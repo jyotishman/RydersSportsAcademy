@@ -1,0 +1,81 @@
+.hero {
+    background: url('/static/img/back2.jpg');
+    background-size: cover;
+    height: 500px;
+    position: relative;
+
+    h1 {
+        position: absolute;
+        top: 24%;
+        left: 50%;
+        transform: translate(-50%, 50%);
+        width: 61%;
+        font-size: 36px;
+        padding-left: 6px;
+        color: #fff;
+        font-weight: 400;
+
+        span {
+            font-weight: 500;
+            color: #fbff00;
+        }
+    }
+
+    .sport-city-selector {
+        background: #fff;
+        width: 60%;
+        margin: auto;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        padding: 0 5px;
+        border-radius: 2px;
+        box-shadow: 0 6px 12px 0 rgba(0, 0, 0, .15);
+
+        .sport-city-form {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+
+            .form-group {
+                margin-bottom: 0;
+                width: 40%;
+
+                .selected-data {
+                    color: #979797;
+                    padding: 10px;
+                    height: 50px;
+                    line-height: 30px;
+                    font-size: 16px;
+                }
+
+                &:nth-child(1) {
+                    border-right: 1px solid #cacaca;
+                }
+
+                &:nth-child(3) {
+                    width: 20%;
+                    text-align: right;
+                }
+            }
+
+            button {
+                background: #3e82f7;
+                color: #fff;
+                border: 0;
+                padding: 12px 15px;
+                height: 100%;
+                margin-bottom: 0;
+                font-size: 16px;
+                font-weight: 500;
+                width: 150px;
+                border-radius: 2px;
+
+            }
+
+        }
+    }
+
+}

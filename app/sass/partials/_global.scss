@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500');
+
 $primary-color: #3e82f7;
 $secondary-color: #ffc239;
 $break-small: 480px;
@@ -7,23 +9,8 @@ $break-large: 1024px;
 $break-xlarge: 1024px;
 
 
-@font-face {
-    font-family: primary-font;
-    src: url(../fonts/GoogleSans-Regular.ttf);
-}
-
-@font-face {
-    font-family: primary-medium-font;
-    src: url(../fonts/GoogleSans-Medium.ttf);
-}
-
-@font-face {
-    font-family: primary-bold-font;
-    src: url(../fonts/GoogleSans-Bold.ttf);
-}
-
 body {
-    font-family: primary-font;
+    font-family: 'Roboto', sans-serif;
     background: #f8f8f8;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -130,5 +117,30 @@ input {
 .hidden-xs {
     @include respond-to(mobile) {
         display: none;
+    }
+}
+
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
     }
 }

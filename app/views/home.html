@@ -1,1 +1,107 @@
 {% extends "base.html" %}
+
+{% block css %}
+    <link rel="stylesheet" href="/static/css/home.css">
+{% endblock css %}
+
+{% block maincontent %}
+    <section class="hero">
+    	<h1>Find your academy <span>near you</span></h1>
+    	<div class="sport-city-selector">
+    		<form class="sport-city-form">
+    			<div class="form-group">
+    				<p class="selected-sport selected-data">Select your preferred sport</p>
+    				
+    			</div>
+    			<div class="form-group">
+    				<p class="selected-center selected-data">Select your nearest center</p>
+    			</div>
+    			<div class="form-group">
+    				<button>Submit</button>
+    			</div>
+    		</form>
+    	</div>
+    </section>
+    <section class="about-us">
+    	<div class="container">
+    		<h2>Know us</h2>
+    		<p>
+    			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    		</p>
+    	</div>
+    </section>
+    <section class="sports-wrap">
+    	<div class="container">
+    		<h2>Sports training we provide</h2>
+    		<ul class="sports-list">
+    			<li>
+    				<a href="">
+    					<div class="img-wrapper">
+    						<img alt="painting" class="b-lazy image b-loaded" src="//d17huovmutvsfz.cloudfront.net/static-images/painting-desktop.jpg">
+    					</div>
+    					<span class="name">
+    						Football
+    					</span>
+    				</a>
+    			</li>
+    			<li>
+    				<a href="">
+    					<div class="img-wrapper">
+    						<img alt="painting" class="b-lazy image b-loaded" src="//d17huovmutvsfz.cloudfront.net/static-images/painting-desktop.jpg">
+    					</div>
+    					<span class="name">
+    						Football
+    					</span>
+    				</a>
+    			</li>
+    			<li>
+    				<a href="">
+    					<div class="img-wrapper">
+    						<img alt="painting" class="b-lazy image b-loaded" src="//d17huovmutvsfz.cloudfront.net/static-images/painting-desktop.jpg">
+    					</div>
+    					<span class="name">
+    						Football
+    					</span>
+    				</a>
+    			</li>
+    			<li>
+    				<a href="">
+    					<div class="img-wrapper">
+    						<img alt="painting" class="b-lazy image b-loaded" src="//d17huovmutvsfz.cloudfront.net/static-images/painting-desktop.jpg">
+    					</div>
+    					<span class="name">
+    						Football
+    					</span>
+    				</a>
+    			</li>
+    			<li>
+    				<a href="">
+    					<div class="img-wrapper">
+    						<img alt="painting" class="b-lazy image b-loaded" src="//d17huovmutvsfz.cloudfront.net/static-images/painting-desktop.jpg">
+    					</div>
+    					<span class="name">
+    						Football
+    					</span>
+    				</a>
+    			</li>
+    		</ul>
+    	</div>
+    </section>
+    <section class="signup-wrap">
+        <div class="container">
+            <div class="wrapper">
+                <div class="info">
+                    <h2>Signup now to get amazing coupons and discount from top sports brands</h2>
+                </div>
+                <div class="button">
+                    <button>Signup</button>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock maincontent %}
