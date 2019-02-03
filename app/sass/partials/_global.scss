@@ -1,0 +1,134 @@
+$primary-color: #3e82f7;
+$secondary-color: #ffc239;
+$break-small: 480px;
+$break-mobile: 767px;
+$break-tablet: 992px;
+$break-large: 1024px;
+$break-xlarge: 1024px;
+
+
+@font-face {
+    font-family: primary-font;
+    src: url(../fonts/GoogleSans-Regular.ttf);
+}
+
+@font-face {
+    font-family: primary-medium-font;
+    src: url(../fonts/GoogleSans-Medium.ttf);
+}
+
+@font-face {
+    font-family: primary-bold-font;
+    src: url(../fonts/GoogleSans-Bold.ttf);
+}
+
+body {
+    font-family: primary-font;
+    background: #f8f8f8;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+.list-inline li {
+    display: inline-block;
+}
+
+.form-control {
+    height: 40px;
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 2px;
+    border: 1px solid #e6e6e6;
+    outline: none;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.success-message {
+    font-size: 16px;
+    color: #02b150;
+}
+
+.hidden {
+    display: none;
+}
+
+
+
+@mixin flex {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+@mixin transition($value) {
+    -webkit-transition: $value all;
+    -moz-transition: $value all;
+    -o-transition: $value all;
+    -ms-transition: $value all;
+    transition: $value all;
+}
+
+@mixin respond-to($media) {
+    @if $media==small {
+        @media only screen and (max-width: $break-small) {
+            @content;
+        }
+    }
+
+    @else if $media==mobile {
+        @media only screen and (max-width: $break-mobile) {
+            @content;
+        }
+    }
+
+    @else if $media==large-mobile {
+        @media only screen and (min-width: $break-small + 1) and (max-width: $break-mobile) {
+            @content;
+        }
+    }
+
+    @else if $media==upto-tablet {
+        @media only screen and (min-width: $break-mobile + 1) {
+            @content;
+        }
+    }
+
+    @else if $media==tablet {
+        @media only screen and (min-width: $break-mobile + 1) and (max-width: $break-large - 1) {
+            @content;
+        }
+    }
+
+    @else if $media==desktop {
+        @media only screen and (min-width: $break-large) {
+            @content;
+        }
+    }
+}
+
+
+input {
+    @include transition(0.2s);
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: $primary-color;
+    -webkit-box-shadow: 0 0 0 1px $primary-color;
+    box-shadow: 0 0 0 1px $primary-color;
+
+}
+
+.hidden-xs {
+    @include respond-to(mobile) {
+        display: none;
+    }
+}
