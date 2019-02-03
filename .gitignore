@@ -1,0 +1,58 @@
+# Executables
+*.pyc
+
+# Temporary files
+*~
+*.swo
+*.swp
+*.orig
+.elasticbeanstalk/
+.anvil
+*.log
+*.db
+
+# cscope files
+cscope.*
+
+# Celery / supervisord
+celerybeat-schedule
+*celerybeat-schedule
+*supervisord.conf
+
+# eclipse project files
+.project
+.pydevproject
+
+# VIM related files
+.project.ide.files
+
+#Sqlite files
+*.sqlite
+*.sqlite3
+
+#Media directory
+media
+staticfiles
+
+# Log directory
+log
+logs
+bin
+node_modules
+bower_components
+
+# Others
+*.DS_Store
+.sass-cache
+.ropeproject
+conf.ini
+conf.ini*
+.idea
+__start_time.txt
+static/
+.idea/
+public
+post/
+category/
+tag/
+page/
