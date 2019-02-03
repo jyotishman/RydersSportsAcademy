@@ -1,0 +1,11 @@
+{
+  "name": "sportsacademy",
+  "version": "1.0.0",
+  "description": "",
+  "author": "jyotishman",
+  "license": "ISC",
+  "devDependencies": {
+    "grunt": "^1.0.3",
+    "grunt-contrib-sass": "^1.0.0"
+  }
+}
