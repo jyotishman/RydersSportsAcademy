@@ -1,0 +1,9 @@
+python3.6
+python-pip
+libjpeg-dev
+python3.6-dev
+libxml2-dev
+libxslt1-dev
+libmagic-dev
+libncurses-dev
+postgresql postgresql-contrib
