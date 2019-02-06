@@ -55,4 +55,5 @@ public
 post/
 category/
 tag/
+.sass-cache/*
 page/

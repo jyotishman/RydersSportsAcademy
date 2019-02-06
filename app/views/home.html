@@ -2,11 +2,39 @@
 
 {% block css %}
     <link rel="stylesheet" href="/static/css/home.css">
+    
 {% endblock css %}
+
+{% block js %}
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
+    <script type="text/javascript">
+        (function() {
+        var typed = new Typed('#typed', {
+            stringsElement: '#typed-strings',
+            loop: true,
+            typeSpeed: 100
+          });
+    })();
+    </script>
+{% endblock js %}
 
 {% block maincontent %}
     <section class="hero">
-    	<h1>Find a  <span>RydersSportsAcademy</span> near you</h1>
+        <div class="hero-heading">
+            <h5>Welcome to  Ryders-Sports-Academy</h5>
+            <div id="typed-strings">
+                <p>Football</p>
+                <p>Tennis</p>
+                <p>Basketball</p>
+                <p>Golf</p>
+            </div>
+            <h1>
+                Find <span id="typed"></span> in Gurgaon
+            </h1>
+            
+        </div>
+    	
+
     	<div class="sport-city-selector">
     		<form class="sport-city-form">
     			<div class="form-group">
@@ -24,7 +52,7 @@
     </section>
     <section class="about-us">
     	<div class="container">
-    		<h2>About <span>RydersSportsAcademy</span></h2>
+    		<h2 class="global-heading">About <span>RydersSportsAcademy</span></h2>
             <p></p>
             <div class="left-photo">
                 <img src="static/img/athelete.jpg" alt="">

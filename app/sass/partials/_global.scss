@@ -144,3 +144,31 @@ input {
         width: 1170px;
     }
 }
+
+
+.global-heading {
+    position: relative;
+    margin-bottom: 40px;
+
+    &:before {
+        content: "";
+        background: #cecece;
+        position: absolute;
+        top: 135%;
+        width: 20%;
+        left: 50%;
+        height: 2px;
+        transform: translate(-50%, 0);
+    }
+
+    &:after {
+        content: "";
+        position: absolute;
+        top: 123%;
+        left: 50%;
+        width: 10px;
+        height: 10px;
+        background: #c2c3c4;
+        border-radius: 50px;
+    }
+}

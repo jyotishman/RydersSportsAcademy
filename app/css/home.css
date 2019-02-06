@@ -186,6 +186,28 @@ input {
 @media (min-width: 1200px) {
   .container {
     width: 1170px; } }
+.global-heading {
+  position: relative;
+  margin-bottom: 40px; }
+  .global-heading:before {
+    content: "";
+    background: #cecece;
+    position: absolute;
+    top: 135%;
+    width: 20%;
+    left: 50%;
+    height: 2px;
+    transform: translate(-50%, 0); }
+  .global-heading:after {
+    content: "";
+    position: absolute;
+    top: 123%;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    background: #c2c3c4;
+    border-radius: 50px; }
+
 header {
   display: -webkit-flex;
   display: -moz-flex;
@@ -229,19 +251,31 @@ header {
   background-size: cover;
   height: 500px;
   position: relative; }
-  .hero h1 {
+  .hero .hero-heading {
     position: absolute;
-    top: 24%;
+    top: 20%;
     left: 50%;
     transform: translate(-50%, 50%);
     width: 61%;
     font-size: 36px;
     padding-left: 6px;
     color: #fff;
-    font-weight: 400; }
-    .hero h1 span {
+    font-weight: 400;
+    text-align: center; }
+    .hero .hero-heading span {
       font-weight: 700;
       color: #fed707; }
+    .hero .hero-heading h5 {
+      font-size: 14px;
+      margin-bottom: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #ffd900;
+      letter-spacing: 0.5px;
+      background: #0000001c;
+      display: inline-flex;
+      padding: 6px;
+      border-radius: 2px; }
   .hero .sport-city-selector {
     background: #fff;
     width: 60%;
@@ -249,7 +283,7 @@ header {
     position: absolute;
     left: 50%;
     transform: translate(-50%, -50%);
-    top: 50%;
+    top: 56%;
     padding: 0 5px;
     border-radius: 2px;
     box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.15); }
