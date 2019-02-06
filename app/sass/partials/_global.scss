@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,500');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
 
-$primary-color: #3e82f7;
-$secondary-color: #ffc239;
+$primary-color: #0078ff;
+$secondary-color: #fed707;
 $break-small: 480px;
 $break-mobile: 767px;
 $break-tablet: 992px;
@@ -142,5 +142,33 @@ input {
 @media (min-width: 1200px) {
     .container {
         width: 1170px;
+    }
+}
+
+
+.global-heading {
+    position: relative;
+    margin-bottom: 40px;
+
+    &:before {
+        content: "";
+        background: #cecece;
+        position: absolute;
+        top: 135%;
+        width: 20%;
+        left: 50%;
+        height: 2px;
+        transform: translate(-50%, 0);
+    }
+
+    &:after {
+        content: "";
+        position: absolute;
+        top: 123%;
+        left: 50%;
+        width: 10px;
+        height: 10px;
+        background: #c2c3c4;
+        border-radius: 50px;
     }
 }

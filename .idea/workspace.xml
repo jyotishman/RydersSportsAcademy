@@ -2,13 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b93900c1-e95f-4c8c-9569-ba50de989eeb" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/center-detail.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/sport-detail.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/teams.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/img/athelete.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/img/basketball.jpeg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/img/football.jpeg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/img/golf.jpeg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/img/horse.jpeg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/img/logo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/img/new.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/img/pattern.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/bower.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/settings/base.py" afterPath="$PROJECT_DIR$/config/settings/base.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sports_academy/storefront/urls.py" afterPath="$PROJECT_DIR$/sports_academy/storefront/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sports_academy/storefront/views.py" afterPath="$PROJECT_DIR$/sports_academy/storefront/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/css/home.css" afterPath="$PROJECT_DIR$/app/css/home.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/css/home.css.map" afterPath="$PROJECT_DIR$/app/css/home.css.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/sass/home.scss" afterPath="$PROJECT_DIR$/app/sass/home.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/sass/partials/_about-us.scss" afterPath="$PROJECT_DIR$/app/sass/partials/_about-us.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/sass/partials/_global.scss" afterPath="$PROJECT_DIR$/app/sass/partials/_global.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/sass/partials/_header.scss" afterPath="$PROJECT_DIR$/app/sass/partials/_header.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/sass/partials/_hero.scss" afterPath="$PROJECT_DIR$/app/sass/partials/_hero.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/sass/partials/_sports.scss" afterPath="$PROJECT_DIR$/app/sass/partials/_sports.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/base.html" afterPath="$PROJECT_DIR$/app/views/base.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/home.html" afterPath="$PROJECT_DIR$/app/views/home.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -41,7 +55,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sports_academy/storefront/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="196">
@@ -53,11 +67,21 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="18">
+              <caret line="1" column="5" lean-forward="false" selection-start-line="1" selection-start-column="2" selection-end-line="1" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sports_academy/storefront/urls.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="162">
-              <caret line="11" column="51" lean-forward="true" selection-start-line="11" selection-start-column="51" selection-end-line="11" selection-end-column="51" />
+              <caret line="11" column="51" lean-forward="false" selection-start-line="11" selection-start-column="51" selection-end-line="11" selection-end-column="51" />
               <folding />
             </state>
           </provider>
@@ -93,6 +117,7 @@
       <find>__</find>
       <find>BASE_DIR</find>
       <find>publ</find>
+      <find>pyc</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -185,17 +210,6 @@
             <path>
               <item name="sports_academy" type="b2602c69:ProjectViewProjectNode" />
               <item name="sports_academy" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sports_academy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sports_academy" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sports_academy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sports_academy" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="sports_academy" type="b2602c69:ProjectViewProjectNode" />
@@ -339,6 +353,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="900">
           <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -393,13 +408,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/home.html" />
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
-          <caret line="36" column="8" lean-forward="false" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/settings/conf.ini">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
@@ -686,7 +694,7 @@
     <entry file="file://$PROJECT_DIR$/sports_academy/storefront/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
-          <caret line="11" column="51" lean-forward="true" selection-start-line="11" selection-start-column="51" selection-end-line="11" selection-end-column="51" />
+          <caret line="11" column="51" lean-forward="false" selection-start-line="11" selection-start-column="51" selection-end-line="11" selection-end-column="51" />
           <folding />
         </state>
       </provider>
@@ -698,6 +706,14 @@
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" column="5" lean-forward="false" selection-start-line="1" selection-start-column="2" selection-end-line="1" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>

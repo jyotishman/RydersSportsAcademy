@@ -2,11 +2,39 @@
 
 {% block css %}
     <link rel="stylesheet" href="/static/css/home.css">
+    
 {% endblock css %}
+
+{% block js %}
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
+    <script type="text/javascript">
+        (function() {
+        var typed = new Typed('#typed', {
+            stringsElement: '#typed-strings',
+            loop: true,
+            typeSpeed: 100
+          });
+    })();
+    </script>
+{% endblock js %}
 
 {% block maincontent %}
     <section class="hero">
-    	<h1>Find your academy <span>near you</span></h1>
+        <div class="hero-heading">
+            <h5>Welcome to  Ryders-Sports-Academy</h5>
+            <div id="typed-strings">
+                <p>Football</p>
+                <p>Tennis</p>
+                <p>Basketball</p>
+                <p>Golf</p>
+            </div>
+            <h1>
+                Find <span id="typed"></span> in Gurgaon
+            </h1>
+            
+        </div>
+    	
+
     	<div class="sport-city-selector">
     		<form class="sport-city-form">
     			<div class="form-group">
@@ -24,15 +52,23 @@
     </section>
     <section class="about-us">
     	<div class="container">
-    		<h2>Know us</h2>
-    		<p>
-    			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-    			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-    			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-    			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    		</p>
+    		<h2 class="global-heading">About <span>RydersSportsAcademy</span></h2>
+            <p></p>
+            <div class="left-photo">
+                <img src="static/img/athelete.jpg" alt="">
+            </div>
+            <div class="right-content">
+                <p>
+                    We are coaches, trainers educators and counsellors committed to building players, athletes and individuals. But most of all we are watchers who never lose sight of our ultimate goal, i.e. <br>
+                    To help you to grow, excel and succeed. Our dedicated and hard working set of coaches always looks for innovative drills and exercises to suit the individual needs of every trainee instead of relying on a ‘one size fits all’ approach. <br>
+                    We help you learn to face challenging situations and to trust one another as partners in new ways, sharing as a team & leadership quality to put you on ‘Top of the World.’
+
+
+                </p>
+                <p>
+                    <a href="">Know More</a>
+                </p>
+            </div>
     	</div>
     </section>
     <section class="sports-wrap">
@@ -42,7 +78,7 @@
     			<li>
     				<a href="">
     					<div class="img-wrapper">
-    						<img alt="painting" class="b-lazy image b-loaded" src="//d17huovmutvsfz.cloudfront.net/static-images/painting-desktop.jpg">
+    						<img alt="painting" class="b-lazy image b-loaded" src="/static/img/football.jpeg">
     					</div>
     					<span class="name">
     						Football
@@ -52,30 +88,30 @@
     			<li>
     				<a href="">
     					<div class="img-wrapper">
-    						<img alt="painting" class="b-lazy image b-loaded" src="//d17huovmutvsfz.cloudfront.net/static-images/painting-desktop.jpg">
+    						<img alt="painting" class="b-lazy image b-loaded" src="/static/img/golf.jpeg">
     					</div>
     					<span class="name">
-    						Football
+    						Golf
     					</span>
     				</a>
     			</li>
     			<li>
     				<a href="">
     					<div class="img-wrapper">
-    						<img alt="painting" class="b-lazy image b-loaded" src="//d17huovmutvsfz.cloudfront.net/static-images/painting-desktop.jpg">
+    						<img alt="painting" class="b-lazy image b-loaded" src="/static/img/basketball.jpeg">
     					</div>
     					<span class="name">
-    						Football
+    						Basket ball
     					</span>
     				</a>
     			</li>
     			<li>
     				<a href="">
     					<div class="img-wrapper">
-    						<img alt="painting" class="b-lazy image b-loaded" src="//d17huovmutvsfz.cloudfront.net/static-images/painting-desktop.jpg">
+    						<img alt="painting" class="b-lazy image b-loaded" src="/static/img/horse.jpeg">
     					</div>
     					<span class="name">
-    						Football
+    						Horse Riding
     					</span>
     				</a>
     			</li>
