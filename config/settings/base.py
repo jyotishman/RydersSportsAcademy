@@ -58,9 +58,15 @@ THIRD_PARTY_APPS = [
     'phonenumbers',
     'phonenumber_field',
     'storages',
+    # 'cities',
 ]
 
 LOCAL_APPS = [
+    'sports_academy.center.apps.CenterConfig',
+    'sports_academy.gallery.apps.GalleryConfig',
+    'sports_academy.sport.apps.SportConfig',
+    'sports_academy.storefront.apps.StorefrontConfig',
+    'sports_academy.team.apps.TeamConfig',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
