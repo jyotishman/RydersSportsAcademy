@@ -6,7 +6,10 @@
     "jyotishman"
   ],
   "dependencies": {
-    "bootstrap-grid-only": "^1.0.0"
+    "bootstrap-grid-only": "^1.0.0",
+    "bLazy": "blazy#^1.8.2",
+    "jquery": "^3.3.1"
+
   },
   "license": "ISC",
   "homepage": "https://github.com/jyotishman/RydersSportsAcademy",

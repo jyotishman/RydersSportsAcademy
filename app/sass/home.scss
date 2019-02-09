@@ -10,4 +10,30 @@
     padding: 90px 0;
     background: url(/static/img/pattern.png);
     color: #fff;
+
+    .wrapper {
+        @include flex();
+        justify-content: space-between;
+        align-items: center;
+
+        .info {
+            h2 {
+                font-size: 28px;
+                font-weight: 500;
+            }
+        }
+
+        .button {
+            button {
+                background: #ffda00;
+                border: 0;
+                font-size: 18px;
+                font-weight: 600;
+                width: 180px;
+                padding: 16px;
+                border-radius: 3px;
+                color: #545454;
+            }
+        }
+    }
 }

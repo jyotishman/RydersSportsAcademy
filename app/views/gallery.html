@@ -2,7 +2,18 @@
 
 {% block css %}
     <link rel="stylesheet" href="/static/css/gallery.css">
+    <link rel="stylesheet" href="/static/bower_components/fancybox/dist/jquery.fancybox.css" />
+
 {% endblock css %}
+
+{% block js %}
+	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+	<script type="text/javascript" src="/static/bower_components/fancybox/dist/jquery.fancybox.js"></script>
+
+    <script src="/static/gallery_bundle.js"></script>
+    
+{% endblock js %}
 
 {% block maincontent %}
 	<section class="gallery-wrap">
@@ -11,11 +22,15 @@
 		</div>
 		<div class="container">
 			<ul class="photo-list">
-				<li>
-					<div class="img-wrapper">
-						<img src="/static/img/athelete.jpg" alt="">
-					</div>
-				</li>
+				{% for gallery in galleries  %}
+					<li>
+						<div class="img-wrapper">
+							<a class="fancybox-button" rel="fancybox-button" href="/media/{{ gallery.image }}" title="jyotisman">
+								<img src="/media/{{ gallery.image }}" alt="" />
+							</a>
+						</div>
+					</li>
+				{% endfor %}
 			</ul>
 		</div>
 	</section>

@@ -23,39 +23,32 @@
         <div class="hero-heading">
             <h5>Welcome to  Ryders-Sports-Academy</h5>
             <div id="typed-strings">
-                <p>Football</p>
-                <p>Tennis</p>
-                <p>Basketball</p>
-                <p>Golf</p>
+                {% for sport in sports  %}
+                    <p>{{ sport.name }}</p>
+                {% endfor %}
             </div>
             <h1>
-                Find <span id="typed"></span> in Gurgaon
-            </h1>
-            
+                Find <span id="typed"></span> Academy in Gurgaon
+            </h1>            
         </div>
-    	
 
     	<div class="sport-city-selector">
     		<form class="sport-city-form">
     			<div class="form-group">
     				<p class="selected-sport selected-data">Select your preferred sport</p>
                     <ul class="custom-select">
-                        <li>Football</li>
-                        <li>Football</li>
-                        <li>Football</li>
-                        <li>Football</li>
-                        <li>Football</li>
+                        {% for sport in sports  %}
+                            <li>{{ sport.name }}</li>
+                        {% endfor %}
                     </ul>
     				
     			</div>
     			<div class="form-group">
     				<p class="selected-center selected-data">Select your nearest center</p>
                     <ul class="custom-select">
-                        <li>Football</li>
-                        <li>Football</li>
-                        <li>Football</li>
-                        <li>Football</li>
-                        <li>Football</li>
+                        {% for center in centers  %}
+                            <li>{{ center.academy_name }}</li>
+                        {% endfor %}
                     </ul>
     			</div>
     			<div class="form-group">
@@ -146,12 +139,17 @@
         <div class="container">
             <div class="wrapper">
                 <div class="info">
-                    <h2>Signup now to get amazing coupons and discount from top sports brands</h2>
+                    <h2>Are you a professional looking to grow your service business?</h2>
                 </div>
                 <div class="button">
-                    <button>Signup</button>
+                    <button>Join Now</button>
                 </div>
             </div>
+        </div>
+    </section>
+    <section class="view-our-gallery">
+        <div class="container">
+            
         </div>
     </section>
 {% endblock maincontent %}

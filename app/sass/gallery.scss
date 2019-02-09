@@ -41,11 +41,24 @@
     .photo-list {
         li {
             width: 25%;
+            padding: 10px;
             float: left;
 
+
+
             .img-wrapper {
+                border: 2px solid #ddd;
+                border-radius: 2px;
+
                 img {
                     max-width: 100%;
+                }
+
+                a.fancybox-button {
+                    height: 100%;
+                    width: 100%;
+                    background: transparent;
+                    padding: 5px;
                 }
             }
         }

@@ -26,6 +26,13 @@ module.exports = function(grunt) {
                 dot: true,
                 src: '**/*'
             },
+            bower: {
+                expand: true,
+                cwd: 'bower_components',
+                dest: '../public/bower_components',
+                dot: true,
+                src: '**/*'
+            },
         },
         watch: {
             css: {
@@ -62,6 +69,20 @@ module.exports = function(grunt) {
                 },
                 src: ['scripts/index.js'],
                 dest: '../public/bundle.js'
+            },
+            dist1: {
+                options: {
+                    transform: [
+                        ['babelify', { presets: ['es2015'] }],
+                        ['stringify', ['.html']],
+                        ['browserify-css']
+                    ],
+                    browserifyOptions: { debug: true },
+                    watch: true,
+                    keepAlive: false
+                },
+                src: ['scripts/gallery_index.js'],
+                dest: '../public/gallery_bundle.js'
             }
         },
     });
