@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block css %}
+    <link rel="stylesheet" href="/static/css/gallery.css">
+{% endblock css %}
+
+{% block maincontent %}
+	<section class="gallery-wrap">
+		<div class="hero-background">
+			<h1>Our photo gallery</h1>
+		</div>
+		<div class="container">
+			<ul class="photo-list">
+				<li>
+					<div class="img-wrapper">
+						<img src="/static/img/athelete.jpg" alt="">
+					</div>
+				</li>
+			</ul>
+		</div>
+	</section>
+{% endblock maincontent %}

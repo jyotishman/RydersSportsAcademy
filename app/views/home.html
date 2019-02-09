@@ -2,11 +2,11 @@
 
 {% block css %}
     <link rel="stylesheet" href="/static/css/home.css">
-    
 {% endblock css %}
 
 {% block js %}
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
+    <script src="/static/bundle.js"></script>
     <script type="text/javascript">
         (function() {
         var typed = new Typed('#typed', {
@@ -39,10 +39,24 @@
     		<form class="sport-city-form">
     			<div class="form-group">
     				<p class="selected-sport selected-data">Select your preferred sport</p>
+                    <ul class="custom-select">
+                        <li>Football</li>
+                        <li>Football</li>
+                        <li>Football</li>
+                        <li>Football</li>
+                        <li>Football</li>
+                    </ul>
     				
     			</div>
     			<div class="form-group">
     				<p class="selected-center selected-data">Select your nearest center</p>
+                    <ul class="custom-select">
+                        <li>Football</li>
+                        <li>Football</li>
+                        <li>Football</li>
+                        <li>Football</li>
+                        <li>Football</li>
+                    </ul>
     			</div>
     			<div class="form-group">
     				<button>Submit</button>

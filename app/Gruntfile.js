@@ -47,13 +47,31 @@ module.exports = function(grunt) {
                     ext: '.css'
                 }]
             }
-        }
+        },
+        browserify: {
+            dist: {
+                options: {
+                    transform: [
+                        ['babelify', { presets: ['es2015'] }],
+                        ['stringify', ['.html']],
+                        ['browserify-css']
+                    ],
+                    browserifyOptions: { debug: true },
+                    watch: true,
+                    keepAlive: false
+                },
+                src: ['scripts/index.js'],
+                dest: '../public/bundle.js'
+            }
+        },
     });
 
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-browserify');
+
 
     // Default task(s).
-    grunt.registerTask('build', ['sass', 'copy']);
+    grunt.registerTask('build', ['sass', 'copy', 'browserify']);
 };
