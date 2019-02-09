@@ -7,22 +7,25 @@ from django_countries.fields import CountryField
 
 class Center(models.Model):
 	academy_name = models.CharField(max_length=200)
-	image = models.ImageField(null=True)
+	image = models.ImageField(null=True, blank=True)
 	description = models.TextField(blank=True)
 
 	address = models.TextField(blank=True)
 	city = models.CharField(max_length=100)
 	state = models.CharField(max_length=100)
 	country = models.CharField(max_length=100)
-	mobile = PhoneNumberField()
+	zipcode = models.CharField(max_length=10)
+
+	active = models.BooleanField(default=True)
+
+	mobile = PhoneNumberField(blank=True)
 	email = models.EmailField(max_length=255, blank=True)
-	zipcode = models.CharField(max_length=10, blank=True)
 
-	morning_opening_timing = models.TimeField()
-	morning_closing_timing = models.TimeField()
+	morning_opening_timing = models.TimeField(null=True, blank=True)
+	morning_closing_timing = models.TimeField(null=True, blank=True)
 
-	evening_opening_timing = models.TimeField()
-	evening_closing_timing = models.TimeField()
+	evening_opening_timing = models.TimeField(null=True, blank=True)
+	evening_closing_timing = models.TimeField(null=True, blank=True)
 
 	sports = models.ManyToManyField('sport.Sport')
 
@@ -30,4 +33,4 @@ class Center(models.Model):
 	modified = models.DateTimeField(auto_now=True)
 
 	def __str__(self):
-		self.academy_name
+		return self.academy_name
