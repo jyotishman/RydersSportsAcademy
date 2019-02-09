@@ -111,3 +111,15 @@ class TeamView(View):
 			'image': "https://d14nytznni7htl.cloudfront.net/standalone/17663/og_image_1542134794_7567792.png"
 		}
 		return render(request, self.template_name, context=context)
+
+
+class ContactUsView(View):
+	template_name = "contact-us.html"
+
+	def get(self, request, *args, **kwargs):
+		context = {
+			'meta_title': "Showtop10- The best 10 list of everything",
+			'meta_description': "Top 10 list of everything and anything in one place. Get the best ten list everyday.",
+			'image': "https://d14nytznni7htl.cloudfront.net/standalone/17663/og_image_1542134794_7567792.png"
+		}
+		return render(request, self.template_name, context=context)
