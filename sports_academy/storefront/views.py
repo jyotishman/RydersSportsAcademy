@@ -1,9 +1,12 @@
+import json
 from django.shortcuts import render
 from rest_framework.views import View
 from sports_academy.gallery.models import Gallery
 from sports_academy.center.models import Center
 from sports_academy.sport.models import Sport
 from django.shortcuts import get_object_or_404
+from sports_academy.center.serializers import CenterSerializer
+from sports_academy.sport.serializers import SportSerializer
 
 
 # Create your views here.
@@ -45,7 +48,8 @@ class CenterView(View):
 		context = {
 			'meta_title': "Showtop10- The best 10 list of everything",
 			'meta_description': "Top 10 list of everything and anything in one place. Get the best ten list everyday.",
-			'image': "https://d14nytznni7htl.cloudfront.net/standalone/17663/og_image_1542134794_7567792.png"
+			'image': "https://d14nytznni7htl.cloudfront.net/standalone/17663/og_image_1542134794_7567792.png",
+			'centres': json.loads(json.dumps(CenterSerializer(Center.objects.filter(active=True), many=True).data))
 		}
 		return render(request, self.template_name, context=context)
 
@@ -58,7 +62,8 @@ class CenterDetailView(View):
 		context = {
 			'meta_title': "Showtop10- The best 10 list of everything",
 			'meta_description': "Top 10 list of everything and anything in one place. Get the best ten list everyday.",
-			'image': "https://d14nytznni7htl.cloudfront.net/standalone/17663/og_image_1542134794_7567792.png"
+			'image': "https://d14nytznni7htl.cloudfront.net/standalone/17663/og_image_1542134794_7567792.png",
+			'center': CenterSerializer(center).data
 		}
 		return render(request, self.template_name, context=context)
 
@@ -70,7 +75,8 @@ class SportView(View):
 		context = {
 			'meta_title': "Showtop10- The best 10 list of everything",
 			'meta_description': "Top 10 list of everything and anything in one place. Get the best ten list everyday.",
-			'image': "https://d14nytznni7htl.cloudfront.net/standalone/17663/og_image_1542134794_7567792.png"
+			'image': "https://d14nytznni7htl.cloudfront.net/standalone/17663/og_image_1542134794_7567792.png",
+			'sports': json.loads(json.dumps(SportSerializer(Sport.objects.filter(active=True), many=True).data))
 		}
 		return render(request, self.template_name, context=context)
 
@@ -83,7 +89,8 @@ class SportDetailView(View):
 		context = {
 			'meta_title': "Showtop10- The best 10 list of everything",
 			'meta_description': "Top 10 list of everything and anything in one place. Get the best ten list everyday.",
-			'image': "https://d14nytznni7htl.cloudfront.net/standalone/17663/og_image_1542134794_7567792.png"
+			'image': "https://d14nytznni7htl.cloudfront.net/standalone/17663/og_image_1542134794_7567792.png",
+			'sport': SportSerializer(sport).data
 		}
 		return render(request, self.template_name, context=context)
 
