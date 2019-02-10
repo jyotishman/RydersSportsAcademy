@@ -3,11 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b93900c1-e95f-4c8c-9569-ba50de989eeb" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/requirements/base.txt" afterPath="$PROJECT_DIR$/requirements/base.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sports_academy/center/models.py" afterPath="$PROJECT_DIR$/sports_academy/center/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sports_academy/gallery/models.py" afterPath="$PROJECT_DIR$/sports_academy/gallery/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sports_academy/sport/models.py" afterPath="$PROJECT_DIR$/sports_academy/sport/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sports_academy/storefront/views.py" afterPath="$PROJECT_DIR$/sports_academy/storefront/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sports_academy/team/models.py" afterPath="$PROJECT_DIR$/sports_academy/team/models.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -42,14 +37,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sports_academy/storefront/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+            <state relative-caret-position="288">
+              <caret line="133" column="12" lean-forward="false" selection-start-line="133" selection-start-column="12" selection-end-line="133" selection-end-column="12" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="base.txt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/requirements/base.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="11" column="17" lean-forward="false" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -141,12 +146,12 @@
         <option value="$PROJECT_DIR$/sports_academy/gallery/serializers.py" />
         <option value="$PROJECT_DIR$/sports_academy/sport/serializers.py" />
         <option value="$PROJECT_DIR$/sports_academy/team/serializers.py" />
-        <option value="$PROJECT_DIR$/requirements/base.txt" />
         <option value="$PROJECT_DIR$/sports_academy/sport/models.py" />
         <option value="$PROJECT_DIR$/sports_academy/center/models.py" />
         <option value="$PROJECT_DIR$/sports_academy/gallery/models.py" />
         <option value="$PROJECT_DIR$/sports_academy/team/models.py" />
         <option value="$PROJECT_DIR$/sports_academy/storefront/views.py" />
+        <option value="$PROJECT_DIR$/requirements/base.txt" />
       </list>
     </option>
   </component>
@@ -198,13 +203,7 @@
             <path>
               <item name="sports_academy" type="b2602c69:ProjectViewProjectNode" />
               <item name="sports_academy" type="462c0819:PsiDirectoryNode" />
-              <item name="sports_academy" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sports_academy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sports_academy" type="462c0819:PsiDirectoryNode" />
-              <item name="sports_academy" type="462c0819:PsiDirectoryNode" />
-              <item name="storefront" type="462c0819:PsiDirectoryNode" />
+              <item name="requirements" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="sports_academy" type="b2602c69:ProjectViewProjectNode" />
@@ -626,14 +625,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/requirements/base.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="21" lean-forward="false" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sports_academy/center/serializers.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
@@ -692,11 +683,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sports_academy/storefront/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+        <state relative-caret-position="288">
+          <caret line="133" column="12" lean-forward="false" selection-start-line="133" selection-start-column="12" selection-end-line="133" selection-end-column="12" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/requirements/base.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="17" lean-forward="false" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
