@@ -1,7 +1,9 @@
+from django.conf import settings
 from django.core.exceptions import ValidationError
 from django.db import models
 from django.db.models import F
 from django.db.transaction import atomic
+from slugify import slugify
 
 
 # Create your models here.
@@ -55,3 +57,7 @@ class Gallery(models.Model):
 		with atomic():
 			self.__class__.objects.filter(priority__gt=priority).update(priority=F('priority') - 1)
 			super(Gallery, self).delete(*args, **kwargs)
+
+	@property
+	def slug(self):
+		return slugify(self.name)[:settings.DEFAULT_SLUG_LENGTH]
