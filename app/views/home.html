@@ -82,56 +82,18 @@
     	<div class="container">
     		<h2 class="global-heading">Our <span>Services</span></h2>
     		<ul class="sports-list">
+                {% for sport in sports  %}
     			<li>
     				<a href="">
     					<div class="img-wrapper">
-    						<img alt="painting" class="b-lazy image b-loaded" src="/static/img/football.jpeg">
+    						<img alt="painting" class="b-lazy image b-loaded" src="/media/{{ sport.image }}">
     					</div>
     					<span class="name">
-    						Football
+    						{{ sport.name }}
     					</span>
     				</a>
     			</li>
-    			<li>
-    				<a href="">
-    					<div class="img-wrapper">
-    						<img alt="painting" class="b-lazy image b-loaded" src="/static/img/golf.jpeg">
-    					</div>
-    					<span class="name">
-    						Golf
-    					</span>
-    				</a>
-    			</li>
-    			<li>
-    				<a href="">
-    					<div class="img-wrapper">
-    						<img alt="painting" class="b-lazy image b-loaded" src="/static/img/basketball.jpeg">
-    					</div>
-    					<span class="name">
-    						Basket ball
-    					</span>
-    				</a>
-    			</li>
-    			<li>
-    				<a href="">
-    					<div class="img-wrapper">
-    						<img alt="painting" class="b-lazy image b-loaded" src="/static/img/horse.jpeg">
-    					</div>
-    					<span class="name">
-    						Horse Riding
-    					</span>
-    				</a>
-    			</li>
-    			<li>
-    				<a href="">
-    					<div class="img-wrapper">
-    						<img alt="painting" class="b-lazy image b-loaded" src="//d17huovmutvsfz.cloudfront.net/static-images/painting-desktop.jpg">
-    					</div>
-    					<span class="name">
-    						Football
-    					</span>
-    				</a>
-    			</li>
+                {% endfor %}
     		</ul>
     	</div>
     </section>

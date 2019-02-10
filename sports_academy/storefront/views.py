@@ -12,9 +12,9 @@ from sports_academy.sport.serializers import SportSerializer
 # Create your views here.
 
 global_context = {
-		'centers': Center.objects.filter(active=True).only('id', 'academy_name').values('id', 'academy_name'),
-		'sports': Sport.objects.filter(active=True).only('id', 'name').values('id', 'name'),
-	}
+	'centers': Center.objects.filter(active=True).only('id', 'academy_name').values('id', 'academy_name'),
+	'sports': Sport.objects.filter(active=True).only('id', 'name', 'image').values('id', 'name', 'image'),
+}
 
 class HomeView(View):
 	template_name = "home.html"

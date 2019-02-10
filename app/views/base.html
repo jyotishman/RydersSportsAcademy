@@ -63,12 +63,19 @@
                       <li><a href="">Home</a></li>
                       <li><a href="/about-us">About us</a></li>
                       <li><a href="/teams">Our team</a></li>
-                      <li><a href="/sports">Sports</a></li>
+                      <li>
+                        <a href="/sports">Sports</a>
+                        <ul class="menu-dropdown">
+                            {% for sport in sports  %}
+                                <li><a href="/sport/{{sport.id}}">{{ sport.name }}</a></li>
+                            {% endfor %}
+                        </ul>
+                      </li>
                       <li>
                         <a href="/centers/">Centers</a>
                         <ul class="menu-dropdown">
                             {% for center in centers  %}
-                                <li><a href="/center/{{ center.id }}/{{ center.academy_name }}">{{ center.academy_name }}</a></li>
+                                <li><a href="/center/{{ center.id }}/{{ center.slug }}">{{ center.academy_name }}</a></li>
                             {% endfor %}                            
                         </ul>
                         </li>
