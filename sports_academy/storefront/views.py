@@ -11,6 +11,10 @@ from sports_academy.sport.serializers import SportSerializer
 
 # Create your views here.
 
+global_context = {
+		'centers': Center.objects.filter(active=True).only('id', 'academy_name').values('id', 'academy_name'),
+		'sports': Sport.objects.filter(active=True).only('id', 'name').values('id', 'name'),
+	}
 
 class HomeView(View):
 	template_name = "home.html"
@@ -20,9 +24,8 @@ class HomeView(View):
 			'meta_title': "Showtop10- The best 10 list of everything",
 			'meta_description': "Top 10 list of everything and anything in one place. Get the best ten list everyday.",
 			'image': "https://d14nytznni7htl.cloudfront.net/standalone/17663/og_image_1542134794_7567792.png",
-			'centers': Center.objects.filter(active=True).only('id', 'academy_name').values('id', 'academy_name'),
-			'sports': Sport.objects.filter(active=True).only('id', 'name').values('id', 'name'),
 		}
+		context.update(global_context)
 		return render(request, self.template_name, context=context)
 
 
@@ -38,6 +41,7 @@ class GalleryView(View):
 				'id', 'image', 'description'
 			).values('id', 'image', 'description')
 		}
+		context.update(global_context)
 		return render(request, self.template_name, context=context)
 
 
@@ -51,6 +55,7 @@ class CenterView(View):
 			'image': "https://d14nytznni7htl.cloudfront.net/standalone/17663/og_image_1542134794_7567792.png",
 			'centres': json.loads(json.dumps(CenterSerializer(Center.objects.filter(active=True), many=True).data))
 		}
+		context.update(global_context)
 		return render(request, self.template_name, context=context)
 
 
@@ -65,6 +70,7 @@ class CenterDetailView(View):
 			'image': "https://d14nytznni7htl.cloudfront.net/standalone/17663/og_image_1542134794_7567792.png",
 			'center': CenterSerializer(center).data
 		}
+		context.update(global_context)
 		return render(request, self.template_name, context=context)
 
 
@@ -78,6 +84,7 @@ class SportView(View):
 			'image': "https://d14nytznni7htl.cloudfront.net/standalone/17663/og_image_1542134794_7567792.png",
 			'sports': json.loads(json.dumps(SportSerializer(Sport.objects.filter(active=True), many=True).data))
 		}
+		context.update(global_context)
 		return render(request, self.template_name, context=context)
 
 
@@ -92,6 +99,7 @@ class SportDetailView(View):
 			'image': "https://d14nytznni7htl.cloudfront.net/standalone/17663/og_image_1542134794_7567792.png",
 			'sport': SportSerializer(sport).data
 		}
+		context.update(global_context)
 		return render(request, self.template_name, context=context)
 
 
@@ -105,6 +113,7 @@ class SportCenterView(View):
 			'meta_description': "Top 10 list of everything and anything in one place. Get the best ten list everyday.",
 			'image': "https://d14nytznni7htl.cloudfront.net/standalone/17663/og_image_1542134794_7567792.png"
 		}
+		context.update(global_context)
 		return render(request, self.template_name, context=context)
 
 
@@ -117,6 +126,7 @@ class TeamView(View):
 			'meta_description': "Top 10 list of everything and anything in one place. Get the best ten list everyday.",
 			'image': "https://d14nytznni7htl.cloudfront.net/standalone/17663/og_image_1542134794_7567792.png"
 		}
+		context.update(global_context)
 		return render(request, self.template_name, context=context)
 
 
@@ -129,4 +139,5 @@ class ContactUsView(View):
 			'meta_description': "Top 10 list of everything and anything in one place. Get the best ten list everyday.",
 			'image': "https://d14nytznni7htl.cloudfront.net/standalone/17663/og_image_1542134794_7567792.png"
 		}
+		context.update(global_context)
 		return render(request, self.template_name, context=context)
