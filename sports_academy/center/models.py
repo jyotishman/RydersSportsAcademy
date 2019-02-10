@@ -1,6 +1,8 @@
+from django.conf import settings
 from django.db import models
 from phonenumber_field.modelfields import PhoneNumberField
-from django_countries.fields import CountryField
+from slugify import slugify
+
 
 # Create your models here.
 
@@ -34,3 +36,7 @@ class Center(models.Model):
 
 	def __str__(self):
 		return self.academy_name
+
+	@property
+	def slug(self):
+		return slugify(self.academy_name)[:settings.DEFAULT_SLUG_LENGTH]
