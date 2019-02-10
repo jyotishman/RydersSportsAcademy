@@ -11,6 +11,7 @@ from sports_academy.center.models import Center
 from sports_academy.center.serializers import CenterSerializer
 from sports_academy.gallery.models import Gallery
 from sports_academy.sport.models import Sport
+from sports_academy.team.models import Team
 from sports_academy.sport.serializers import SportSerializer
 from sports_academy.team.serializers import TeamSerializer
 
@@ -127,12 +128,13 @@ class SportCenterView(View):
 
 class TeamView(View):
 	template_name = "teams.html"
+
 	def get(self, request, *args, **kwargs):
 		context = {
 			'meta_title': "Showtop10- The best 10 list of everything",
 			'meta_description': "Top 10 list of everything and anything in one place. Get the best ten list everyday.",
 			'image': "https://d14nytznni7htl.cloudfront.net/standalone/17663/og_image_1542134794_7567792.png",
-			'team': TeamSerializer().data
+			'teams': json.loads(json.dumps(TeamSerializer(Team.objects.filter(active=True), many=True).data))
 		}
 		context.update(global_context)
 		return render(request, self.template_name, context=context)

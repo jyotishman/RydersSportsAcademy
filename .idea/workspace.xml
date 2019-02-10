@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b93900c1-e95f-4c8c-9569-ba50de989eeb" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sports_academy/center/models.py" afterPath="$PROJECT_DIR$/sports_academy/center/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sports_academy/center/serializers.py" afterPath="$PROJECT_DIR$/sports_academy/center/serializers.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sports_academy/gallery/models.py" afterPath="$PROJECT_DIR$/sports_academy/gallery/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sports_academy/gallery/serializers.py" afterPath="$PROJECT_DIR$/sports_academy/gallery/serializers.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sports_academy/sport/models.py" afterPath="$PROJECT_DIR$/sports_academy/sport/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sports_academy/sport/serializers.py" afterPath="$PROJECT_DIR$/sports_academy/sport/serializers.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sports_academy/team/models.py" afterPath="$PROJECT_DIR$/sports_academy/team/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sports_academy/team/serializers.py" afterPath="$PROJECT_DIR$/sports_academy/team/serializers.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sports_academy/storefront/views.py" afterPath="$PROJECT_DIR$/sports_academy/storefront/views.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -40,6 +34,30 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/sports_academy/storefront/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="232">
+              <caret line="136" column="0" lean-forward="false" selection-start-line="136" selection-start-column="0" selection-end-line="136" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sports_academy/team/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="252">
+              <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#32#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="serializers.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sports_academy/sport/serializers.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -50,11 +68,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="serializers.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="serializers.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sports_academy/team/serializers.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+            <state relative-caret-position="54">
+              <caret line="5" column="20" lean-forward="false" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -119,7 +137,6 @@
         <option value="$PROJECT_DIR$/sports_academy/utils/helpers.py" />
         <option value="$PROJECT_DIR$/config/settings/conf.ini" />
         <option value="$PROJECT_DIR$/sports_academy/storefront/serializers.py" />
-        <option value="$PROJECT_DIR$/sports_academy/storefront/views.py" />
         <option value="$PROJECT_DIR$/sports_academy/sport/models.py" />
         <option value="$PROJECT_DIR$/sports_academy/gallery/models.py" />
         <option value="$PROJECT_DIR$/sports_academy/center/models.py" />
@@ -128,6 +145,7 @@
         <option value="$PROJECT_DIR$/sports_academy/gallery/serializers.py" />
         <option value="$PROJECT_DIR$/sports_academy/sport/serializers.py" />
         <option value="$PROJECT_DIR$/sports_academy/team/serializers.py" />
+        <option value="$PROJECT_DIR$/sports_academy/storefront/views.py" />
       </list>
     </option>
   </component>
@@ -221,7 +239,7 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PythonContentEntriesConfigurable" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../bin/python3.6" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="SearchEverywhereHistoryKey" value="base&#9;FILE&#9;file:///home/shubham/dev/sports-academy/sports_academy/config/settings/base.py&#10;con&#9;FILE&#9;file:///home/shubham/dev/sports-academy/sports_academy/config/settings/conf.ini&#10;bas&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value="TeamV&#9;null&#9;null&#10;base&#9;FILE&#9;file:///home/shubham/dev/sports-academy/sports_academy/config/settings/base.py&#10;con&#9;FILE&#9;file:///home/shubham/dev/sports-academy/sports_academy/config/settings/conf.ini&#10;bas&#9;null&#9;null" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -546,16 +564,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sports_academy/storefront/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/settings/conf.ini">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="361">
@@ -656,16 +664,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sports_academy/team/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="534">
-          <caret line="31" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sports_academy/center/serializers.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
@@ -692,9 +690,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sports_academy/team/serializers.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        <state relative-caret-position="54">
+          <caret line="5" column="20" lean-forward="false" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="20" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sports_academy/team/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sports_academy/storefront/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="136" column="0" lean-forward="false" selection-start-line="136" selection-start-column="0" selection-end-line="136" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
