@@ -2,6 +2,7 @@ from django.conf import settings
 from django.db import models
 from phonenumber_field.modelfields import PhoneNumberField
 from slugify import slugify
+from autoslug import AutoSlugField
 
 
 # Create your models here.
@@ -31,12 +32,10 @@ class Center(models.Model):
 
 	sports = models.ManyToManyField('sport.Sport')
 
+	slug = AutoSlugField(populate_from='academy_name', null=True)
+
 	created = models.DateTimeField(auto_now_add=True)
 	modified = models.DateTimeField(auto_now=True)
 
 	def __str__(self):
 		return self.academy_name
-
-	@property
-	def slug(self):
-		return slugify(self.academy_name)[:settings.DEFAULT_SLUG_LENGTH]

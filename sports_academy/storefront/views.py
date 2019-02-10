@@ -20,8 +20,8 @@ from . import serializers
 # Create your views here.
 
 global_context = {
-	'centers': Center.objects.filter(active=True).only('id', 'academy_name').values('id', 'academy_name'),
-	'sports': Sport.objects.filter(active=True).only('id', 'name', 'image').values('id', 'name', 'image'),
+	'centers': Center.objects.filter(active=True).only('id', 'academy_name', 'slug').values('id', 'academy_name', 'slug'),
+	'sports': Sport.objects.filter(active=True).only('id', 'name', 'image', 'slug').values('id', 'name', 'image', 'slug'),
 }
 
 

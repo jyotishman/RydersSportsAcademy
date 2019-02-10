@@ -1,7 +1,7 @@
 from django.conf import settings
 from django.db import models
 from slugify import slugify
-
+from autoslug import AutoSlugField
 
 # Create your models here.
 
@@ -13,12 +13,10 @@ class Sport(models.Model):
 
 	active = models.BooleanField(default=True)
 
+	slug = AutoSlugField(populate_from='name', null=True)
+
 	created = models.DateTimeField(auto_now_add=True)
 	modified = models.DateTimeField(auto_now=True)
 
 	def __str__(self):
 		return self.name
-
-	@property
-	def slug(self):
-		return slugify(self.name)[:settings.DEFAULT_SLUG_LENGTH]
