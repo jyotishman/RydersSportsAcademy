@@ -2,12 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b93900c1-e95f-4c8c-9569-ba50de989eeb" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sports_academy/storefront/serializers.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sports_academy/utils/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sports_academy/utils/helpers.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/sass/center-details.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/sass/contact.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/sass/partials/_contact-form.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sports_academy/contact/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sports_academy/contact/admin.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sports_academy/contact/apps.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sports_academy/contact/migrations/0001_initial.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sports_academy/contact/migrations/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sports_academy/contact/models.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sports_academy/contact/serializers.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sports_academy/contact/tests.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sports_academy/contact/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/settings/conf.ini" afterPath="$PROJECT_DIR$/config/settings/conf.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/v1_urls.py" afterPath="$PROJECT_DIR$/config/v1_urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/sass/partials/_header.scss" afterPath="$PROJECT_DIR$/app/sass/partials/_header.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/base.html" afterPath="$PROJECT_DIR$/app/views/base.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/center-detail.html" afterPath="$PROJECT_DIR$/app/views/center-detail.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/centers.html" afterPath="$PROJECT_DIR$/app/views/centers.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/contact-form.html" afterPath="$PROJECT_DIR$/app/views/contact-form.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/contact-us.html" afterPath="$PROJECT_DIR$/app/views/contact-us.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/home.html" afterPath="$PROJECT_DIR$/app/views/home.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sports_academy/storefront/urls.py" afterPath="$PROJECT_DIR$/sports_academy/storefront/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sports_academy/storefront/views.py" afterPath="$PROJECT_DIR$/sports_academy/storefront/views.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -39,11 +54,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sports_academy/storefront/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="448">
-              <caret line="156" column="38" lean-forward="false" selection-start-line="156" selection-start-column="38" selection-end-line="156" selection-end-column="38" />
+            <state relative-caret-position="234">
+              <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -77,13 +92,13 @@
         <entry file="file://$PROJECT_DIR$/config/settings/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="486">
-              <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+              <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dev.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="dev.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/settings/dev.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="270">
@@ -234,11 +249,6 @@
             <path>
               <item name="sports_academy" type="b2602c69:ProjectViewProjectNode" />
               <item name="sports_academy" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sports_academy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sports_academy" type="462c0819:PsiDirectoryNode" />
               <item name="logs" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -246,6 +256,17 @@
               <item name="sports_academy" type="462c0819:PsiDirectoryNode" />
               <item name="logs" type="462c0819:PsiDirectoryNode" />
               <item name="mails" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sports_academy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sports_academy" type="462c0819:PsiDirectoryNode" />
+              <item name="sports_academy" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sports_academy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sports_academy" type="462c0819:PsiDirectoryNode" />
+              <item name="sports_academy" type="462c0819:PsiDirectoryNode" />
+              <item name="storefront" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="sports_academy" type="b2602c69:ProjectViewProjectNode" />
@@ -665,16 +686,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sports_academy/storefront/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="156" column="38" lean-forward="false" selection-start-line="156" selection-start-column="38" selection-end-line="156" selection-end-column="38" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sports_academy/storefront/serializers.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
@@ -696,7 +707,7 @@
     <entry file="file://$PROJECT_DIR$/config/settings/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="486">
-          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -714,6 +725,16 @@
         <state relative-caret-position="270">
           <caret line="15" column="30" lean-forward="false" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sports_academy/storefront/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

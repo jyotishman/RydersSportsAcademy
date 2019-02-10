@@ -1,10 +1,68 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "base.html" %}
 
-</body>
-</html>
+{% block css %}
+    <link rel="stylesheet" href="/static/css/center-details.css">
+{% endblock css %}
+
+{% block maincontent %}
+	<section class="center-detail-wrap">
+		<div class="container">
+			<div class="top-map">
+				<iframe width="100%" height="250" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA6BuhugILHbrfHoUkHcVzhEGeRhhX2ErA&amp;q={{center.address}}+{{center.city}}"></iframe>
+			</div>
+			
+			<div class="bottom-form-wrap">
+				<div class="top-contact-details">
+					
+					<h1>{{ center.academy_name }}</h1>
+					<address>
+						<p><b>Address: </b> {{ center.address }}, {{ center.city }}, {{ center.zipcode }}, {{ center.state }}, {{ center.country }}</p>
+					</address>
+					<p>
+						<b>Mobile:</b> {{ center.mobile }}
+					</p>
+					<p>
+						<b>Email:</b> {{ center.email }}
+					</p>
+					<table>
+						<thead>
+							<tr>
+								<th>Morning(Open)</th>
+								<th>Morning(Close)</th>
+							</tr>
+						</thead>
+
+						<tbody>
+							<tr>
+								<td>{{ center.morning_opening_timing}}</td>
+								<td>{{ center.morning_closing_timing}}</td>
+							</tr>
+						</tbody>
+					</table>
+
+					<table>
+						<thead>
+							<tr>
+								<th>Evening(Open)</th>
+								<th>Evening(Close)</th>
+							</tr>
+						</thead>
+
+						<tbody>
+							<tr>
+								<td>{{ center.evening_opening_timing}}</td>
+								<td>{{ center.evening_closing_timing}}</td>
+							</tr>
+						</tbody>
+					</table>
+
+					
+				</div>
+				<div class="left-form-wrap">
+					<h2>Reach us</h2>
+					{% include "contact-form.html" %}
+				</div>
+			</div>
+		</div>
+	</section>
+{% endblock maincontent %}
