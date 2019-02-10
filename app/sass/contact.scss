@@ -1,6 +1,7 @@
 @import 'partials/reset';
 @import 'partials/global';
 @import 'partials/header';
+@import 'partials/contact-form';
 
 
 
@@ -42,56 +43,20 @@
     position: relative;
     width: 80%;
     margin: auto;
-    margin-top: -8%;
+    margin-top: -15%;
     border-radius: 2px;
     box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.15);
     @include flex();
 
-    .contact-form {
+    .contact-form-wrap {
         width: 60%;
-        padding: 20px;
+        padding: 30px;
 
-        form {
-            label {
-                display: block;
-                font-size: 14px;
-                color: #444;
-                margin-bottom: 5px;
-            }
-
-            .form-group {
-
-                &:nth-child(1),
-                &:nth-child(3) {
-                    width: calc(50% - 5px);
-                    margin-right: 5px;
-                    float: left;
-                }
-
-                &:nth-child(2),
-                &:nth-child(4) {
-                    width: calc(50% - 5px);
-                    margin-left: 5px;
-                    float: left;
-                }
-            }
-
-            textarea {
-                height: 150px;
-            }
-
-            button {
-                background: $secondary-color;
-                color: #2f2f2f;
-                border: 0;
-                box-shadow: none;
-                padding: 15px;
-                font-size: 14px;
-                font-weight: 700;
-                border-radius: 3px;
-                width: 200px;
-                text-transform: uppercase;
-            }
+        h1 {
+            font-size: 24px;
+            font-weight: 600;
+            color: #0073ff;
+            margin-bottom: 20px;
         }
     }
 
@@ -99,6 +64,23 @@
         width: 40%;
         background: $primary-color;
         color: #fff;
-        padding: 20px;
+        padding: 30px;
+
+        h5 {
+            font-size: 24px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            li {
+                margin-bottom: 20px;
+
+                b {
+                    font-weight: 600;
+                }
+            }
+        }
     }
 }
