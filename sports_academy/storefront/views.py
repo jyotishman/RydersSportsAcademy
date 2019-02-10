@@ -1,20 +1,26 @@
 import json
-from django.shortcuts import render
-from rest_framework.views import View
-from sports_academy.gallery.models import Gallery
-from sports_academy.center.models import Center
-from sports_academy.sport.models import Sport
-from django.shortcuts import get_object_or_404
-from sports_academy.center.serializers import CenterSerializer
-from sports_academy.sport.serializers import SportSerializer
 
+from django.shortcuts import get_object_or_404
+from django.shortcuts import render
+from rest_framework.permissions import AllowAny
+from rest_framework.response import Response
+from rest_framework.views import View
+from rest_framework.viewsets import ViewSet
+
+from sports_academy.center.models import Center
+from sports_academy.center.serializers import CenterSerializer
+from sports_academy.gallery.models import Gallery
+from sports_academy.sport.models import Sport
+from sports_academy.sport.serializers import SportSerializer
+from . import serializers
 
 # Create your views here.
 
 global_context = {
-		'centers': Center.objects.filter(active=True).only('id', 'academy_name').values('id', 'academy_name'),
-		'sports': Sport.objects.filter(active=True).only('id', 'name').values('id', 'name'),
-	}
+	'centers': Center.objects.filter(active=True).only('id', 'academy_name').values('id', 'academy_name'),
+	'sports': Sport.objects.filter(active=True).only('id', 'name').values('id', 'name'),
+}
+
 
 class HomeView(View):
 	template_name = "home.html"
@@ -141,3 +147,16 @@ class ContactUsView(View):
 		}
 		context.update(global_context)
 		return render(request, self.template_name, context=context)
+
+
+class ContactUsViewSet(ViewSet):
+	permission_classes = (AllowAny,)
+	serializer_class = serializers.ContactUsSerializer
+
+	def create(self, request, *args, **kwargs):
+		serializer = serializers.ContactUsSerializer(data=request.data)
+		if serializer.is_valid():
+			mail_response = serializer.send_contact_mail(serializer.validated_data)
+			return Response({'send': mail_response})
+		else:
+			return Response(serializer.errors, status=400)
