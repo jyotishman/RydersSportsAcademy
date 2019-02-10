@@ -1,0 +1,42 @@
+form.contact-form {
+    label {
+        display: block;
+        font-size: 14px;
+        color: #444;
+        margin-bottom: 5px;
+    }
+
+    .form-group {
+
+        &:nth-child(1),
+        &:nth-child(3) {
+            width: calc(50% - 5px);
+            margin-right: 5px;
+            float: left;
+        }
+
+        &:nth-child(2),
+        &:nth-child(4) {
+            width: calc(50% - 5px);
+            margin-left: 5px;
+            float: left;
+        }
+    }
+
+    textarea {
+        height: 150px;
+    }
+
+    button {
+        background: $secondary-color;
+        color: #2f2f2f;
+        border: 0;
+        box-shadow: none;
+        padding: 15px;
+        font-size: 14px;
+        font-weight: 700;
+        border-radius: 3px;
+        width: 200px;
+        text-transform: uppercase;
+    }
+}

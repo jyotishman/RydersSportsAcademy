@@ -1,7 +1,7 @@
 header {
     @include flex();
     border-bottom: 1px solid rgba(249, 249, 249, 0.25);
-    background: transparent;
+    background: rgba(0, 0, 0, 0.06);
     flex-wrap: wrap;
     align-items: center;
     padding: 0 20px;
@@ -29,6 +29,7 @@ header {
     .menu-list {
         li {
             display: inline-block;
+            position: relative;
 
             a {
                 color: #fff;
@@ -39,6 +40,34 @@ header {
                 text-transform: capitalize;
 
             }
+
+            .menu-dropdown {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                background: #fff;
+                width: 200px;
+                border-radius: 2px;
+                display: none;
+
+                li {
+                    display: block;
+
+                    a {
+                        padding: 10px;
+                        font-size: 14px;
+                        color: #555;
+                    }
+                }
+            }
+
+            &:hover {
+                >.menu-dropdown {
+                    display: block;
+                }
+
+            }
         }
+
     }
 }
