@@ -4,8 +4,11 @@
 @import 'partials/hero';
 @import 'partials/about-us';
 @import 'partials/sports';
+@import 'partials/footer';
+
 
 .gallery-wrap {
+    overflow: hidden;
     .hero-background {
         background-image: url(/static/img/gallery-back.jpg);
         height: 300px;

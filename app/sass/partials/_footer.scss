@@ -1,0 +1,51 @@
+footer {
+    background: #0073ff;
+    margin-top: 30px;
+    padding: 45px 0;
+
+    .container {
+        @include flex();
+        justify-content: space-between;
+        align-items: center;
+
+        .logo-wrap {
+            img {
+                max-width: 100px;
+            }
+        }
+
+        .link-wrapper {
+            width: 70%;
+            @include flex();
+
+            h5 {
+                width: 100%;
+                color: #fff;
+                font-size: 18px;
+                font-weight: 600;
+                text-transform: uppercase;
+                margin-bottom: 20px;
+            }
+
+            ul {
+                margin-right: 30px;
+                width: 33.33%;
+
+                h5 {
+                    font-size: 15px;
+                    margin-bottom: 5px;
+                }
+
+                li {
+                    a {
+                        text-decoration: none;
+                        color: #fff;
+                        padding: 5px 0;
+                        display: block;
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+}
