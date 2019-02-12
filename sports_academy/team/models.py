@@ -1,14 +1,13 @@
-from django.conf import settings
-from django.db import models
-from slugify import slugify
 from autoslug import AutoSlugField
+from django.db import models
+
 
 # Create your models here.
 
 
 class Team(models.Model):
 	name = models.CharField(max_length=200)
-	image = models.ImageField()
+	image = models.ImageField(blank=True, null=True)
 	designation = models.CharField(max_length=100)
 
 	about = models.TextField(blank=True)

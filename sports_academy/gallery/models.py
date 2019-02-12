@@ -1,10 +1,8 @@
-from django.conf import settings
+from autoslug import AutoSlugField
 from django.core.exceptions import ValidationError
 from django.db import models
 from django.db.models import F
 from django.db.transaction import atomic
-from slugify import slugify
-from autoslug import AutoSlugField
 
 
 # Create your models here.
@@ -25,7 +23,7 @@ class Gallery(models.Model):
 	modified = models.DateTimeField(auto_now=True)
 
 	def __str__(self):
-		return "%s | Priority - %s"%(self.name, self.priority)
+		return "%s | Priority - %s" % (self.name, self.priority)
 
 	def __init__(self, *args, **kwargs):
 		super(Gallery, self).__init__(*args, **kwargs)

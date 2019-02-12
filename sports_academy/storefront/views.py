@@ -1,5 +1,3 @@
-import json
-
 from django.shortcuts import get_object_or_404
 from django.shortcuts import render
 from rest_framework.permissions import AllowAny
@@ -8,13 +6,13 @@ from rest_framework.views import View
 from rest_framework.viewsets import ViewSet
 
 from sports_academy.center.models import Center
-from sports_academy.center.serializers import CenterSerializer
+from sports_academy.center.serializers import CenterSerializer, CenterDetailSerializer
 from sports_academy.gallery.models import Gallery
 from sports_academy.sport.models import Sport
+from sports_academy.sport.serializers import SportSerializer, SportDetailSerializer
 from sports_academy.team.models import Team
-from sports_academy.sport.serializers import SportSerializer
-from sports_academy.team.serializers import TeamSerializer
-
+from sports_academy.team.serializers import TeamDetailSerializer
+from sports_academy.utils.helpers import convert_to_dict
 from . import serializers
 
 # Create your views here.
@@ -62,7 +60,7 @@ class CenterView(View):
 			'meta_title': "Showtop10- The best 10 list of everything",
 			'meta_description': "Top 10 list of everything and anything in one place. Get the best ten list everyday.",
 			'image': "https://d14nytznni7htl.cloudfront.net/standalone/17663/og_image_1542134794_7567792.png",
-			'centres': json.loads(json.dumps(CenterSerializer(Center.objects.filter(active=True), many=True).data))
+			'centres': convert_to_dict(CenterSerializer(Center.objects.filter(active=True), many=True).data)
 		}
 		context.update(global_context)
 		return render(request, self.template_name, context=context)
@@ -77,7 +75,7 @@ class CenterDetailView(View):
 			'meta_title': "Showtop10- The best 10 list of everything",
 			'meta_description': "Top 10 list of everything and anything in one place. Get the best ten list everyday.",
 			'image': "https://d14nytznni7htl.cloudfront.net/standalone/17663/og_image_1542134794_7567792.png",
-			'center': CenterSerializer(center).data
+			'center': convert_to_dict(CenterDetailSerializer(center).data)
 		}
 		context.update(global_context)
 		return render(request, self.template_name, context=context)
@@ -91,7 +89,7 @@ class SportView(View):
 			'meta_title': "Showtop10- The best 10 list of everything",
 			'meta_description': "Top 10 list of everything and anything in one place. Get the best ten list everyday.",
 			'image': "https://d14nytznni7htl.cloudfront.net/standalone/17663/og_image_1542134794_7567792.png",
-			'sports': json.loads(json.dumps(SportSerializer(Sport.objects.filter(active=True), many=True).data))
+			'sports': convert_to_dict(SportSerializer(Sport.objects.filter(active=True), many=True).data)
 		}
 		context.update(global_context)
 		return render(request, self.template_name, context=context)
@@ -106,7 +104,7 @@ class SportDetailView(View):
 			'meta_title': "Showtop10- The best 10 list of everything",
 			'meta_description': "Top 10 list of everything and anything in one place. Get the best ten list everyday.",
 			'image': "https://d14nytznni7htl.cloudfront.net/standalone/17663/og_image_1542134794_7567792.png",
-			'sport': SportSerializer(sport).data
+			'sport': convert_to_dict(SportDetailSerializer(sport).data)
 		}
 		context.update(global_context)
 		return render(request, self.template_name, context=context)
@@ -115,7 +113,7 @@ class SportDetailView(View):
 class SportCenterView(View):
 	template_name = "sports-centers.html"
 
-	def get(self, request, *args, **kwargs):
+	def get(self, request, pk=None, *args, **kwargs):
 		sport = get_object_or_404(Sport, pk=pk)
 		context = {
 			'meta_title': "Showtop10- The best 10 list of everything",
@@ -134,7 +132,7 @@ class TeamView(View):
 			'meta_title': "Showtop10- The best 10 list of everything",
 			'meta_description': "Top 10 list of everything and anything in one place. Get the best ten list everyday.",
 			'image': "https://d14nytznni7htl.cloudfront.net/standalone/17663/og_image_1542134794_7567792.png",
-			'teams': json.loads(json.dumps(TeamSerializer(Team.objects.filter(active=True), many=True).data))
+			'teams': convert_to_dict(TeamDetailSerializer(Team.objects.filter(active=True), many=True).data)
 		}
 		context.update(global_context)
 		return render(request, self.template_name, context=context)
