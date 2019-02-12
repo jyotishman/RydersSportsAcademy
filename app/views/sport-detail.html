@@ -1,10 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "base.html" %}
 
-</body>
-</html>
+{% block css %}
+    <link rel="stylesheet" href="/static/css/sport-details.css">
+{% endblock css %}
+
+{% block maincontent %}
+	<section class="sport-detail-wrap">
+		<div class="hero-background" style="background-image: url('{{ sport.image }}')">
+			<h1>{{ sport.name }}</h1>
+		</div>
+		<div class="container">
+			<div class="left-content-details">
+				<h5>{{ sport.name }}</h5>
+				<p>
+					{{ sport.content }}
+				</p>
+
+				
+			</div>
+			<div class="right-form-wrap">
+				{% include "contact-form.html" %}
+			</div>
+		</div>
+	</section>
+{% endblock maincontent %}

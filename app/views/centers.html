@@ -1,26 +1,30 @@
 {% extends "base.html" %}
 
 {% block css %}
-    <link rel="stylesheet" href="/static/css/gallery.css">
+    <link rel="stylesheet" href="/static/css/sport.css">
 {% endblock css %}
 
 {% block maincontent %}
-	<section class="gallery-wrap">
+	<section class="sports-wrap">
 		<div class="hero-background">
 			<h1>Our Centres in Gurgaon</h1>
 		</div>
 		<div class="container">
-			<div class="top-contact-details">
-				
-			</div>
-			<div class="bottom-form-wrap">
-				<div class="left-form-wrap">
-					
-				</div>
-				<div class="right-map">
-					
-				</div>
-			</div>
+			<ul class="sports-list">
+
+                {% for center in centers  %}
+    			<li>
+    				<a href="/center/{{ center.id }}/{{ center.slug }}">
+    					<div class="img-wrapper">
+    						<img alt="painting" class="b-lazy image b-loaded" src="/media/{{ center.image }}">
+    					</div>
+    					<span class="name">
+    						{{ center.academy_name }}
+    					</span>
+    				</a>
+    			</li>
+                {% endfor %}
+    		</ul>
 		</div>
 	</section>
 {% endblock maincontent %}

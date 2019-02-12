@@ -1,0 +1,63 @@
+@import 'partials/reset';
+@import 'partials/global';
+@import 'partials/header';
+@import 'partials/hero';
+@import 'partials/about-us';
+@import 'partials/sports';
+@import 'partials/contact-form';
+@import 'partials/footer';
+
+
+.sport-detail-wrap {
+    overflow: hidden;
+
+    .hero-background {
+        background-image: url(/static/img/gallery-back.jpg);
+        height: 300px;
+        background-size: cover;
+        background-position-y: 56%;
+        position: relative;
+        margin-bottom: 30px;
+
+        &:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.75), #ffffff00);
+        }
+
+        h1 {
+            color: #fff;
+            font-weight: 700;
+            text-transform: uppercase;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            font-size: 36px;
+            transform: translate(-50%, 50%);
+
+        }
+
+    }
+
+    .container {
+        @include flex();
+
+        .left-content-details {
+            width: 50%;
+            padding: 20px;
+            background-image: url(https://gmas-custom-files.s3.amazonaws.com/whatshot/bg2.png);
+
+        }
+
+        .right-form-wrap {
+            width: 50%;
+            padding: 20px;
+            background-image: url(https://gmas-custom-files.s3.amazonaws.com/whatshot/bg2.png);
+
+        }
+    }
+}

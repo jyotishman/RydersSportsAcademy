@@ -83,6 +83,20 @@ module.exports = function(grunt) {
                 },
                 src: ['scripts/gallery_index.js'],
                 dest: '../public/gallery_bundle.js'
+            },
+            dist2: {
+                options: {
+                    transform: [
+                        ['babelify', { presets: ['es2015'] }],
+                        ['stringify', ['.html']],
+                        ['browserify-css']
+                    ],
+                    browserifyOptions: { debug: true },
+                    watch: true,
+                    keepAlive: false
+                },
+                src: ['scripts/contact_index.js'],
+                dest: '../public/contact_bundle.js'
             }
         },
     });

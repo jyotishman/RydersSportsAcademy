@@ -38,6 +38,14 @@
                     }
                 }
             }
+
+            &:hover {
+                a {
+                    .name {
+                        color: $primary-color;
+                    }
+                }
+            }
         }
     }
 }

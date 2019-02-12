@@ -39,6 +39,10 @@ header {
                 font-size: 15px;
                 text-transform: capitalize;
 
+                &:hover {
+                    color: $secondary-color;
+                }
+
             }
 
             .menu-dropdown {
@@ -49,6 +53,8 @@ header {
                 width: 200px;
                 border-radius: 2px;
                 display: none;
+                border-radius: 2px;
+                box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.15);
 
                 li {
                     display: block;
@@ -57,6 +63,11 @@ header {
                         padding: 10px;
                         font-size: 14px;
                         color: #555;
+
+                        &:hover {
+                            color: #fff;
+                            background: #0078ff;
+                        }
                     }
                 }
             }

@@ -84,7 +84,7 @@
     		<ul class="sports-list">
                 {% for sport in sports  %}
     			<li>
-    				<a href="">
+    				<a href="/sport/{{ sport.id }}/{{ sport.slug }}">
     					<div class="img-wrapper">
     						<img alt="painting" class="b-lazy image b-loaded" src="/media/{{ sport.image }}">
     					</div>

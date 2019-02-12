@@ -8,8 +8,8 @@
   "dependencies": {
     "bootstrap-grid-only": "^1.0.0",
     "bLazy": "blazy#^1.8.2",
-    "jquery": "^3.3.1"
-
+    "jquery": "^3.3.1",
+    "font-awesome": "^5.7.1"
   },
   "license": "ISC",
   "homepage": "https://github.com/jyotishman/RydersSportsAcademy",

@@ -67,7 +67,7 @@
                         <a href="/sports">Sports</a>
                         <ul class="menu-dropdown">
                             {% for sport in sports  %}
-                                <li><a href="/sport/{{sport.id}}">{{ sport.name }}</a></li>
+                                <li><a href="/sport/{{sport.id}}/{{sport.slug}}">{{ sport.name }}</a></li>
                             {% endfor %}
                         </ul>
                       </li>
@@ -108,6 +108,13 @@
                         {% for center in centers  %}
                             <li><a href="/center/{{ center.id }}/{{ center.slug }}">{{ center.academy_name }}</a></li>
                         {% endfor %}                            
+                    </ul>
+                    <ul class="social-link-list">
+                        <h5>Connect with us</h5>
+                        <li><a href="">Facebook</a></li>
+                        <li><a href="">Facebook</a></li>
+                        <li><a href="">Facebook</a></li>
+                        <li><a href="">Facebook</a></li>
                     </ul>
                 </div>
                 <div class="logo-wrap">

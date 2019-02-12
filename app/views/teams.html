@@ -1,16 +1,62 @@
 {% extends "base.html" %}
 
 {% block css %}
-    <link rel="stylesheet" href="/static/css/gallery.css">
+    
+    <link rel="stylesheet" href="/static/bower_components/components-bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="/static/bower_components/font-awesome/css/brands.css">
+    <link rel="stylesheet" href="/static/css/team.css">
 {% endblock css %}
 
+
+{% block js %}
+    <script src="/static/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/static/bower_components/components-bootstrap/js/modal.js"></script>
+{% endblock js %}
+
 {% block maincontent %}
-	<section class="gallery-wrap">
+	<section class="team-detail-wrap">
 		<div class="hero-background">
 			<h1>Our teams</h1>
 		</div>
 		<div class="container">
-			{{ team }}
+			<ul class="team-list">
+					{% for team in teams  %}
+					<li>
+						<div class="img-wrapper">
+							<img src="{{ team.image }}" alt="">
+						</div>
+						<p class="name">{{ team.name }}</p>
+						<p class="designation"><b>Designation: </b>{{ team.designation }}</p>
+						<p>
+							<button data-toggle="modal" data-target="#team{{team.id }}">Know More</button>
+						</p>
+						<i class="fa fa-font-awesome"></i>
+
+					</li>
+				{% endfor %}
+			</ul>
 		</div>
 	</section>
+	{% for team in teams  %}
+		<div id="team{{team.id}}" class="modal fade" role="dialog">
+		  <div class="modal-dialog">
+
+		    <!-- Modal content-->
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal">&times;</button>
+		        <h4 class="modal-title">{{ team.name }}</h4>
+		      </div>
+		      <div class="modal-body">
+		      	{{ team }}
+		        <p>{{ team.about }}</p>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		      </div>
+		    </div>
+
+		  </div>
+		</div>
+	{% endfor %}
 {% endblock maincontent %}

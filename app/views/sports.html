@@ -1,16 +1,29 @@
 {% extends "base.html" %}
 
 {% block css %}
-    <link rel="stylesheet" href="/static/css/gallery.css">
+    <link rel="stylesheet" href="/static/css/sport.css">
 {% endblock css %}
 
 {% block maincontent %}
-	<section class="gallery-wrap">
+	<section class="sports-wrap">
 		<div class="hero-background">
 			<h1>Sports training we provide</h1>
 		</div>
 		<div class="container">
-			
+			<ul class="sports-list">
+                {% for sport in sports  %}
+    			<li>
+    				<a href="/sport/{{ sport.id }}/{{ sport.slug }}">
+    					<div class="img-wrapper">
+    						<img alt="painting" class="b-lazy image b-loaded" src="/media/{{ sport.image }}">
+    					</div>
+    					<span class="name">
+    						{{ sport.name }}
+    					</span>
+    				</a>
+    			</li>
+                {% endfor %}
+    		</ul>
 		</div>
 	</section>
 {% endblock maincontent %}
