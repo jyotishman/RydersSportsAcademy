@@ -1,8 +1,7 @@
-from django.conf import settings
-from django.db import models
-from phonenumber_field.modelfields import PhoneNumberField
-from slugify import slugify
 from autoslug import AutoSlugField
+from django.db import models
+from django.core.exceptions import ValidationError
+from phonenumber_field.modelfields import PhoneNumberField
 
 
 # Create your models here.
@@ -36,6 +35,11 @@ class Center(models.Model):
 
 	created = models.DateTimeField(auto_now_add=True)
 	modified = models.DateTimeField(auto_now=True)
+
+	def clean(self):
+		if self.morning_opening_timing > self.morning_closing_timing or \
+						self.evening_opening_timing > self.evening_closing_timing:
+			raise ValidationError("Opening timing should be greater than closing timing")
 
 	def __str__(self):
 		return self.academy_name

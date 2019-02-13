@@ -1,7 +1,6 @@
-from django.conf import settings
-from django.db import models
-from slugify import slugify
 from autoslug import AutoSlugField
+from django.db import models
+
 
 # Create your models here.
 
