@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 
 {% block css %}
-    
     <link rel="stylesheet" href="/static/bower_components/components-bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="/static/bower_components/font-awesome/css/brands.css">
+    <link rel="stylesheet" href="/static/bower_components/components-font-awesome/css/fontawesome.css">
+    <link rel="stylesheet" href="/static/bower_components/components-font-awesome/css/fa-brands.css">
     <link rel="stylesheet" href="/static/css/team.css">
 {% endblock css %}
 
@@ -17,6 +17,7 @@
 	<section class="team-detail-wrap">
 		<div class="hero-background">
 			<h1>Our teams</h1>
+
 		</div>
 		<div class="container">
 			<ul class="team-list">
@@ -27,11 +28,16 @@
 						</div>
 						<p class="name">{{ team.name }}</p>
 						<p class="designation"><b>Designation: </b>{{ team.designation }}</p>
+						
+						<ul class="social-list">
+							<li><a target="_blank" href="{{ team.facebook_url}}"><i class="fab fa-facebook-square"></i></a></li>
+							<li><a target="_blank" href="{{ team.google_plus_url}}"><i class="fab fa-google-plus-square"></i></a></li>
+							<li><a target="_blank" href="{{ team.linkedin_url}}"><i class="fab fa-linkedin"></i></a></li>
+							<li><a target="_blank" href="{{ team.twitter_url}}"><i class="fab fa-twitter-square"></i></a></li>
+						</ul>
 						<p>
 							<button data-toggle="modal" data-target="#team{{team.id }}">Know More</button>
 						</p>
-						<i class="fa fa-font-awesome"></i>
-
 					</li>
 				{% endfor %}
 			</ul>

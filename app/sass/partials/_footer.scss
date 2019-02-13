@@ -4,9 +4,16 @@ footer {
     padding: 45px 0;
 
     .container {
-        @include flex();
-        justify-content: space-between;
-        align-items: center;
+        >h5 {
+            width: 100%;
+            color: $secondary-color;
+            font-size: 18px;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+
 
         .logo-wrap {
             img {
@@ -15,8 +22,17 @@ footer {
         }
 
         .link-wrapper {
-            width: 70%;
-            @include flex();
+            overflow: hidden;
+
+            >ul,
+            .logo-wrap {
+                width: calc(25% - 30px);
+                float: left;
+            }
+
+            .logo-wrap {
+                text-align: right;
+            }
 
             h5 {
                 width: 100%;
@@ -29,7 +45,6 @@ footer {
 
             ul {
                 margin-right: 30px;
-                width: 33.33%;
 
                 h5 {
                     font-size: 15px;
@@ -43,6 +58,20 @@ footer {
                         padding: 5px 0;
                         display: block;
                         font-size: 14px;
+                    }
+                }
+            }
+
+            ul.social-link-list {
+                li {
+                    display: inline-block;
+
+                    a {
+                        display: block;
+                        margin-right: 8px;
+                        .fab {
+                            font-size: 25px;
+                        }
                     }
                 }
             }

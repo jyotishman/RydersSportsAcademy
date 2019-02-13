@@ -44,7 +44,7 @@
     }
 
     .team-list {
-        li {
+        >li {
             width: 25%;
             float: left;
             text-align: center;
@@ -81,6 +81,25 @@
 
             p.designation {
                 font-size: 12px;
+            }
+
+            .social-list {
+                margin-top: 10px;
+
+                li {
+                    display: inline-block;
+                    padding: 2px;
+
+                    a {
+                        border-radius: 50px;
+                        display: block;
+                        color: #a9a9a9;
+                        font-size: 25px;
+                        &:hover {
+                            color: $primary-color;
+                        }
+                    }
+                }
             }
 
             p {

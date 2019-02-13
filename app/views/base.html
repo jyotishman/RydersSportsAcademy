@@ -39,6 +39,9 @@
         
     {% endblock internal_css %}
 
+    <link rel="stylesheet" href="/static/bower_components/components-font-awesome/css/fontawesome.css">
+    <link rel="stylesheet" href="/static/bower_components/components-font-awesome/css/fa-brands.css">
+
     {% block css %}
         
     {% endblock css %}
@@ -94,9 +97,8 @@
     {% block footer %}
         <footer>
             <div class="container">
-                
+                <h5>RydersSportsAcademy</h5>
                 <div class="link-wrapper">
-                    <h5>RydersSportsAcademy</h5>
                     <ul class="sports-link-wrap">
                         <h5>Sports</h5>
                         {% for sport in sports  %}
@@ -111,15 +113,17 @@
                     </ul>
                     <ul class="social-link-list">
                         <h5>Connect with us</h5>
-                        <li><a href="">Facebook</a></li>
-                        <li><a href="">Facebook</a></li>
-                        <li><a href="">Facebook</a></li>
-                        <li><a href="">Facebook</a></li>
+                        <li><a target="_blank" href="{{ team.facebook_url}}"><i class="fab fa-facebook-square"></i></a></li>
+                            <li><a target="_blank" href="{{ team.google_plus_url}}"><i class="fab fa-google-plus-square"></i></a></li>
+                            <li><a target="_blank" href="{{ team.linkedin_url}}"><i class="fab fa-linkedin"></i></a></li>
+                            <li><a target="_blank" href="{{ team.twitter_url}}"><i class="fab fa-twitter-square"></i></a></li>
+                        
                     </ul>
+                    <div class="logo-wrap">
+                        <img src="/static/img/logo.png" alt="">
+                    </div>
                 </div>
-                <div class="logo-wrap">
-                    <img src="/static/img/logo.png" alt="">
-                </div>
+                
             </div>
         </footer>
     {% endblock footer %}
