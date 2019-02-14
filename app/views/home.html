@@ -82,7 +82,7 @@
     	<div class="container">
     		<h2 class="global-heading">Training <span>Courses</span></h2>
     		<ul class="sports-list">
-                {% for sport in sports|slice:":7"  %}
+                {% for sport in sports|slice:":8"  %}
     			<li>
     				<a href="/sport/{{ sport.id }}/{{ sport.slug }}">
     					<div class="img-wrapper">
@@ -93,11 +93,10 @@
     					</span>
     				</a>
     			</li>
-                {% if forloop.counter == 7 %}
-                    <li>
-                        
-                        <a href="/sports">View More</a>
-                    </li>
+                {% if forloop.counter == 8 %}
+                    
+                        <a class="btn-primary" href="/sports">View More</a>
+                    
                 {% endif %}
                 {% endfor %}
     		</ul>
@@ -115,9 +114,9 @@
             </div>
         </div>
     </section>
-    <section class="view-our-gallery">
+    <section class="brands">
         <div class="container">
-            
+            {{ brands }}
         </div>
     </section>
 {% endblock maincontent %}

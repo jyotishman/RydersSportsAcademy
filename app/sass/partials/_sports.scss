@@ -4,6 +4,7 @@
 
     .sports-list {
         margin-top: 20px;
+        text-align: center;
 
         li {
 
@@ -46,6 +47,21 @@
                     }
                 }
             }
+        }
+
+        .btn-primary {
+            display: inline-block;
+            text-align: center;
+            margin: auto;
+            background: $primary-color;
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+            padding: 15px;
+            font-weight: 700;
+            border-radius: 2px;
+            width: 200px;
+            margin-top: 35px;
         }
     }
 }
