@@ -15,10 +15,17 @@
 				<p>
 					{{ sport.content }}
 				</p>
+				{{ sport.name }} training is available in :
+				<ul>
+				    {% for center in sport.centers  %}
+				        <li><a href="/center/{{ center.id }}/{{ center.slug }}">{{ center.academy_name }}</a></li>
+				    {% endfor %}                            
+				</ul>
 
 				
 			</div>
 			<div class="right-form-wrap">
+				<h1>Intrested in {{ sport.name }}</h1>
 				{% include "contact-form.html" %}
 			</div>
 		</div>

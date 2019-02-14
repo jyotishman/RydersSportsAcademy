@@ -16,28 +16,30 @@
 {% block maincontent %}
 	<section class="team-detail-wrap">
 		<div class="hero-background">
-			<h1>Our teams</h1>
+			<h1>Our Professional & Expert Coaches</h1>
 
 		</div>
 		<div class="container">
 			<ul class="team-list">
 					{% for team in teams  %}
 					<li>
-						<div class="img-wrapper">
-							<img src="{{ team.image }}" alt="">
+						<div class="inner-wrap">
+							<div class="img-wrapper">
+								<img src="{{ team.image }}" alt="">
+							</div>
+							<p class="name">{{ team.name }}</p>
+							<p class="designation"><b>Designation: </b>{{ team.designation }}</p>
+							
+							<ul class="social-list">
+								<li><a target="_blank" href="{{ team.facebook_url}}"><i class="fab fa-facebook-square"></i></a></li>
+								<li><a target="_blank" href="{{ team.google_plus_url}}"><i class="fab fa-google-plus-square"></i></a></li>
+								<li><a target="_blank" href="{{ team.linkedin_url}}"><i class="fab fa-linkedin"></i></a></li>
+								<li><a target="_blank" href="{{ team.twitter_url}}"><i class="fab fa-twitter-square"></i></a></li>
+							</ul>
+							<p>
+								<button data-toggle="modal" data-target="#team{{team.id }}">Know More</button>
+							</p>
 						</div>
-						<p class="name">{{ team.name }}</p>
-						<p class="designation"><b>Designation: </b>{{ team.designation }}</p>
-						
-						<ul class="social-list">
-							<li><a target="_blank" href="{{ team.facebook_url}}"><i class="fab fa-facebook-square"></i></a></li>
-							<li><a target="_blank" href="{{ team.google_plus_url}}"><i class="fab fa-google-plus-square"></i></a></li>
-							<li><a target="_blank" href="{{ team.linkedin_url}}"><i class="fab fa-linkedin"></i></a></li>
-							<li><a target="_blank" href="{{ team.twitter_url}}"><i class="fab fa-twitter-square"></i></a></li>
-						</ul>
-						<p>
-							<button data-toggle="modal" data-target="#team{{team.id }}">Know More</button>
-						</p>
 					</li>
 				{% endfor %}
 			</ul>
@@ -51,11 +53,24 @@
 		    <div class="modal-content">
 		      <div class="modal-header">
 		        <button type="button" class="close" data-dismiss="modal">&times;</button>
-		        <h4 class="modal-title">{{ team.name }}</h4>
+		        <h4 class="modal-title">Detail about {{ team.name }}</h4>
 		      </div>
 		      <div class="modal-body">
-		      	{{ team }}
+		      	<!-- {{ team }} -->
 		        <p>{{ team.about }}</p>
+		        <p><b>{{ team.name }} is available on center:</b></p>
+		        <ul>
+		        	{% for center in team.centers  %}
+	                    <li><a href="/center/{{ center.id }}/{{ center.slug }}">{{ center.academy_name }}</a></li>
+	                {% endfor %} 
+		        </ul>
+		        <p><b>{{ team.name }} coaches:</b></p>
+		        <ul class="menu-dropdown">
+	                {% for sport in team.sports  %}
+	                    <li><a href="/sport/{{sport.id}}/{{sport.slug}}">{{ sport.name }}</a></li>
+	                {% endfor %}
+	            </ul>
+
 		      </div>
 		      <div class="modal-footer">
 		        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

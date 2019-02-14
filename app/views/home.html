@@ -80,9 +80,9 @@
     </section>
     <section class="sports-wrap">
     	<div class="container">
-    		<h2 class="global-heading">Our <span>Services</span></h2>
+    		<h2 class="global-heading">Training <span>Courses</span></h2>
     		<ul class="sports-list">
-                {% for sport in sports  %}
+                {% for sport in sports|slice:":7"  %}
     			<li>
     				<a href="/sport/{{ sport.id }}/{{ sport.slug }}">
     					<div class="img-wrapper">
@@ -93,6 +93,12 @@
     					</span>
     				</a>
     			</li>
+                {% if forloop.counter == 7 %}
+                    <li>
+                        
+                        <a href="/sports">View More</a>
+                    </li>
+                {% endif %}
                 {% endfor %}
     		</ul>
     	</div>
