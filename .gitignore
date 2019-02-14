@@ -10,7 +10,7 @@
 .anvil
 *.log
 *.db
-
+config/__pycac
 # cscope files
 cscope.*
 

@@ -116,7 +116,20 @@
     </section>
     <section class="brands">
         <div class="container">
-            {{ brands }}
+            <h2 class="global-heading">Brands we tieup with</h2>
+            <ul>
+                {% for brand in brands %}
+                <li>
+                    <div class="img-wrapper">
+                        <img src="/media/{{ brand.image }}" alt="">
+                    </div>
+                    {{brand.name}}
+                </li>
+                {% endfor %}
+            </ul>
+            
+            {{ company }}
+            
         </div>
     </section>
 {% endblock maincontent %}

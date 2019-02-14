@@ -8,6 +8,8 @@ from rest_framework.viewsets import ViewSet
 from sports_academy.center.models import Center
 from sports_academy.center.serializers import CenterSerializer, CenterDetailSerializer
 from sports_academy.gallery.models import Gallery
+from sports_academy.brands.models import Brands
+from sports_academy.company.models import Company
 from sports_academy.sport.models import Sport
 from sports_academy.sport.serializers import SportSerializer, SportDetailSerializer
 from sports_academy.team.models import Team
@@ -31,6 +33,10 @@ class HomeView(View):
 			'meta_title': "Showtop10- The best 10 list of everything",
 			'meta_description': "Top 10 list of everything and anything in one place. Get the best ten list everyday.",
 			'image': "https://d14nytznni7htl.cloudfront.net/standalone/17663/og_image_1542134794_7567792.png",
+			'brands': Brands.objects.filter(active=True).only(
+				'id', 'name', 'image'
+			).values('id', 'name', 'image'),
+			'company': Company.objects.only('address').values('address')
 		}
 		context.update(global_context)
 		return render(request, self.template_name, context=context)
@@ -114,11 +120,12 @@ class SportCenterView(View):
 	template_name = "sports-centers.html"
 
 	def get(self, request, pk=None, *args, **kwargs):
-		sport = get_object_or_404(Sport, pk=pk)
+		center = get_object_or_404(Center, pk=pk)
 		context = {
 			'meta_title': "Showtop10- The best 10 list of everything",
 			'meta_description': "Top 10 list of everything and anything in one place. Get the best ten list everyday.",
-			'image': "https://d14nytznni7htl.cloudfront.net/standalone/17663/og_image_1542134794_7567792.png"
+			'image': "https://d14nytznni7htl.cloudfront.net/standalone/17663/og_image_1542134794_7567792.png",
+			'center': convert_to_dict(CenterDetailSerializer(center).data)
 		}
 		context.update(global_context)
 		return render(request, self.template_name, context=context)
