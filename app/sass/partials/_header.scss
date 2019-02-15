@@ -12,6 +12,12 @@ header {
     z-index: 99;
     width: 100%;
 
+    @include respond-to(mobile) {
+        position: static;
+        height: 50px;
+        background: #fff;
+    }
+
     .logo-link {
         text-decoration: none;
         font-size: 16px;

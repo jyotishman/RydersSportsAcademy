@@ -46,7 +46,7 @@
 		</div>
 	</section>
 	{% for team in teams  %}
-		<div id="team{{team.id}}" class="modal fade" role="dialog">
+		<div id="team{{team.id}}" class="modal team-detail-modal fade" role="dialog">
 		  <div class="modal-dialog modal-lg">
 
 		    <!-- Modal content-->
@@ -57,15 +57,13 @@
 		      </div>
 		      <div class="modal-body">
 		        <p>{{ team.about }}</p>
+		        
 		        <h5>Explore the sports coaches by {{ team.name }} </h5>
-	            <ul class="explore-centers-list">
+	            <ul class="tag-list my-slider">
 	                {% for sport in team.sports  %}
 	                    <li>
 	                    	<div class="content">
 	                    		<a href="/sport/{{ sport.id }}/{{ sport.slug }}">
-	                    			<div class="img-wrapper">
-	                    				<img src="{{sport.image }}" alt="{{ sport.name }}">
-	                    			</div>
 	                    			<span class="name">
 	                    				{{ sport.name }}
 	                    			</span>
@@ -74,15 +72,13 @@
 	                    </li>
 	                {% endfor %}
 	        	</ul>
+	        	<hr>
 				<h5>Explore the centers coaches by {{ team.name }} </h5>
-                <ul class="explore-centers-list">
+                <ul class="tag-list">
                     {% for center in team.centers  %}
                         <li>
                         	<div class="content">
                         		<a href="/center/{{ center.id }}/{{ center.slug }}">
-                        			<div class="img-wrapper">
-                        				<img src="{{center.image }}" alt="{{ center.academy_name }}">
-                        			</div>
                         			<span class="name">
                         				{{ center.academy_name }}
                         			</span>
