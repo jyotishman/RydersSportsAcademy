@@ -85,21 +85,28 @@
                     left: 0;
                     background: #fff;
                     width: 100%;
-                    border: 1px solid #ddd;
+                    border: 1px solid rgba(0, 115, 255, 0.25);
                     display: none;
                     border-radius: 2px;
                     z-index: 99;
                     max-height: 200px;
                     overflow: scroll;
+                    box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.15);
 
                     li {
                         padding: 10px;
                         font-size: 14px;
-                        border-bottom: 1px solid #dddd;
+                        border-bottom: 1px solid rgba(0, 115, 255, 0.25);
                         color: #666;
 
                         &:last-child {
                             border-bottom: 0;
+                        }
+
+                        &:hover {
+                            background: $primary-color;
+                            color: #fff;
+                            border-color: $primary-color;
                         }
                     }
                 }
@@ -116,10 +123,18 @@
                     font-size: 16px;
                     cursor: pointer;
 
-                    .fas {
-                        float: right;
-                        margin-top: 3%;
+                    &:before {
+                        content: "\f107";
+                        font-family: 'Font Awesome 5 Free';
+                        position: absolute;
+                        right: 10px;
+                        top: 12px;
                     }
+
+                }
+
+                .selected-data.highlight {
+                    color: $primary-color
                 }
 
                 &:nth-child(1) {
