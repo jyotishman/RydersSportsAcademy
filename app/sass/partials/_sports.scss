@@ -16,6 +16,10 @@
             margin-bottom: 20px;
             background: #fff;
 
+            @include respond-to(mobile) {
+                width: 100%;
+            }
+
             a {
                 text-decoration: none;
 

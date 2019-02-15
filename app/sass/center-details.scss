@@ -9,7 +9,8 @@ header {
     background: #b6b6b6;
     background-color: #858585;
 }
-.center-detail-wrap{
+
+.center-detail-wrap {
     background: #fff;
 }
 
@@ -53,6 +54,72 @@ header {
         }
     }
 }
+
+.footer-form-wrap {
+    margin-top: 15px;
+
+    h5 {
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+
+    .explore-centers-list {
+        overflow: hidden;
+        margin-left: -10px;
+        margin-right: -10px;
+
+        li {
+            width: 25%;
+            padding: 10px;
+            height: 90px;
+            float: left;
+            cursor: pointer;
+
+            .content {
+                border: 1px solid rgba(0, 0, 0, 0.1);
+                box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px !important;
+                overflow: hidden;
+                max-height: 100%;
+                position: relative;
+                @include transition(0.3s);
+
+                .img-wrapper {
+                    width: 50%;
+                    float: left;
+
+                    img {
+                        max-width: 100%;
+                    }
+                }
+
+                .name {
+                    width: 50%;
+                    float: left;
+                    font-size: 14px;
+                    font-weight: 600;
+                    color: #555;
+                    padding-left: 10px;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-0%, -50%);
+                }
+            }
+
+            &:hover {
+                .content {
+                    border-color: $primary-color;
+
+                    .name {
+                        color: $primary-color;
+                    }
+                }
+            }
+        }
+    }
+}
+
 
 table {
     margin-top: 30px;

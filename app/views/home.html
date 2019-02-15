@@ -35,24 +35,25 @@
     	<div class="sport-city-selector">
     		<form class="sport-city-form">
     			<div class="form-group">
-    				<p class="selected-sport selected-data">Select your preferred sport</p>
+    				<p class="selected-sport selected-data">Select your preferred sport
+                    <i class="fas fa-angle-down"></i></p>
                     <ul class="custom-select">
                         {% for sport in sports  %}
-                            <li>{{ sport.name }}</li>
+                            <li slug="{{sport.slug}}">{{ sport.name }}</li>
                         {% endfor %}
                     </ul>
     				
     			</div>
     			<div class="form-group">
-    				<p class="selected-center selected-data">Select your nearest center</p>
+    				<p class="selected-center selected-data">Select your nearest center <i class="fas fa-angle-down"></i></p>
                     <ul class="custom-select">
                         {% for center in centers  %}
-                            <li>{{ center.academy_name }}</li>
+                            <li center={{center.id}}>{{ center.academy_name }}</li>
                         {% endfor %}
                     </ul>
     			</div>
     			<div class="form-group">
-    				<button>Submit</button>
+    				<button type="button" class="submit-selection">Submit</button>
     			</div>
     		</form>
     	</div>
@@ -126,10 +127,7 @@
                     {{brand.name}}
                 </li>
                 {% endfor %}
-            </ul>
-            
-            {{ company }}
-            
+            </ul>            
         </div>
     </section>
 {% endblock maincontent %}

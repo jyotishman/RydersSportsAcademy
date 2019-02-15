@@ -13,7 +13,7 @@
 
     .hero-background {
         background-image: url(/static/img/gallery-back.jpg);
-        height: 300px;
+        height: 450px;
         background-size: cover;
         background-position-y: 56%;
         position: relative;
@@ -35,9 +35,9 @@
             text-transform: uppercase;
             position: absolute;
             top: 50%;
-            left: 50%;
+            left: 5%;
             font-size: 36px;
-            transform: translate(-50%, 50%);
+            transform: translate(0%, 50%);
 
         }
 
@@ -47,17 +47,103 @@
         @include flex();
 
         .left-content-details {
-            width: 50%;
-            padding: 20px;
-            background-image: url(https://gmas-custom-files.s3.amazonaws.com/whatshot/bg2.png);
+            width: 100%;
+            padding-top: 30px;
 
+            h5 {
+                font-size: 26px;
+                font-weight: 700;
+                color: #000;
+                text-transform: capitalize;
+                margin-bottom: 15px;
+            }
+
+            .content-txt {
+                margin-bottom: 15px;
+                color: #555;
+                font-size: 14px;
+            }
+
+            .explore-heading {
+                font-size: 18px;
+                font-weight: 600;
+                margin-bottom: 10px;
+            }
+
+            .explore-centers-list {
+                overflow: hidden;
+                margin-left: -10px;
+                margin-right: -10px;
+
+                li {
+                    width: 25%;
+                    padding: 10px;
+                    height: 90px;
+                    float: left;
+                    cursor: pointer;
+
+                    .content {
+                        border: 1px solid rgba(0, 0, 0, 0.1);
+                        box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px !important;
+                        overflow: hidden;
+                        max-height: 100%;
+                        position: relative;
+                        @include transition(0.3s);
+
+                        .img-wrapper {
+                            width: 50%;
+                            float: left;
+
+                            img {
+                                max-width: 100%;
+                            }
+                        }
+
+                        .name {
+                            width: 50%;
+                            float: left;
+                            font-size: 14px;
+                            font-weight: 600;
+                            color: #555;
+                            padding-left: 10px;
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-0%, -50%);
+                        }
+                    }
+
+                    &:hover {
+                        .content {
+                            border-color: $primary-color;
+
+                            .name {
+                                color: $primary-color;
+                            }
+                        }
+                    }
+                }
+            }
         }
 
-        .right-form-wrap {
-            width: 50%;
-            padding: 20px;
-            background-image: url(https://gmas-custom-files.s3.amazonaws.com/whatshot/bg2.png);
 
-        }
+    }
+}
+
+.fixed-form-wrap {
+    position: absolute;
+    width: 42%;
+    background: rgba(255, 255, 255, 0.88);
+    padding: 20px;
+    top: 100px;
+    right: 20px;
+    border-radius: 4px;
+    box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.15);
+
+    h1 {
+        font-size: 26px;
+        color: #000;
+        font-weight: 700;
+        margin-bottom: 15px;
     }
 }

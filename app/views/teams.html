@@ -47,7 +47,7 @@
 	</section>
 	{% for team in teams  %}
 		<div id="team{{team.id}}" class="modal fade" role="dialog">
-		  <div class="modal-dialog">
+		  <div class="modal-dialog modal-lg">
 
 		    <!-- Modal content-->
 		    <div class="modal-content">
@@ -56,20 +56,43 @@
 		        <h4 class="modal-title">Detail about {{ team.name }}</h4>
 		      </div>
 		      <div class="modal-body">
-		      	<!-- {{ team }} -->
 		        <p>{{ team.about }}</p>
-		        <p><b>{{ team.name }} is available on center:</b></p>
-		        <ul>
-		        	{% for center in team.centers  %}
-	                    <li><a href="/center/{{ center.id }}/{{ center.slug }}">{{ center.academy_name }}</a></li>
-	                {% endfor %} 
-		        </ul>
-		        <p><b>{{ team.name }} coaches:</b></p>
-		        <ul class="menu-dropdown">
+		        <h5>Explore the sports coaches by {{ team.name }} </h5>
+	            <ul class="explore-centers-list">
 	                {% for sport in team.sports  %}
-	                    <li><a href="/sport/{{sport.id}}/{{sport.slug}}">{{ sport.name }}</a></li>
+	                    <li>
+	                    	<div class="content">
+	                    		<a href="/sport/{{ sport.id }}/{{ sport.slug }}">
+	                    			<div class="img-wrapper">
+	                    				<img src="{{sport.image }}" alt="{{ sport.name }}">
+	                    			</div>
+	                    			<span class="name">
+	                    				{{ sport.name }}
+	                    			</span>
+	                    		</a>
+	                    	</div>
+	                    </li>
 	                {% endfor %}
-	            </ul>
+	        	</ul>
+				<h5>Explore the centers coaches by {{ team.name }} </h5>
+                <ul class="explore-centers-list">
+                    {% for center in team.centers  %}
+                        <li>
+                        	<div class="content">
+                        		<a href="/center/{{ center.id }}/{{ center.slug }}">
+                        			<div class="img-wrapper">
+                        				<img src="{{center.image }}" alt="{{ center.academy_name }}">
+                        			</div>
+                        			<span class="name">
+                        				{{ center.academy_name }}
+                        			</span>
+                        		</a>
+                        	</div>
+                        </li>
+                    {% endfor %}
+            	</ul>
+
+
 
 		      </div>
 		      <div class="modal-footer">

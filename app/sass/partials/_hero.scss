@@ -4,6 +4,10 @@
     height: 500px;
     position: relative;
 
+    @include respond-to(mobile) {
+        height: 400px;
+    }
+
     .hero-heading {
         position: absolute;
         top: 20%;
@@ -33,6 +37,12 @@
             padding: 6px;
             border-radius: 2px;
         }
+
+        h1 {
+            @include respond-to(mobile) {
+                display: none;
+            }
+        }
     }
 
     .sport-city-selector {
@@ -48,6 +58,12 @@
         box-shadow: 0 6px 12px 0 rgba(0, 0, 0, .15);
         padding-left: 0;
 
+        @include respond-to(mobile) {
+            width: 90%;
+            padding: 0;
+            top: 62%;
+        }
+
         .sport-city-form {
             display: flex;
             align-items: center;
@@ -59,6 +75,10 @@
                 width: 40%;
                 position: relative;
 
+                @include respond-to(mobile) {
+                    width: 100%;
+                }
+
                 .custom-select {
                     position: absolute;
                     top: 100%;
@@ -68,6 +88,9 @@
                     border: 1px solid #ddd;
                     display: none;
                     border-radius: 2px;
+                    z-index: 99;
+                    max-height: 200px;
+                    overflow: scroll;
 
                     li {
                         padding: 10px;
@@ -92,15 +115,28 @@
                     line-height: 30px;
                     font-size: 16px;
                     cursor: pointer;
+
+                    .fas {
+                        float: right;
+                        margin-top: 3%;
+                    }
                 }
 
                 &:nth-child(1) {
                     border-right: 1px solid #cacaca;
+
+                    @include respond-to(mobile) {
+                        border-right: 0;
+                    }
                 }
 
                 &:nth-child(3) {
                     width: 20%;
                     text-align: right;
+
+                    @include respond-to(mobile) {
+                        width: 100%;
+                    }
                 }
             }
 
@@ -115,6 +151,10 @@
                 font-weight: 500;
                 width: 150px;
                 border-radius: 2px;
+
+                @include respond-to(mobile) {
+                    width: 100%;
+                }
 
             }
 

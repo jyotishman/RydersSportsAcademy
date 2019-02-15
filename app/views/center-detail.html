@@ -63,6 +63,25 @@
 					{% include "contact-form.html" %}
 				</div>
 			</div>
+			<div class="footer-form-wrap">
+				<h5>Explore our sports available in {{center.academy_name}}</h5>
+				    <ul class="explore-centers-list">
+				        {% for sport in center.sports  %}
+				            <li>
+				            	<div class="content">
+				            		<a href="/sport/{{ sport.id }}/{{ sport.slug }}">
+				            			<div class="img-wrapper">
+				            				<img src="{{sport.image }}" alt="{{ sport.name }}">
+				            			</div>
+				            			<span class="name">
+				            				{{ sport.name }}
+				            			</span>
+				            		</a>
+				            	</div>
+				            </li>
+				        {% endfor %}
+					</ul>
+			</div>
 		</div>
 	</section>
 {% endblock maincontent %}

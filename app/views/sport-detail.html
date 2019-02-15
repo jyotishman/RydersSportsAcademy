@@ -8,26 +8,36 @@
 	<section class="sport-detail-wrap">
 		<div class="hero-background" style="background-image: url('{{ sport.image }}')">
 			<h1>{{ sport.name }}</h1>
+			<a href="/gallery" class="view-photos-btn">View our photos</a>
 		</div>
 		<div class="container">
 			<div class="left-content-details">
 				<h5>{{ sport.name }}</h5>
-				<p>
+				<p class="content-txt">
 					{{ sport.content }}
 				</p>
-				{{ sport.name }} training is available in :
-				<ul>
+				<h5 class="explore-heading">Explore our centers for {{ sport.name }} training:</h5>
+				<ul class="explore-centers-list">
 				    {% for center in sport.centers  %}
-				        <li><a href="/center/{{ center.id }}/{{ center.slug }}">{{ center.academy_name }}</a></li>
+				        <li>
+				        	<div class="content">
+				        		<a href="/center/{{ center.id }}/{{ center.slug }}">
+				        			<div class="img-wrapper">
+				        				<img src="{{center.image }}" alt="{{ center.academy_name }}">
+				        			</div>
+				        			<span class="name">
+				        				{{ center.academy_name }}
+				        			</span>
+				        		</a>
+				        	</div>
+				        </li>
 				    {% endfor %}                            
 				</ul>
-
-				
-			</div>
-			<div class="right-form-wrap">
-				<h1>Intrested in {{ sport.name }}</h1>
-				{% include "contact-form.html" %}
 			</div>
 		</div>
 	</section>
+	<div class="fixed-form-wrap">
+		<h1>Intrested in {{ sport.name }}</h1>
+		{% include "contact-form.html" %}
+	</div>
 {% endblock maincontent %}
