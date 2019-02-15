@@ -159,12 +159,12 @@ class ContactUsView(View):
 
 class ContactUsViewSet(ViewSet):
 	permission_classes = (AllowAny,)
-	serializer_class = serializers.ContactUsSerializer
+	http_method_names = ["post"]
 
 	def create(self, request, *args, **kwargs):
 		serializer = serializers.ContactUsSerializer(data=request.data)
 		if serializer.is_valid():
-			mail_response = serializer.send_contact_mail(serializer.validated_data)
+			mail_response = serializer.create(serializer.validated_data)
 			return Response({'send': mail_response})
 		else:
 			return Response(serializer.errors, status=400)
