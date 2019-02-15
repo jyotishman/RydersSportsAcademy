@@ -1,5 +1,5 @@
-from autoslug import AutoSlugField
 from django.db import models
+from django.core.exceptions import ValidationError
 
 
 # Create your models here.
@@ -22,3 +22,8 @@ class Company(models.Model):
 
 	def __str__(self):
 		return self.name
+
+	def clean(self, *args, **kwargs):
+		if Company.objects.exists():
+			raise ValidationError("Company already exists.")
+		super(Company, self).clean(*args, **kwargs)
