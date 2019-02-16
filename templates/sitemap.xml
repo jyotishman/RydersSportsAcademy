@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
+xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+    {% for item in items %}
+        {% if item.type == "urls" %}
+            {% for url in item.urls %}
+                <url>
+                    {% for key, value in url.items %}
+                        {% if key == "loc" %}
+                            <loc>{{ value }}</loc>
+                        {% elif key == "lastmod" %}
+                            <lastmod>{{ value }}</lastmod>
+                        {% elif key == "changefreq" %}
+                            <changefreq>{{ value }}</changefreq>
+                        {% elif key == "images" %}
+                            {% for image in value %}
+                                <image:image>
+                                    {% for key1, value1 in image.items %}
+                                        {% if key1 == "loc" %}
+                                            <image:loc>{{ value1 }}</image:loc>
+                                        {% endif %}
+                                    {% endfor %}
+                                </image:image>
+                            {% endfor %}
+                        {% endif %}
+                    {% endfor %}
+                </url>
+            {% endfor %}
+        {% elif item.type == "sitemaps" %}
+            <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+                {% for sitemap in item.sitemaps %}
+                    <sitemap>
+                        {% for key, value in sitemap.items %}
+                            {% if key == "loc" %}
+                                <loc>{{ value }}</loc>
+                            {% elif key == "lastmod" %}
+                                <lastmod>{{ value }}</lastmod>
+                            {% elif key == "changefreq" %}
+                                <changefreq>{{ value }}</changefreq>
+                            {% elif key == "images" %}
+                                {% for image in value %}
+                                    <image:image>
+                                        {% for key1, value1 in image.items %}
+                                            {% if key1 == "loc" %}
+                                                <image:loc>{{ value1 }}</image:loc>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </image:image>
+                                {% endfor %}
+                            {% endif %}
+                        {% endfor %}
+                    </sitemap>
+                {% endfor %}
+            </sitemapindex>
+        {% elif item.type == "images" %}
+            {% for image in item.images %}
+                <image:image>
+                    {% for key, value in image.items %}
+                        {% if key == "loc" %}
+                            <image:loc>{{ value }}</image:loc>
+                        {% endif %}
+                    {% endfor %}
+                </image:image>
+            {% endfor %}
+        {% endif %}
+    {% endfor %}
+</urlset>
