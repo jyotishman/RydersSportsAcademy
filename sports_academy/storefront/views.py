@@ -5,12 +5,11 @@ from rest_framework.response import Response
 from rest_framework.views import View
 from rest_framework.viewsets import ViewSet
 
+from sports_academy.brands.models import Brands
 from sports_academy.center.models import Center
 from sports_academy.center.serializers import CenterSerializer, CenterDetailSerializer
 from sports_academy.company.models import Company
 from sports_academy.gallery.models import Gallery
-from sports_academy.brands.models import Brands
-from sports_academy.company.models import Company
 from sports_academy.sport.models import Sport
 from sports_academy.sport.serializers import SportSerializer, SportDetailSerializer
 from sports_academy.team.models import Team
@@ -23,8 +22,12 @@ from . import serializers
 
 def global_context():
 	return {
-		'centers': Center.objects.filter(active=True).only('id', 'academy_name', 'slug').values('id', 'academy_name', 'slug'),
-		'sports': Sport.objects.filter(active=True).only('id', 'name', 'image', 'slug').values('id', 'name', 'image', 'slug'),
+		'centers': Center.objects.filter(active=True).only(
+			'id', 'academy_name', 'slug'
+		).values('id', 'academy_name', 'slug'),
+		'sports': Sport.objects.filter(active=True).only(
+			'id', 'name', 'image', 'slug'
+		).values('id', 'name', 'image', 'slug'),
 		'company': Company.objects.values()[0] if Company.objects.exists() else {}
 	}
 
@@ -170,3 +173,16 @@ class ContactUsViewSet(ViewSet):
 			return Response({'send': mail_response})
 		else:
 			return Response(serializer.errors, status=400)
+
+
+class AboutUsView(View):
+	template_name = "about-us.html"
+
+	def get(self, request, *args, **kwargs):
+		context = {
+			'meta_title': "Showtop10- The best 10 list of everything",
+			'meta_description': "Top 10 list of everything and anything in one place. Get the best ten list everyday.",
+			'image': "https://d14nytznni7htl.cloudfront.net/standalone/17663/og_image_1542134794_7567792.png"
+		}
+		context.update(global_context())
+		return render(request, self.template_name, context=context)

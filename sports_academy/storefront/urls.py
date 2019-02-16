@@ -12,4 +12,5 @@ urlpatterns = [
     url(r'^center/(?P<pk>[0-9]+)/sports/(?P<slug>[\w-]+)/$', views.SportCenterView.as_view(), name='center-sports'),
     url(r'^teams/$', views.TeamView.as_view(), name='teams'),
     url(r'^contact-us/$', views.ContactUsView.as_view(), name='contact_us'),
+    url(r'^about-us/$', views.AboutUsView.as_view(), name='about-us')
 ]
