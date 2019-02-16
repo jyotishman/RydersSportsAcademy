@@ -20,11 +20,13 @@ from . import serializers
 
 # Create your views here.
 
-global_context = {
-	'centers': Center.objects.filter(active=True).only('id', 'academy_name', 'slug').values('id', 'academy_name', 'slug'),
-	'sports': Sport.objects.filter(active=True).only('id', 'name', 'image', 'slug').values('id', 'name', 'image', 'slug'),
-	'company': Company.objects.values()[0] if Company.objects.exists() else {}
-}
+
+def global_context():
+	return {
+		'centers': Center.objects.filter(active=True).only('id', 'academy_name', 'slug').values('id', 'academy_name', 'slug'),
+		'sports': Sport.objects.filter(active=True).only('id', 'name', 'image', 'slug').values('id', 'name', 'image', 'slug'),
+		'company': Company.objects.values()[0] if Company.objects.exists() else {}
+	}
 
 
 class HomeView(View):
@@ -37,7 +39,7 @@ class HomeView(View):
 			'image': "https://d14nytznni7htl.cloudfront.net/standalone/17663/og_image_1542134794_7567792.png",
 			'brands': Brands.objects.filter(active=True).only('id', 'name', 'image').values('id', 'name', 'image'),
 		}
-		context.update(global_context)
+		context.update(global_context())
 		return render(request, self.template_name, context=context)
 
 
@@ -53,7 +55,7 @@ class GalleryView(View):
 				'id', 'image', 'description'
 			).values('id', 'image', 'description')
 		}
-		context.update(global_context)
+		context.update(global_context())
 		return render(request, self.template_name, context=context)
 
 
@@ -67,7 +69,7 @@ class CenterView(View):
 			'image': "https://d14nytznni7htl.cloudfront.net/standalone/17663/og_image_1542134794_7567792.png",
 			'centres': convert_to_dict(CenterSerializer(Center.objects.filter(active=True), many=True).data)
 		}
-		context.update(global_context)
+		context.update(global_context())
 		return render(request, self.template_name, context=context)
 
 
@@ -82,7 +84,7 @@ class CenterDetailView(View):
 			'image': "https://d14nytznni7htl.cloudfront.net/standalone/17663/og_image_1542134794_7567792.png",
 			'center': convert_to_dict(CenterDetailSerializer(center).data)
 		}
-		context.update(global_context)
+		context.update(global_context())
 		return render(request, self.template_name, context=context)
 
 
@@ -96,7 +98,7 @@ class SportView(View):
 			'image': "https://d14nytznni7htl.cloudfront.net/standalone/17663/og_image_1542134794_7567792.png",
 			'sports': convert_to_dict(SportSerializer(Sport.objects.filter(active=True), many=True).data)
 		}
-		context.update(global_context)
+		context.update(global_context())
 		return render(request, self.template_name, context=context)
 
 
@@ -111,7 +113,7 @@ class SportDetailView(View):
 			'image': "https://d14nytznni7htl.cloudfront.net/standalone/17663/og_image_1542134794_7567792.png",
 			'sport': convert_to_dict(SportDetailSerializer(sport).data)
 		}
-		context.update(global_context)
+		context.update(global_context())
 		return render(request, self.template_name, context=context)
 
 
@@ -126,7 +128,7 @@ class SportCenterView(View):
 			'image': "https://d14nytznni7htl.cloudfront.net/standalone/17663/og_image_1542134794_7567792.png",
 			'center': convert_to_dict(CenterDetailSerializer(center).data)
 		}
-		context.update(global_context)
+		context.update(global_context())
 		return render(request, self.template_name, context=context)
 
 
@@ -140,7 +142,7 @@ class TeamView(View):
 			'image': "https://d14nytznni7htl.cloudfront.net/standalone/17663/og_image_1542134794_7567792.png",
 			'teams': convert_to_dict(TeamDetailSerializer(Team.objects.filter(active=True), many=True).data)
 		}
-		context.update(global_context)
+		context.update(global_context())
 		return render(request, self.template_name, context=context)
 
 
@@ -153,7 +155,7 @@ class ContactUsView(View):
 			'meta_description': "Top 10 list of everything and anything in one place. Get the best ten list everyday.",
 			'image': "https://d14nytznni7htl.cloudfront.net/standalone/17663/og_image_1542134794_7567792.png"
 		}
-		context.update(global_context)
+		context.update(global_context())
 		return render(request, self.template_name, context=context)
 
 
