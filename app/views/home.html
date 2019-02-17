@@ -67,7 +67,7 @@
                     </p>
                     <ul class="custom-select">
                         {% for sport in sports  %}
-                            <li slug="{{sport.slug}}">{{ sport.name }}</li>
+                            <li sport="{{sport.id}}" slug="{{sport.slug}}">{{ sport.name }}</li>
                         {% endfor %}
                     </ul>
     				
@@ -76,7 +76,7 @@
     				<p class="selected-center selected-data">Select your nearest center </p>
                     <ul class="custom-select">
                         {% for center in centers  %}
-                            <li center={{center.id}}>{{ center.academy_name }}</li>
+                            <li slug="{{center.slug}}" center={{center.id}}>{{ center.academy_name }}</li>
                         {% endfor %}
                     </ul>
     			</div>

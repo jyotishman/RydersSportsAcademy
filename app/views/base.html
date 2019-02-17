@@ -114,11 +114,13 @@
                     </ul>
                     <ul class="social-link-list">
                         <h5>Connect with us</h5>
-                        <li><a target="_blank" href="{{ team.facebook_url}}"><i class="fab fa-facebook-square"></i></a></li>
-                            <li><a target="_blank" href="{{ team.google_plus_url}}"><i class="fab fa-google-plus-square"></i></a></li>
-                            <li><a target="_blank" href="{{ team.linkedin_url}}"><i class="fab fa-linkedin"></i></a></li>
-                            <li><a target="_blank" href="{{ team.twitter_url}}"><i class="fab fa-twitter-square"></i></a></li>
-                        
+                        {% if company %}
+                        <li>
+                            <a target="_blank" href="{{ company.facebook_url}}"><i class="fab fa-facebook-square"></i></a></li>
+                            <li><a target="_blank" href="{{ company.google_plus_url}}"><i class="fab fa-google-plus-square"></i></a></li>
+                            <li><a target="_blank" href="{{ company.linkedin_url}}"><i class="fab fa-linkedin"></i></a></li>
+                            <li><a target="_blank" href="{{ company.twitter_url}}"><i class="fab fa-twitter-square"></i></a></li>
+                        {% endif %}
                     </ul>
                     <div class="logo-wrap">
                         <img src="/static/img/logo.png" alt="">
@@ -126,6 +128,7 @@
                 </div>
                 
             </div>
+
             <div class="bottom-fotter">
                 <div class="container">
                     © 2019 RydersSportsAcademy

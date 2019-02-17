@@ -39,18 +39,31 @@ export class SportCitySelection {
         document.getElementsByClassName("selected-sport")[0].classList.remove('active');
         document.getElementsByClassName("selected-sport")[0].classList.add('highlight');
         document.getElementsByClassName("selected-sport")[0].setAttribute("slug", el.target.getAttribute("slug"));
+        document.getElementsByClassName("selected-sport")[0].setAttribute("sport", el.target.getAttribute("sport"));
     }
     showCenterSelected(el) {
         document.getElementsByClassName("selected-center")[0].innerHTML = el.target.innerHTML;
         document.getElementsByClassName("selected-center")[0].classList.remove('active');
         document.getElementsByClassName("selected-center")[0].classList.add('highlight');
         document.getElementsByClassName("selected-center")[0].setAttribute("center", el.target.getAttribute("center"));
+        document.getElementsByClassName("selected-center")[0].setAttribute("slug", el.target.getAttribute("slug"));
 
     }
     submitSelection(e) {
         let center_id = parseInt(document.getElementsByClassName("selected-center")[0].getAttribute("center"));
+        let sport_id = parseInt(document.getElementsByClassName("selected-sport")[0].getAttribute("sport"));
         let sport_slug = document.getElementsByClassName("selected-sport")[0].getAttribute("slug");
-       location.href =`/center/${center_id}/sports/${sport_slug}`;
+        let center_slug = document.getElementsByClassName("selected-center")[0].getAttribute("slug");
+
+        if (sport_slug === null && center_slug != null) {
+            location.href =`/center/${center_id}/${center_slug}`;
+        }
+        if (center_slug === null && sport_slug!= null) {
+            location.href =`/sport/${sport_id}/${sport_slug}`;
+        }
+        if (center_slug != null && sport_slug!= null) {
+            location.href =`/center/${center_id}/sports/${sport_slug}`;
+        }
     }
 
 }
