@@ -37,8 +37,30 @@ class Center(models.Model):
 	modified = models.DateTimeField(auto_now=True)
 
 	def clean(self):
-		if self.morning_opening_timing > self.morning_closing_timing or \
-						self.evening_opening_timing > self.evening_closing_timing:
+		if self.morning_closing_timing and not self.morning_opening_timing:
+			raise ValidationError({
+				'morning_opening_timing': "Opening timing is required after filling opening timing"
+			})
+
+		if self.morning_opening_timing and not self.morning_closing_timing:
+			raise ValidationError({
+				'morning_closing_timing': "Closing timing is required after filling opening timing"
+			})
+
+		if self.evening_closing_timing and not self.evening_opening_timing:
+			raise ValidationError({
+				'evening_opening_timing': "Opening timing is required after filling opening timing"
+			})
+
+		if self.evening_opening_timing and not self.evening_closing_timing:
+			raise ValidationError({
+				'evening_closing_timing': "Closing timing is required after filling opening timing"
+			})
+
+		if (self.morning_opening_timing and self.morning_closing_timing and
+				    self.morning_opening_timing > self.morning_closing_timing) or \
+				(self.evening_opening_timing and self.evening_closing_timing and
+						 self.evening_opening_timing > self.evening_closing_timing):
 			raise ValidationError("Opening timing should be greater than closing timing")
 
 	def __str__(self):

@@ -284,10 +284,8 @@ API_BASE_URL = config.get('host', 'API_BASE_URL')
 WEB_EMAIL_ACTIVATION_URL = '/email/activate'
 
 XML_PAGINATION_CONSTANTS = {
-    'category': 200,
-    'comment': 200,
-    'post': 200,
-    'tag': 200
+    'center': 200,
+    'sport': 200,
 }
 
 CONTACT_US_RECIPIENTS = config.get('contact', 'RECIPIENTS').split(', ')
