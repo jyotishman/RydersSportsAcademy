@@ -57,5 +57,7 @@ category/
 tag/
 .sass-cache/*
 page/
+config/settings/__pycache__/
+config/__pycache__/
 css/
 
