@@ -43,8 +43,8 @@ class HomeView(View):
 
     def get(self, request, *args, **kwargs):
         context = {
-            'meta_title': "RydersSportsAcademy",
-            'meta_description': "Ryders Sport's Academy",
+            'meta_title': "Ryder's Sports Academy- Where victories begin.",
+            'meta_description': "Ryders Sports Academy is a multi-sport facility that provides education and training in almost every major sport. From lawn tennis, table tennis, badminton and cricket to football, basketball, skating and horse riding - we have every sport sprawling across 7 centers in Gurgaon.",
             'image': "https://d14nytznni7htl.cloudfront.net/standalone/17663/og_image_1542134794_7567792.png",
             'brands': Brands.objects.filter(active=True).only('id', 'name', 'image').values('id', 'name', 'image'),
         }
@@ -57,8 +57,8 @@ class GalleryView(View):
 
     def get(self, request, *args, **kwargs):
         context = {
-            'meta_title': "RydersSportsAcademy",
-            'meta_description': "Ryders Sport's Academy",
+            'meta_title': "Ryder's Sports Academy- Where victories begin.",
+            'meta_description': "Ryders Sports Academy is a multi-sport facility that provides education and training in almost every major sport. From lawn tennis, table tennis, badminton and cricket to football, basketball, skating and horse riding - we have every sport sprawling across 7 centers in Gurgaon.",
             'image': "https://d14nytznni7htl.cloudfront.net/standalone/17663/og_image_1542134794_7567792.png",
             'galleries': Gallery.objects.filter(active=True).only(
                 'id', 'image', 'description'
@@ -73,8 +73,8 @@ class CenterView(View):
 
     def get(self, request, *args, **kwargs):
         context = {
-            'meta_title': "RydersSportsAcademy",
-            'meta_description': "Ryders Sport's Academy",
+            'meta_title': "Ryder's Sports Academy- Where victories begin.",
+            'meta_description': "Ryders Sports Academy is a multi-sport facility that provides education and training in almost every major sport. From lawn tennis, table tennis, badminton and cricket to football, basketball, skating and horse riding - we have every sport sprawling across 7 centers in Gurgaon.",
             'image': "https://d14nytznni7htl.cloudfront.net/standalone/17663/og_image_1542134794_7567792.png",
             'centres': convert_to_dict(CenterSerializer(Center.objects.filter(active=True), many=True).data)
         }
@@ -88,8 +88,8 @@ class CenterDetailView(View):
     def get(self, request, pk=None, *args, **kwargs):
         center = get_object_or_404(Center, pk=pk)
         context = {
-            'meta_title': "RydersSportsAcademy",
-            'meta_description': "Ryders Sport's Academy",
+            'meta_title': "Ryder's Sports Academy- Where victories begin.",
+            'meta_description': "Ryders Sports Academy is a multi-sport facility that provides education and training in almost every major sport. From lawn tennis, table tennis, badminton and cricket to football, basketball, skating and horse riding - we have every sport sprawling across 7 centers in Gurgaon.",
             'image': "https://d14nytznni7htl.cloudfront.net/standalone/17663/og_image_1542134794_7567792.png",
             'center': convert_to_dict(CenterDetailSerializer(center).data)
         }
@@ -102,8 +102,8 @@ class SportView(View):
 
     def get(self, request, *args, **kwargs):
         context = {
-            'meta_title': "RydersSportsAcademy",
-            'meta_description': "Ryders Sport's Academy",
+            'meta_title': "Ryder's Sports Academy- Where victories begin.",
+            'meta_description': "Ryders Sports Academy is a multi-sport facility that provides education and training in almost every major sport. From lawn tennis, table tennis, badminton and cricket to football, basketball, skating and horse riding - we have every sport sprawling across 7 centers in Gurgaon.",
             'image': "https://d14nytznni7htl.cloudfront.net/standalone/17663/og_image_1542134794_7567792.png",
             'sports': convert_to_dict(SportSerializer(Sport.objects.filter(active=True), many=True).data)
         }
@@ -117,8 +117,8 @@ class SportDetailView(View):
     def get(self, request, pk=None, *args, **kwargs):
         sport = get_object_or_404(Sport, pk=pk)
         context = {
-            'meta_title': "RydersSportsAcademy",
-            'meta_description': "Ryders Sport's Academy",
+            'meta_title': "Ryder's Sports Academy- Where victories begin.",
+            'meta_description': "Ryders Sports Academy is a multi-sport facility that provides education and training in almost every major sport. From lawn tennis, table tennis, badminton and cricket to football, basketball, skating and horse riding - we have every sport sprawling across 7 centers in Gurgaon.",
             'image': "https://d14nytznni7htl.cloudfront.net/standalone/17663/og_image_1542134794_7567792.png",
             'sport': convert_to_dict(SportDetailSerializer(sport).data)
         }
@@ -132,8 +132,8 @@ class SportCenterView(View):
     def get(self, request, pk=None, *args, **kwargs):
         center = get_object_or_404(Center, pk=pk)
         context = {
-            'meta_title': "RydersSportsAcademy",
-            'meta_description': "Ryders Sport's Academy",
+            'meta_title': "Ryder's Sports Academy- Where victories begin.",
+            'meta_description': "Ryders Sports Academy is a multi-sport facility that provides education and training in almost every major sport. From lawn tennis, table tennis, badminton and cricket to football, basketball, skating and horse riding - we have every sport sprawling across 7 centers in Gurgaon.",
             'image': "https://d14nytznni7htl.cloudfront.net/standalone/17663/og_image_1542134794_7567792.png",
             'center': convert_to_dict(CenterDetailSerializer(center).data)
         }
@@ -146,8 +146,8 @@ class TeamView(View):
 
     def get(self, request, *args, **kwargs):
         context = {
-            'meta_title': "RydersSportsAcademy",
-            'meta_description': "Ryders Sport's Academy",
+            'meta_title': "Ryder's Sports Academy- Where victories begin.",
+            'meta_description': "Ryders Sports Academy is a multi-sport facility that provides education and training in almost every major sport. From lawn tennis, table tennis, badminton and cricket to football, basketball, skating and horse riding - we have every sport sprawling across 7 centers in Gurgaon.",
             'image': "https://d14nytznni7htl.cloudfront.net/standalone/17663/og_image_1542134794_7567792.png",
             'teams': convert_to_dict(TeamDetailSerializer(Team.objects.filter(active=True), many=True).data)
         }
@@ -160,8 +160,8 @@ class ContactUsView(View):
 
     def get(self, request, *args, **kwargs):
         context = {
-            'meta_title': "RydersSportsAcademy",
-            'meta_description': "Ryders Sport's Academy",
+            'meta_title': "Ryder's Sports Academy- Where victories begin.",
+            'meta_description': "Ryders Sports Academy is a multi-sport facility that provides education and training in almost every major sport. From lawn tennis, table tennis, badminton and cricket to football, basketball, skating and horse riding - we have every sport sprawling across 7 centers in Gurgaon.",
             'image': "https://d14nytznni7htl.cloudfront.net/standalone/17663/og_image_1542134794_7567792.png"
         }
         context.update(global_context())
@@ -186,8 +186,8 @@ class AboutUsView(View):
 
     def get(self, request, *args, **kwargs):
         context = {
-            'meta_title': "RydersSportsAcademy",
-            'meta_description': "Ryders Sport's Academy",
+            'meta_title': "Ryder's Sports Academy- Where victories begin.",
+            'meta_description': "Ryders Sports Academy is a multi-sport facility that provides education and training in almost every major sport. From lawn tennis, table tennis, badminton and cricket to football, basketball, skating and horse riding - we have every sport sprawling across 7 centers in Gurgaon.",
             'image': "https://d14nytznni7htl.cloudfront.net/standalone/17663/og_image_1542134794_7567792.png"
         }
         context.update(global_context())
