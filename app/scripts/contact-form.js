@@ -10,7 +10,13 @@ export class Contact {
         const request = new XMLHttpRequest();
         request.open('POST', url, true);
         request.setRequestHeader('Content-type', 'application/json; charset=utf-8');
-        request.onload = () => callback(request.responseText);
+        request.onload = () => {
+            if (request.readyState === request.DONE) {
+                    if (request.status === 200) {
+                        callback(request.responseText);
+                    }
+                }
+        }
         request.onerror = () => err(request);
         request.send(data);
     };
@@ -26,7 +32,16 @@ export class Contact {
         this.httpPost(
             'api/v1/contact-us/',
             data,
-            console.log
+            (e)=>{
+                let obj = JSON.parse(e)
+                console.log(obj)
+                if (obj.send) {
+                    document.getElementById("contact-form").reset();
+                    var x = document.getElementById("success-msgz");
+                      x.style.display = "block";
+                }
+                
+            }
         );
     };
 
