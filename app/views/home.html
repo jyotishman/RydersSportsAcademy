@@ -1,12 +1,32 @@
 {% extends "base.html" %}
 
+{% block internal_css %}
+    <style>
+        .hero .hero-heading {
+          position: absolute;
+          top: 20%;
+          left: 50%;
+          transform: translate(-50%, 50%);
+          width: 61%;
+          font-size: 36px;
+          padding-left: 6px;
+          color: #fff;
+          font-weight: 400;
+          text-align: center;
+        }
+    </style>
+{% endblock internal_css %}
+
 {% block css %}
     <link rel="stylesheet" href="/static/css/home.css">
     <link rel="stylesheet" href="/static/bower_components/tiny-slider/dist/tiny-slider.css"></link>
 {% endblock css %}
 
+
+
 {% block js %}
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
+    <script src="/static/bower_components/bLazy/bLazy.js"></script>
     <script src="/static/bower_components/tiny-slider/dist/tiny-slider.js"></script>
     <script src="/static/bundle.js"></script>
     <script type="text/javascript">
@@ -51,12 +71,16 @@
         <div class="hero-heading">
             <h5>Welcome to  Ryder's Sports Academy</h5>
             <div id="typed-strings">
-                {% for sport in sports  %}
-                    <p>{{ sport.name }}</p>
-                {% endfor %}
+                <p>Tennis</p>
+                <p>Football</p>
+                <p>Basketball</p>
+                <p>Cricket</p>
+                <p>Taekwondo</p>
+                <p>Badminton</p>
+                <p>Golf</p>
             </div>
             <h1>
-                Find <span id="typed"></span> Academy in Gurgaon
+                Find <span id="typed"></span> Coaching in Gurgaon
             </h1>            
         </div>
 
@@ -91,7 +115,7 @@
     		<h2 class="global-heading">About <span>RydersSportsAcademy</span></h2>
             <p></p>
             <div class="left-photo">
-                <img src="static/img/athelete.jpg" alt="">
+                <img class="b-lazy" data-src="static/img/athelete.jpg" alt="athelete">
             </div>
             <div class="right-content">
                 <p>
@@ -115,7 +139,7 @@
     			<li>
     				<a href="/sport/{{ sport.id }}/{{ sport.slug }}">
     					<div class="img-wrapper">
-    						<img alt="painting" class="b-lazy image b-loaded" src="/media/{{ sport.image }}">
+    						<img alt="{{ sport.name }}" class="b-lazy" data-src="/media/{{ sport.image }}">
     					</div>
     					<span class="name">
     						{{ sport.name }}
@@ -151,7 +175,7 @@
                     <li>
                         <div class="content">
                             <div class="img-wrapper">
-                                <img src="/media/{{ brand.image }}" alt="">
+                                <img class="b-lazy" data-src="/media/{{ brand.image }}" alt="{{brand.name}}">
                             </div>
                             <div class="name">
                                 {{brand.name}}

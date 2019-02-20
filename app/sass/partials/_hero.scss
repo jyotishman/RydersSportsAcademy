@@ -1,8 +1,19 @@
 .hero {
-    background: url('/static/img/rsa_background.jpg');
+    background: url('/static/img/fball_back.jpeg');
     background-size: cover;
-    height: 500px;
+    height: 550px;
     position: relative;
+    background-position-y: 20%;
+
+    &:before {
+        content: "";
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.19), rgba(0, 0, 0, 0.21));
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+    }
 
     @include respond-to(mobile) {
         height: 400px;
@@ -21,14 +32,14 @@
         text-align: center;
 
         span {
-            font-weight: 700;
+            font-family: primary-bold-font;
             color: $secondary-color;
         }
 
         h5 {
             font-size: 14px;
             margin-bottom: 10px;
-            font-weight: 700;
+            font-family: primary-bold-font;
             text-transform: uppercase;
             color: #ffd900;
             letter-spacing: 0.5px;

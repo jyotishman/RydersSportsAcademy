@@ -33,6 +33,13 @@ module.exports = function(grunt) {
                 dot: true,
                 src: '**/*'
             },
+            fonts: {
+                expand: true,
+                cwd: 'fonts',
+                dest: '../public/fonts',
+                dot: true,
+                src: '**/*'
+            },
         },
         watch: {
             css: {
