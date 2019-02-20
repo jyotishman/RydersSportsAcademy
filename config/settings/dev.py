@@ -12,9 +12,18 @@ MEDIA_URL = '/media/'
 # EMAIL CONFIGURATION
 # ------------------------------------------------------------------------------
 
-EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
-EMAIL_FILE_PATH = os.path.join(BASE_DIR, 'logs/mails')
+# EMAIL CONFIGURATION
+# ------------------------------------------------------------------------------
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = config.get('email', 'HOST')
+EMAIL_HOST_USER = config.get('email', 'USER')
+EMAIL_HOST_PASSWORD = config.get('email', 'PASSWORD')
+EMAIL_PORT = config.get('email', 'PORT')
+EMAIL_USE_TLS = config.getboolean('email', 'USE_TLS')
 DEFAULT_FROM_EMAIL = config.get('email', 'DEFAULT_FROM_EMAIL')
+EMAIL_FROM = config.get('email', 'EMAIL_FROM')
+EMAIL_SUBJECT_PREFIX = '[RyderSportAcademy] '
 
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_HEADERS = (
