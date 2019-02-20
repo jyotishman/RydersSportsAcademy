@@ -195,7 +195,7 @@ class AboutUsView(View):
 
 
 class SiteMapView(View):
-
+	
     def get(self, request, *args, **kwargs):
         xml_content = CreateXMLContext(settings.WEB_BASE_URL, settings.MEDIA_URL)
 
@@ -208,30 +208,30 @@ class SiteMapView(View):
         for (url, changefreq) in static_url_n_changefreqs:
             xml_content.create_xml_url_context(url, changefreq=changefreq)
 
-        gallery_lastmod = Gallery.objects.order_by('-modified').first().modified
-        gallery_images = Gallery.objects.values_list('image', flat=True)
+        gallery = Gallery.objects.order_by('-modified').first()
+        if gallery:
+            gallery_images = Gallery.objects.values_list('image', flat=True)
+            xml_content.create_xml_url_context(reverse('galleries'), lastmod=gallery.modified, images=gallery_images)
 
-        xml_content.create_xml_url_context(reverse('galleries'), lastmod=gallery_lastmod, images=gallery_images)
+        team = Team.objects.order_by('-modified').first()
+        if team:
+            xml_content.create_xml_url_context(reverse('teams'), lastmod=team.modified)
 
-        team_lastmod = Team.objects.order_by('-modified').first().modified
-
-        xml_content.create_xml_url_context(reverse('teams'), lastmod=team_lastmod)
-
-        if Center.objects.exists():
+        center = Center.objects.order_by('-modified').first()
+        if center:
             center_list = [reverse('center-sitemap', kwargs={'page': index}) for index in range(1, ceil(
                 Center.objects.count() / settings.XML_PAGINATION_CONSTANTS.get('center', 50)
             ) + 1)]
-            center_lastmod = Sport.objects.order_by('-modified').first().modified
             for center_list in center_list:
-                xml_content.create_xml_sitemap_context(center_list, lastmod=center_lastmod)
+                xml_content.create_xml_sitemap_context(center_list, lastmod=center.modified)
 
-        if Sport.objects.exists():
+        sport = Sport.objects.order_by('-modified').first()
+        if sport:
             sport_list = [reverse('sport-sitemap', kwargs={'page': index}) for index in range(1, ceil(
                 Sport.objects.count() / settings.XML_PAGINATION_CONSTANTS.get('sport', 50)
             ) + 1)]
-            sport_lastmod = Sport.objects.order_by('-modified').first().modified
             for sport_url in sport_list:
-                xml_content.create_xml_sitemap_context(sport_url, lastmod=sport_lastmod)
+                xml_content.create_xml_sitemap_context(sport_url, lastmod=sport.modified)
 
         return render(request, 'sitemap.xml', xml_content.generate_xml_context, content_type="text/xml")
 
