@@ -31,4 +31,4 @@ class ContactUs(models.Model):
 			self.sport or "N.A.",
 			self.content
 		)
-		return send_mail(subject, recipient_list, message, from_email=settings.DEFAULT_FROM_EMAIL)
+		return send_mail(subject, recipient_list, message)
