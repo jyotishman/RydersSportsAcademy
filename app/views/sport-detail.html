@@ -4,40 +4,75 @@
     <link rel="stylesheet" href="/static/css/sport-details.css">
 {% endblock css %}
 
+{% block js %}
+    <script src="/static/contact_bundle.js"></script>
+    
+{% endblock js %}
+
 {% block maincontent %}
 	<section class="sport-detail-wrap">
-		<div class="hero-background" style="background-image: url('{{ sport.image }}')">
-			<h1>{{ sport.name }}</h1>
-			<a href="/gallery" class="view-photos-btn">View our photos</a>
-		</div>
 		<div class="container">
-			<div class="left-content-details">
-				<h5>{{ sport.name }}</h5>
-				<p class="content-txt">
-					{{ sport.content }}
-				</p>
-				<h5 class="explore-heading">Explore our centers for {{ sport.name }} training:</h5>
-				<ul class="explore-centers-list">
-				    {% for center in sport.centers  %}
-				        <li>
-				        	<div class="content">
-				        		<a href="/center/{{ center.id }}/{{ center.slug }}">
-				        			<div class="img-wrapper">
-				        				<img src="{{center.image }}" alt="{{ center.academy_name }}">
-				        			</div>
-				        			<span class="name">
-				        				{{ center.academy_name }}
-				        			</span>
-				        		</a>
-				        	</div>
-				        </li>
-				    {% endfor %}                            
+			<div class="left-wrap">
+				<h1>Find Best {{ sport.name }} in Gurgaon</h1>
+				<div class="star-rating-wrap">
+					<div class="star">
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star-half-alt"></i>
+						<span>268 reviews</span>
+					</div>
+					<div class="lock">
+						<i class="fas fa-lock"></i>
+					</div>
+				</div>
+				<ul class="highlight-points">
+					<li><i class="fas fa-user-tie"></i></i> 
+						<span>
+							<b>Highly trained</b> professional sports coaches.
+						</span>
+						
+					</li>
+					<li><i class="fas fa-users"></i>
+						<span>
+							<b>18,000+</b> registered members.
+						</span> 
+					</li>
+					<li><i class="fas fa-map-marked-alt"></i>
+						<span>
+							<b>8 running centers</b> in New Delhi and Gurgaon.
+						</span> 
+					</li>
 				</ul>
+				<div class="img-wrapper">
+					<img src="{{sport.image}}" alt="">
+				</div>
+			</div>
+			<div class="right-wrap">
+				<label class="form-label">Fill this form and get best deals on {{ sport.name }}</label>
+				<p class="success-msgz" id="success-msgz">Thanks for submitting your details!</p>
+				{% include "contact-form.html" %}
+			</div>
+			<div class="bottom-wrap">
+				<h5>Our Center's that provide {{ sport.name }} </h5>
+				    <ul class="explore-centers-list">
+				        {% for center in sport.centers  %}
+				            <li>
+				            	<div class="content">
+				            		<a href="/center/{{ center.id }}/{{ center.slug }}">
+				            			<div class="img-wrapper">
+				            				<img src="{{center.image }}" alt="{{ center.academy_name }}">
+				            			</div>
+				            			<span class="name">
+				            				{{ center.academy_name }}
+				            			</span>
+				            		</a>
+				            	</div>
+				            </li>
+				        {% endfor %}
+					</ul>
 			</div>
 		</div>
 	</section>
-	<div class="fixed-form-wrap">
-		<h1>Intrested in {{ sport.name }}</h1>
-		{% include "contact-form.html" %}
-	</div>
+	
 {% endblock maincontent %}
