@@ -30,20 +30,15 @@
 
                 span.name {
                     display: block;
-                    padding: 10px 0;
+                    padding: 18px 0;
                     text-align: center;
                     font-size: 14px;
                     font-weight: 700;
-                    color: #fff;
-                    position: absolute;
-                    bottom: 0;
-                    width: 100%;
-                    left: 0;
-                    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.6392156863));
+                    color: #000;
                 }
 
                 .img-wrapper {
-                    height: 150px;
+                    height: 170px;
 
                     img {
                         max-width: 100%;
