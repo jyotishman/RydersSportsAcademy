@@ -30,11 +30,13 @@
 
                 span.name {
                     display: block;
-                    padding: 18px 0;
+                    padding: 21px 0;
                     text-align: center;
                     font-size: 14px;
                     font-weight: 700;
-                    color: #000;
+                    color: #515252;
+                    height: 60px;
+                    overflow: hidden;
                 }
 
                 .img-wrapper {
@@ -50,6 +52,7 @@
             }
 
             &:hover {
+                border-color: $primary-color;
                 a {
                     .name {
                         color: $primary-color;
