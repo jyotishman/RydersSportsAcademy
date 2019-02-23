@@ -1,0 +1,59 @@
+@import 'partials/reset';
+@import 'partials/global';
+@import 'partials/header';
+@import 'partials/hero';
+@import 'partials/about-us';
+@import 'partials/sports';
+@import 'partials/contact-form';
+@import 'partials/footer';
+
+
+body {
+    background-color: rgba(20, 86, 179, 0.03);
+}
+
+header {
+    background: #fff;
+    position: static;
+    border-bottom: 1px solid #ddd;
+
+    .menu-list li a {
+        color: #131313;
+    }
+}
+
+h1 {
+    margin-top: 32px;
+    margin-bottom: 15px;
+}
+
+p {
+    max-width: 75%;
+    margin: auto;
+    line-height: 25px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #515978;
+    margin-bottom: 20px;
+
+}
+
+ol {
+    max-width: 75%;
+    margin: auto;
+    list-style: decimal;
+    margin-bottom: 20px;
+    padding-left: 20px;
+    overflow: hidden;
+
+    li {
+        font-weight: 700;
+        padding: 5px 0;
+        color: #515978;
+        width: 50%;
+        float: left;
+        height: 40px;
+        line-height: 20px;
+
+    }
+}
