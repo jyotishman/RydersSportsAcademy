@@ -286,6 +286,7 @@ WEB_EMAIL_ACTIVATION_URL = '/email/activate'
 XML_PAGINATION_CONSTANTS = {
     'center': 200,
     'sport': 200,
+    'notification': 200
 }
 
 CONTACT_US_RECIPIENTS = config.get('contact', 'RECIPIENTS').split(', ')

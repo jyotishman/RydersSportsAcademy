@@ -8,7 +8,7 @@ from django.urls import reverse
 from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from rest_framework.views import View
-from rest_framework.viewsets import ViewSet
+from rest_framework.viewsets import ReadOnlyModelViewSet, ViewSet
 
 from sports_academy.brands.models import Brands
 from sports_academy.center.models import Center
@@ -20,6 +20,7 @@ from sports_academy.sport.serializers import SportSerializer, SportDetailSeriali
 from sports_academy.team.models import Team
 from sports_academy.team.serializers import TeamDetailSerializer
 from sports_academy.utils.helpers import CreateXMLContext, convert_to_dict
+from . import models
 from . import serializers
 
 
@@ -233,6 +234,14 @@ class SiteMapView(View):
             for sport_url in sport_list:
                 xml_content.create_xml_sitemap_context(sport_url, lastmod=sport.modified)
 
+        notification = models.Notification.objects.order_by('-modified').first()
+        if notification:
+            notification_list = [reverse('notification-sitemap', kwargs={'page': index}) for index in range(1, ceil(
+                models.Notification.objects.count() / settings.XML_PAGINATION_CONSTANTS.get('notification', 50)
+            ) + 1)]
+            for notification_url in notification_list:
+                xml_content.create_xml_sitemap_context(notification_url, lastmod=sport.modified)
+
         return render(request, 'sitemap.xml', xml_content.generate_xml_context, content_type="text/xml")
 
 
@@ -260,5 +269,39 @@ class SportSiteMapView(View):
                 urljoin(settings.WEB_BASE_URL, f"/sport/{sport.id}/{sport.slug}"),
                 lastmod=str(sport.modified),
                 images=[sport.image] if sport.image else []
+            )
+        return render(request, 'sitemap.xml', xml_content.generate_xml_context, content_type="text/xml")
+
+
+class NotificationViewSet(ReadOnlyModelViewSet):
+    permission_classes = (AllowAny,)
+    serializer_class = serializers.NotificationSerializer
+    queryset = models.Notification.objects.filter(active=True)
+
+
+class NotificationView(View):
+    template_name = "notification.html"
+
+    def get(self, request, pk=None, *args, **kwargs):
+        notification = get_object_or_404(models.Notification, pk=pk)
+        context = {
+            'meta_title': "Ryder's Sports Academy- Where victories begin.",
+            'meta_description': "Ryders Sports Academy is a multi-sport facility that provides education and training in almost every major sport. From lawn tennis, table tennis, badminton and cricket to football, basketball, skating and horse riding - we have every sport sprawling across 7 centers in Gurgaon.",
+            'image': "https://d14nytznni7htl.cloudfront.net/standalone/17663/og_image_1542134794_7567792.png",
+            'notification': convert_to_dict(serializers.NotificationSerializer(notification).data)
+        }
+        context.update(global_context())
+        return render(request, self.template_name, context=context)
+
+
+class NotificationSiteMapView(View):
+    def get(self, request, page, *args, **kwargs):
+        xml_content = CreateXMLContext(settings.WEB_BASE_URL, settings.MEDIA_URL)
+        start = (int(page) - 1) * int(settings.XML_PAGINATION_CONSTANTS.get('notification', 50))
+        end = int(page) * settings.XML_PAGINATION_CONSTANTS.get('sport', 50)
+        for notification in models.Notification.objects.all()[start:end]:
+            xml_content.create_xml_url_context(
+                urljoin(settings.WEB_BASE_URL, f"/notification/{notification.id}/{notification.slug}"),
+                lastmod=str(notification.modified),
             )
         return render(request, 'sitemap.xml', xml_content.generate_xml_context, content_type="text/xml")

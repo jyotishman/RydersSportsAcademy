@@ -6,3 +6,4 @@ from . import models
 
 
 admin.site.register(models.ContactUs)
+admin.site.register(models.Notification)

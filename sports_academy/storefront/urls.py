@@ -6,6 +6,8 @@ sitemap_urlpatterns = [
     url(r'^sitemap\.xml$', views.SiteMapView.as_view(), name='sitemap'),
     url(r'^center-sitemap-(?P<page>\d+)\.xml$', views.CenterSiteMapView.as_view(), name='center-sitemap'),
     url(r'^sport-sitemap-(?P<page>\d+)\.xml$', views.SportSiteMapView.as_view(), name='sport-sitemap'),
+    url(r'^notification-sitemap-(?P<page>\d+)\.xml$', views.NotificationSiteMapView.as_view(),
+        name='notification-sitemap'),
 ]
 
 urlpatterns = sitemap_urlpatterns + [
@@ -18,5 +20,6 @@ urlpatterns = sitemap_urlpatterns + [
     url(r'^center/(?P<pk>[0-9]+)/sports/(?P<slug>[\w-]+)/$', views.SportCenterView.as_view(), name='center-sports'),
     url(r'^teams/$', views.TeamView.as_view(), name='teams'),
     url(r'^contact-us/$', views.ContactUsView.as_view(), name='contact-us'),
-    url(r'^about-us/$', views.AboutUsView.as_view(), name='about-us')
+    url(r'^about-us/$', views.AboutUsView.as_view(), name='about-us'),
+    url(r'^notification/(?P<pk>[0-9]+)/(?P<slug>[\w-]+)/$', views.NotificationView.as_view(), name='notification'),
 ]
