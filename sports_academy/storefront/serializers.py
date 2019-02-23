@@ -11,3 +11,10 @@ class ContactUsSerializer(serializers.ModelSerializer):
 	def create(self, validated_data):
 		instance = super(ContactUsSerializer, self).create(validated_data)
 		return instance.send_contact_mail()
+
+
+class NotificationSerializer(serializers.ModelSerializer):
+	class Meta:
+		model = models.Notification
+		fields = ('id', 'title', 'short_description', 'description', 'slug' ,'created', 'modified')
+		read_only_fields = ('created', 'modified',)
