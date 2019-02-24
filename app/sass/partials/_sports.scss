@@ -14,9 +14,9 @@
 
             display: inline-block;
             border: .9px solid #e3e3e3;
-            width: calc(25% - 30px);
+            width: calc(25% - 33px);
             margin-right: 27px;
-            border-radius: 2px;
+            border-radius: 5px;
             margin-bottom: 20px;
             background: #fff;
             position: relative;
@@ -30,20 +30,17 @@
 
                 span.name {
                     display: block;
-                    padding: 10px 0;
+                    padding: 21px 0;
                     text-align: center;
                     font-size: 14px;
-                    font-family: primary-bold-font;
-                    color: #fff;
-                    position: absolute;
-                    bottom: 0;
-                    width: 100%;
-                    left: 0;
-                    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.6392156863));
+                    font-weight: 700;
+                    color: #515252;
+                    height: 60px;
+                    overflow: hidden;
                 }
 
                 .img-wrapper {
-                    height: 150px;
+                    height: 170px;
 
                     img {
                         max-width: 100%;
@@ -55,6 +52,7 @@
             }
 
             &:hover {
+                border-color: $primary-color;
                 a {
                     .name {
                         color: $primary-color;
@@ -72,7 +70,7 @@
             text-decoration: none;
             font-size: 14px;
             padding: 15px;
-            font-family: primary-bold-font;
+            font-weight: 700;
             border-radius: 2px;
             width: 200px;
             margin-top: 35px;

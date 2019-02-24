@@ -32,14 +32,14 @@
         text-align: center;
 
         span {
-            font-family: primary-bold-font;
+            font-weight: 700;
             color: $secondary-color;
         }
 
         h5 {
             font-size: 14px;
             margin-bottom: 10px;
-            font-family: primary-bold-font;
+            font-weight: 700;
             text-transform: uppercase;
             color: #ffd900;
             letter-spacing: 0.5px;
@@ -130,9 +130,11 @@
                     color: #979797;
                     padding: 10px;
                     height: 50px;
-                    line-height: 30px;
-                    font-size: 16px;
+                    line-height: 33px;
+                    font-size: 15px;
                     cursor: pointer;
+                    overflow: hidden;
+                    font-weight: 500;
 
                     &:before {
                         content: "\f107";

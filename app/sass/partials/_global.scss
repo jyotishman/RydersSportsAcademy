@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,700');
+
 $primary-color: #0078ff;
 $secondary-color: #fed707;
 $break-small: 480px;
@@ -6,23 +8,8 @@ $break-tablet: 992px;
 $break-large: 1024px;
 $break-xlarge: 1024px;
 
-@font-face {
-    font-family: primary-font;
-    src: url(../fonts/GoogleSans-Regular.ttf);
-}
-
-@font-face {
-    font-family: primary-medium-font;
-    src: url(../fonts/GoogleSans-Medium.ttf);
-}
-
-@font-face {
-    font-family: primary-bold-font;
-    src: url(../fonts/GoogleSans-Bold.ttf);
-}
-
 body {
-    font-family: primary-font;
+    font-family: 'Montserrat', sans-serif;
     background: #f8f8f8;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -161,36 +148,10 @@ input {
 .global-heading {
     position: relative;
     margin-bottom: 40px;
-    font-size: 28px;
-    color: #006eff;
+    font-size: 32px;
+    color: #141414;
     text-align: center;
-
-    span {
-        font-family: primary-bold-font;
-        color: $primary-color;
-    }
-
-    &:before {
-        content: "";
-        background: #cecece;
-        position: absolute;
-        top: 135%;
-        width: 20%;
-        left: 50%;
-        height: 2px;
-        transform: translate(-50%, 0);
-    }
-
-    &:after {
-        content: "";
-        position: absolute;
-        top: 123%;
-        left: 50%;
-        width: 10px;
-        height: 10px;
-        background: #c2c3c4;
-        border-radius: 50px;
-    }
+    font-weight: 700;
 }
 
 .view-photos-btn {
@@ -201,7 +162,7 @@ input {
     color: #0073ff;
     text-decoration: none;
     font-size: 14px;
-    font-family: primary-bold-font;
+    font-weight: 700;
     padding: 12px;
     border-radius: 4px;
 }

@@ -4,6 +4,7 @@
 @import 'partials/footer';
 @import 'partials/contact-form';
 
+
 header {
     position: static;
     background: #b6b6b6;
@@ -31,7 +32,7 @@ header {
 
         h1 {
             font-size: 24px;
-            font-family: primary-bold-font;
+            font-weight: 700;
             color: #000;
             margin-bottom: 20px;
         }
@@ -57,7 +58,7 @@ header {
 
         h2 {
             font-size: 24px;
-            font-family: primary-bold-font;
+            font-weight: 700;
             margin-bottom: 20px;
         }
     }
@@ -68,8 +69,9 @@ header {
 
     h5 {
         font-size: 20px;
-        font-family: primary-bold-font;
+        font-weight: 700;
         margin-bottom: 10px;
+        margin-top: 30px;
     }
 
     .explore-centers-list {

@@ -29,6 +29,7 @@ header {
             position: absolute;
             top: 3px;
             left: 20px;
+            z-index: 999;
 
             @include respond-to(mobile) {
                 max-width: 70px;
@@ -51,9 +52,10 @@ header {
                 color: #fff;
                 text-decoration: none;
                 display: block;
-                padding: 20px 15px;
-                font-size: 15px;
-                text-transform: capitalize;
+                padding: 20px 12px;
+                font-size: 13px;
+                text-transform: uppercase;
+                font-weight: 700;
 
                 &:hover {
                     color: $secondary-color;
@@ -66,11 +68,12 @@ header {
                 top: 100%;
                 left: 0;
                 background: #fff;
-                width: 200px;
+                width: 222px;
                 border-radius: 2px;
                 display: none;
                 border-radius: 2px;
                 box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.15);
+                z-index: 999;
 
                 li {
                     display: block;
@@ -79,6 +82,9 @@ header {
                         padding: 10px;
                         font-size: 14px;
                         color: #555;
+                        font-weight: 500;
+                        text-transform: capitalize;
+                        line-height: 22px;
 
                         &:hover {
                             color: #fff;
