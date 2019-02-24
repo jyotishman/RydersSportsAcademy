@@ -11,21 +11,19 @@
 
 {% block maincontent %}
 	<section class="sport-detail-wrap">
+		<div class="hero" style="background: url({{ sport.image2 }}) no-repeat center center fixed;  background-size: cover;">
+			<div class="fixed-form-wrap">
+				<label class="form-label">Fill this form and get best deals on {{ sport.name }}</label>
+				<p class="success-msgz" id="success-msgz">Thanks for submitting your details!</p>
+				{% include "contact-form.html" %}
+			</div>
+		</div>
 		<div class="container">
+			<h1>Find Best {{ sport.name }} in Gurgaon</h1>
 			<div class="left-wrap">
-				<h1>Find Best {{ sport.name }} in Gurgaon</h1>
-				<div class="star-rating-wrap">
-					<div class="star">
-						<i class="fas fa-star"></i>
-						<i class="fas fa-star"></i>
-						<i class="fas fa-star"></i>
-						<i class="fas fa-star-half-alt"></i>
-						<span>268 reviews</span>
-					</div>
-					<div class="lock">
-						<i class="fas fa-lock"></i>
-					</div>
-				</div>
+				{{ sport.content |safe }} 
+			</div>
+			<div class="right-wrap">
 				<ul class="highlight-points">
 					<li><i class="fas fa-user-tie"></i></i> 
 						<span>
@@ -44,14 +42,18 @@
 						</span> 
 					</li>
 				</ul>
-				<div class="img-wrapper">
-					<img src="{{sport.image}}" alt="">
+				<div class="star-rating-wrap">
+					<div class="star">
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star-half-alt"></i>
+						<span>268 reviews</span>
+					</div>
+					<div class="lock">
+						<i class="fas fa-lock"></i>
+					</div>
 				</div>
-			</div>
-			<div class="right-wrap">
-				<label class="form-label">Fill this form and get best deals on {{ sport.name }}</label>
-				<p class="success-msgz" id="success-msgz">Thanks for submitting your details!</p>
-				{% include "contact-form.html" %}
 			</div>
 			<div class="bottom-wrap">
 				<h5>Our Center's that provide {{ sport.name }} </h5>

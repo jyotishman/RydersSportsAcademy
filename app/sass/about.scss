@@ -16,6 +16,7 @@ body {
     background: url(/static/img/about.jpg);
     background-size: cover;
     height: 350px;
+    background-attachment: fixed;
 }
 
 header {
@@ -35,9 +36,11 @@ header {
 .about-us-wrap h1,
 .about-us-wrap h2 {
     margin-top: 32px;
-    margin-bottom: 15px;
+    margin-bottom: 32px;
     color: #484848;
     text-align: left;
+    font-weight: 700;
+    font-size: 36px;
 }
 
 .about-wrap {

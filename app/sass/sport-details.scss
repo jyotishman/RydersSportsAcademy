@@ -7,10 +7,6 @@
 @import 'partials/contact-form';
 @import 'partials/footer';
 
-body {
-    background-color: rgba(20, 86, 179, 0.03);
-}
-
 header {
     background: #fff;
     position: static;
@@ -24,19 +20,19 @@ header {
 .sport-detail-wrap {
     overflow: hidden;
 
-    .left-wrap {
+    h1 {
+        font-size: 36px;
+        font-weight: 700;
+        margin-top: 60px;
+        line-height: 45px;
+        text-transform: capitalize;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+
+    .right-wrap {
         width: 50%;
         float: left;
-
-        h1 {
-            font-size: 30px;
-            font-weight: 700;
-            margin-top: 60px;
-            line-height: 45px;
-            text-transform: uppercase;
-            max-width: 90%;
-            margin-bottom: 20px;
-        }
 
         .star-rating-wrap {
             display: inline-block;
@@ -78,7 +74,7 @@ header {
         }
 
         .highlight-points {
-            margin-top: 20px;
+            margin-bottom: 30px;
 
             li {
                 font-size: 16px;
@@ -105,6 +101,20 @@ header {
             }
         }
 
+
+    }
+
+    .left-wrap {
+        width: 50%;
+        float: left;
+        padding-right: 60px;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 25px;
+        color: #555;
+        text-align: justify;
+        margin-bottom: 35px;
+
         .img-wrapper {
             width: 80%;
             margin-top: 30px;
@@ -112,39 +122,6 @@ header {
 
             img {
                 max-width: 100%;
-            }
-        }
-    }
-
-    .right-wrap {
-        float: left;
-        width: 50%;
-
-        .form-label {
-            display: block;
-            margin: 30px 0 10px 0;
-            font-weight: 700;
-            color: #1456b3;
-            font-size: 14px;
-        }
-
-        form#contact-form {
-            background: #fff;
-            padding: 30px;
-            box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.15);
-            border: 1px solid rgba(20, 86, 179, 0.15);
-            border-radius: 2px;
-            margin-bottom: 30px;
-
-            label {
-                font-weight: bold;
-            }
-
-            .form-group {
-                width: 100%;
-                float: none;
-                margin-left: 0;
-                margin-right: 0;
             }
         }
     }
@@ -225,4 +202,44 @@ header {
         }
     }
 
+}
+
+.fixed-form-wrap {
+    position: absolute;
+    top: 50%;
+    left: 30px;
+    background-color: rgba(255, 255, 255, 0.8196078431372549);
+    width: 485px;
+    transform: translate(0%, -50%);
+    padding: 30px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12) !important;
+    border-radius: 4px;
+
+    .form-label {
+        font-size: 26px;
+        font-weight: 700;
+        margin-bottom: 30px;
+        display: block;
+        line-height: 30px;
+        color: #444;
+    }
+
+    form.contact-form label {
+        display: block;
+        font-size: 11px;
+        color: #444;
+        margin-bottom: 8px;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 10px;
+        font-size: 14px;
+        border-radius: 2px;
+        border: 1px solid #bdbdbd;
+        outline: none;
+        background: transparent;
+    }
 }
