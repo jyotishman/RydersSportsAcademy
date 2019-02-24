@@ -24,6 +24,6 @@ class Company(models.Model):
 		return self.name
 
 	def clean(self, *args, **kwargs):
-		if Company.objects.exists():
+		if Company.objects.exclude(id=self.id).exists():
 			raise ValidationError("Company already exists.")
 		super(Company, self).clean(*args, **kwargs)

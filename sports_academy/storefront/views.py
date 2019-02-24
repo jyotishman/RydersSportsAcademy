@@ -77,7 +77,7 @@ class CenterView(View):
             'meta_title': "Ryder's Sports Academy- Where victories begin.",
             'meta_description': "Ryders Sports Academy is a multi-sport facility that provides education and training in almost every major sport. From lawn tennis, table tennis, badminton and cricket to football, basketball, skating and horse riding - we have every sport sprawling across 7 centers in Gurgaon.",
             'image': "https://d14nytznni7htl.cloudfront.net/standalone/17663/og_image_1542134794_7567792.png",
-            'centres': convert_to_dict(CenterSerializer(Center.objects.filter(active=True), many=True).data)
+            'center_list': convert_to_dict(CenterSerializer(Center.objects.filter(active=True), many=True).data)
         }
         context.update(global_context())
         return render(request, self.template_name, context=context)
