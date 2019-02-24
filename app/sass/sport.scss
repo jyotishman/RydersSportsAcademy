@@ -6,10 +6,19 @@
 @import 'partials/sports';
 @import 'partials/footer';
 
+header {
+    background: #fff;
+    position: static;
+    border-bottom: 1px solid #ddd;
+
+    .menu-list li a {
+        color: #131313;
+    }
+}
 
 .sports-wrap {
     overflow: hidden;
-
+    padding: 0;
     .hero-background {
         background-image: url(/static/img/training_back.jpeg);
         height: 300px;

@@ -14,6 +14,7 @@
 
                 {% for center in centers  %}
     			<li>
+                    {{ center.image }}
     				<a href="/center/{{ center.id }}/{{ center.slug }}">
     					<div class="img-wrapper">
     						<img alt="{{ center.academy_name }}" class="b-lazy image b-loaded" src="/media/{{ center.image }}">
