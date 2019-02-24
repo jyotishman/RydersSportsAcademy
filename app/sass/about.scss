@@ -9,7 +9,13 @@
 
 
 body {
-    background-color: rgba(20, 86, 179, 0.03);
+    background-color: #fff;
+}
+
+.hero {
+    background: url(/static/img/about.jpg);
+    background-size: cover;
+    height: 350px;
 }
 
 header {
@@ -20,27 +26,37 @@ header {
     .menu-list li a {
         color: #131313;
     }
+
+    .menu-list>li:hover>a {
+        color: $primary-color;
+    }
 }
 
-h1 {
+.about-us-wrap h1,
+.about-us-wrap h2 {
     margin-top: 32px;
     margin-bottom: 15px;
+    color: #484848;
+    text-align: left;
+}
+
+.about-wrap {
+    .container {
+        max-width: 75%;
+    }
 }
 
 p {
-    max-width: 75%;
     margin: auto;
-    line-height: 25px;
+    line-height: 28px;
     font-size: 16px;
     font-weight: 500;
-    color: #515978;
+    color: #484848;
     margin-bottom: 20px;
 
 }
 
 ol {
-    max-width: 75%;
-    margin: auto;
     list-style: decimal;
     margin-bottom: 20px;
     padding-left: 20px;
@@ -55,5 +71,32 @@ ol {
         height: 40px;
         line-height: 20px;
 
+    }
+}
+
+.mission-wrap {
+    display: flex;
+    justify-content: space-between;
+
+    >div {
+        background: #fff;
+        padding: 20px;
+        border: 1px solid #ddd;
+        margin-bottom: 20px;
+        text-align: center;
+        box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.15);
+        margin-right: 15px;
+        font-size: 14px;
+        border-radius: 4px;
+
+        >h5 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 14px;
+        }
     }
 }
