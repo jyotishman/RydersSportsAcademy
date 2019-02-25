@@ -22,7 +22,9 @@
             position: relative;
 
             @include respond-to(mobile) {
-                width: 100%;
+                width: 45%;
+                float: left;
+                margin-bottom: 24px;
             }
 
             a {
@@ -53,11 +55,19 @@
 
             &:hover {
                 border-color: $primary-color;
+
                 a {
                     .name {
                         color: $primary-color;
                     }
                 }
+            }
+
+            &:nth-child(2n) {
+                @include respond-to(mobile) {
+                    margin-right: 0;
+                }
+
             }
         }
 
