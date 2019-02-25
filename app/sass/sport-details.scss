@@ -17,6 +17,20 @@ header {
     }
 }
 
+.hero {
+    @include respond-to(mobile) {
+        height: auto;
+    }
+
+    &:before {
+        @include respond-to(mobile) {
+            content: "";
+            height: 0;
+            width: 0;
+        }
+    }
+}
+
 .sport-detail-wrap {
     overflow: hidden;
 
@@ -34,6 +48,10 @@ header {
         width: 50%;
         float: left;
 
+        @include respond-to(mobile) {
+            width: 100%;
+        }
+
         .star-rating-wrap {
             display: inline-block;
             border: 1px solid #ddd;
@@ -41,6 +59,10 @@ header {
             padding: 15px;
             height: 75px;
             width: 239px;
+
+            @include respond-to(mobile) {
+                margin-bottom: 30px;
+            }
 
             >div {
                 width: 50%;
@@ -90,6 +112,11 @@ header {
                 span {
                     width: 90%;
                     float: left;
+
+                    @include respond-to(mobile) {
+                        width: 85%;
+                    }
+
                 }
 
                 .fas {
@@ -114,6 +141,11 @@ header {
         color: #555;
         text-align: justify;
         margin-bottom: 35px;
+
+        @include respond-to(mobile) {
+            width: 100%;
+            padding-right: 0;
+        }
 
         .img-wrapper {
             width: 80%;
@@ -215,6 +247,13 @@ header {
     box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12) !important;
     border-radius: 4px;
 
+    @include respond-to(mobile) {
+        position: static;
+        transform: none;
+        padding: 0 15px;
+        width: 100%;
+    }
+
     .form-label {
         font-size: 26px;
         font-weight: 700;
@@ -222,6 +261,11 @@ header {
         display: block;
         line-height: 30px;
         color: #444;
+
+        @include respond-to(mobile) {
+            font-size: 20px;
+            margin-top: 30px;
+        }
     }
 
     form.contact-form label {
