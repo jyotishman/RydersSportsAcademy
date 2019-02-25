@@ -152,6 +152,11 @@ input {
     color: #141414;
     text-align: center;
     font-weight: 700;
+
+    @include respond-to(mobile) {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
 }
 
 .view-photos-btn {
