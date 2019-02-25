@@ -44,6 +44,10 @@
                 .img-wrapper {
                     height: 170px;
 
+                    @include respond-to(mobile) {
+                        height: 103px;
+                    }
+
                     img {
                         max-width: 100%;
                         max-height: 100%;
