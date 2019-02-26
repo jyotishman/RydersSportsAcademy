@@ -20,6 +20,11 @@ body {
     display: inline-block;
 }
 
+button#form_btn.disable {
+    pointer-events: none;
+    opacity: 0.5;
+}
+
 .form-control {
     height: 40px;
     width: 100%;

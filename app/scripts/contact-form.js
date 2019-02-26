@@ -22,6 +22,7 @@ export class Contact {
     };
 
     submitContactForm() {
+        document.getElementById('form_btn').classList.add('disable'); // Add class
         const newPost = {
             "full_name": document.getElementById('name').value,
             "sport": document.getElementById('sport-selection').value,
@@ -35,9 +36,10 @@ export class Contact {
             data,
             (e)=>{
                 let obj = JSON.parse(e)
-                console.log(obj)
                 if (obj.send) {
                     document.getElementById("contact-form").reset();
+                    document.getElementById('form_btn').classList.remove('disable'); // Add class
+
                     var x = document.getElementById("success-msgz");
                       x.style.display = "block";
                 }
