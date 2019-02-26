@@ -24,6 +24,7 @@ export class Contact {
     submitContactForm() {
         const newPost = {
             "full_name": document.getElementById('name').value,
+            "sport": document.getElementById('sport-selection').value,
             "email": document.getElementById('email').value,
             "content": document.getElementById('comment').value,
             "phone_number": '+91'+document.getElementById('phone').value
