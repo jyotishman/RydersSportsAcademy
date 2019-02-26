@@ -76,7 +76,7 @@
         			<img src="/static/img/logo.png" alt="">
         		</a>
         	</div>
-            <div class="burger-menu-wrap">
+            <div class="burger-menu-wrap" id="burger-menu-wrap">
                 <i class="fas fa-bars"></i>
             </div>
         	<div class="nav-wrap">
@@ -158,6 +158,20 @@
     {% block js %}
         
     {% endblock js %}
+    <div class="overlay" id="overlay"></div>
+    <script>
+        
+        document.addEventListener("DOMContentLoaded", function() {
+          document.getElementById('burger-menu-wrap').addEventListener('click', function () {
+            document.body.classList.add("openMenu");
+          });
+          document.getElementById('overlay').addEventListener('click', function () {
+            document.body.classList.remove("openMenu");
+          });
+          
+        });
+
+    </script>
 
     
 </body>

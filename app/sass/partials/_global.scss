@@ -42,6 +42,7 @@ button#form_btn.disable {
 .success-message {
     font-size: 16px;
     color: #02b150;
+    font-weight: 700;
 }
 
 .hidden {
@@ -181,4 +182,55 @@ input {
     display: none;
     color: #14ba00;
     margin-bottom: 15px;
+}
+
+.overlay {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    left: 0px;
+    top: 0;
+    background: #000000a6;
+    z-index: 9;
+    border: 0;
+    display: none;
+}
+
+.openMenu .overlay {
+    display: block;
+}
+
+.openMenu .nav-wrap {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 80%;
+    height: 100%;
+    z-index: 99999;
+    background: #fff;
+    overflow-y: auto;
+    z-index: 999;
+    .menu-list li {
+        display: block;
+    }
+
+    .menu-list li a {
+        color: #000;
+
+    }
+
+    .menu-list li .menu-dropdown {
+        position: static;
+        top: 100%;
+        left: 0;
+        background: #fff;
+        width: 222px;
+        border-radius: 2px;
+        display: block;
+        border-radius: 2px;
+        box-shadow: none;
+        z-index: 999;
+        padding-left: 15px;
+    }
 }
