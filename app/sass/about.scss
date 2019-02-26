@@ -41,11 +41,20 @@ header {
     text-align: left;
     font-weight: 700;
     font-size: 36px;
+
+    @include respond-to(mobile) {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
 }
 
 .about-wrap {
     .container {
         max-width: 75%;
+
+        @include respond-to(mobile) {
+            max-width: 100%;
+        }
     }
 }
 
@@ -80,6 +89,10 @@ ol {
 .mission-wrap {
     display: flex;
     justify-content: space-between;
+
+    @include respond-to(mobile) {
+        display: block;
+    }
 
     >div {
         background: #fff;

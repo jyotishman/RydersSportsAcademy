@@ -103,4 +103,12 @@ header {
         }
 
     }
+
+    .burger-menu-wrap {
+        display: none;
+
+        @include respond-to(mobile) {
+            display: block;
+        }
+    }
 }
