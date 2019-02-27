@@ -1,10 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "base.html" %}
 
-</body>
-</html>
+{% block css %}
+    <link rel="stylesheet" href="/static/css/center-details.css?v=2">
+{% endblock css %}
+
+{% block maincontent %}
+	<div class="notification-wrap">
+		<div class="container">
+			<h1>Notifications</h1>
+			
+		</div>
+	</div>
+    
+{% endblock maincontent %}
