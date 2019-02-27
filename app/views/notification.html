@@ -23,7 +23,7 @@
 		  text-decoration: none;
 		  color: #555;
 		  border: 1px solid #ddd;
-		  padding: 15px;
+		  padding: 16px;
 		  border-bottom: 0;
 		  font-weight: 500;
 		  font-size: 15px;
@@ -32,13 +32,22 @@
     	.notification-list li:last-child a{
 			border-bottom: 1px solid #ddd;
     	}
-    	.notification-list li:hover a{
+    	.notification-list li:hover>a{
     		color: #006eff;
-    		text-decoration: underline;
 		
     	}
     	.notification-list li a span{
-    		float: right;
+    		  float: right;
+			  font-size: 12px;
+			  font-weight: 600;
+    	}
+    	.notification-list li a strong{
+    		  display: block;
+			  font-weight: 400;
+			  margin-top: 10px;
+    	}
+    	p{
+    		text-align: center;
     	}
 
     </style>
@@ -48,14 +57,22 @@
 	<div class="notification-wrap">
 		<div class="container">
 			<h1>Notifications</h1>
+			{% if notifications %}
 			<ol class="notification-list">
 				{% for notification in notifications  %}
 				<li>
-					<a href="/notification/{{ notification.id }}/{{ notification.slug }}">{{ notification.title }} <span>{{ notification.created }}</span></a>
-					
+					<a href="/notification/{{ notification.id }}/{{ notification.slug }}">
+						{{ notification.title }} 
+						
+						<span>{{ notification.created }}</span>
+						<strong>{{ notification.short_description }} <span>Read More</span></strong></a>
+						
 				</li>
 				{% endfor %}  
 			</ol>
+			{% else %}
+				<p>No notifications available currently!</p>
+			{% endif %}
 			
 		</div>
 	</div>
