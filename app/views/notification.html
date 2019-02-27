@@ -2,12 +2,60 @@
 
 {% block css %}
     <link rel="stylesheet" href="/static/css/center-details.css?v=2">
+    <style>
+    	h1{
+    		font-size: 26px;
+    		text-align: center;
+    		font-weight: 700;
+    		margin: 30px 0 ;
+    	}
+    	.notification-wrap{
+    		height: 70vh;
+    	}
+    	.notification-list{
+		  max-width: 70%;
+		  margin: auto;
+		  list-style: decimal;
+    	}
+    	
+    	.notification-list li a{
+		  display: block;
+		  text-decoration: none;
+		  color: #555;
+		  border: 1px solid #ddd;
+		  padding: 15px;
+		  border-bottom: 0;
+		  font-weight: 500;
+		  font-size: 15px;
+
+    	}
+    	.notification-list li:last-child a{
+			border-bottom: 1px solid #ddd;
+    	}
+    	.notification-list li:hover a{
+    		color: #006eff;
+    		text-decoration: underline;
+		
+    	}
+    	.notification-list li a span{
+    		float: right;
+    	}
+
+    </style>
 {% endblock css %}
 
 {% block maincontent %}
 	<div class="notification-wrap">
 		<div class="container">
 			<h1>Notifications</h1>
+			<ol class="notification-list">
+				{% for notification in notifications  %}
+				<li>
+					<a href="/notification/{{ notification.id }}/{{ notification.slug }}">{{ notification.title }} <span>{{ notification.created }}</span></a>
+					
+				</li>
+				{% endfor %}  
+			</ol>
 			
 		</div>
 	</div>

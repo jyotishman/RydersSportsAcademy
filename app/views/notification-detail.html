@@ -1,5 +1,48 @@
 {% extends "base.html" %}
 
+{% block css %}
+    <link rel="stylesheet" href="/static/css/center-details.css?v=2">
+    <style>
+    	h1{
+    		font-size: 26px;
+    		text-align: center;
+    		font-weight: 700;
+    		margin: 30px 0 ;
+    		border-bottom: 1px solid #ddd;
+    		padding-bottom: 10px;
+    		margin-bottom: 15px;
+    	}
+    	.notification-wrap{
+    		height: 70vh;
+    		text-align: center;
+    	}
+    	.date{
+    		font-size: 14px;
+    		font-weight: 700;
+    		margin-bottom: 14px;
+    	}
+    	.desc{
+    		font-size: 15px;
+    		font-weight: 500;
+    		line-height: 22px;
+    		max-width: 70%;
+    		margin: auto;
+    	}
+    	
+
+    </style>
+{% endblock css %}
+
 {% block maincontent %}
-	notification-details
+	<div class="notification-wrap">
+		<div class="container">
+			<h1>{{ notification.title }}</h1>
+			<p class="date">{{ notification.created }}</p>
+			<p class="desc">
+				{{ notification.description }}
+			</p>
+			
+		</div>
+	</div>
+    
 {% endblock maincontent %}
