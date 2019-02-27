@@ -278,6 +278,7 @@ class NotificationViewSet(ReadOnlyModelViewSet):
     serializer_class = serializers.NotificationSerializer
     queryset = models.Notification.objects.filter(active=True)
 
+
 class NotificationView(View):
     template_name = "notification.html"
 
@@ -286,8 +287,12 @@ class NotificationView(View):
             'meta_title': "Ryder's Sports Academy- Where victories begin.",
             'meta_description': "Ryders Sports Academy is a multi-sport facility that provides education and training in almost every major sport. From lawn tennis, table tennis, badminton and cricket to football, basketball, skating and horse riding - we have every sport sprawling across 7 centers in Gurgaon.",
             'image': "https://d14nytznni7htl.cloudfront.net/standalone/17663/og_image_1542134794_7567792.png",
+            'notifications': convert_to_dict(serializers.NotificationSerializer(
+                models.Notification.objects.filter(active=True), many=True
+            ).data)
         }
         return render(request, self.template_name, context=context)
+
 
 class NotificationDetailView(View):
     template_name = "notification-detail.html"
