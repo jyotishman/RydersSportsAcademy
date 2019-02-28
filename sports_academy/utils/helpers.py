@@ -101,7 +101,7 @@ class CreateXMLContext(object):
 			'loc': urljoin(self.host, loc)
 		}
 		if lastmod:
-			data.update(lastmod=str(lastmod))
+			data.update(lastmod=lastmod.strftime('%Y-%m-%dT%H:%M:%SZ'))
 		if changefreq:
 			data.update(changefreq=changefreq)
 		if images:
