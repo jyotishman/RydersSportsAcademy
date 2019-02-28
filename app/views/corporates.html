@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+
+{% block css %}
+    <link rel="stylesheet" href="/static/css/center-details.css?v=2">
+    <style>
+    	
+    	.hero {
+    	    background: url('/static/img/corporate.jpeg') no-repeat center center;
+		  background-size: cover;
+		  background-position-y: 50%;
+    	    height: 350px;
+    	}
+    	h1{
+    		margin-top: 30px;
+
+    	}
+    </style>
+{% endblock css %}
+{% block js %}
+    <script src="/static/contact_bundle.js?v=1"></script>
+    
+{% endblock js %}
+
+{% block maincontent %}
+	<section class="corporates-wrap">
+		<div class="hero"></div>
+		<div class="container">
+
+			<h1 class="global-heading">CORPORATE SPORTS EVENTS</h1>
+			
+			<div class="bottom-form-wrap">
+				<div class="top-contact-details">
+					
+					<h1>{{ center.academy_name }}</h1>
+					<p class="center-desc">
+						For sports, we create & provide complete infrastructure, for example, if you want to organise corporate cricket tournament, we will supply you with wicket, umpires, balls, 55 or 60 metre boundaries & cricket bats.
+					</p>
+					<p class="center-desc">
+						We make it a life time experience for the participants and their families with all the wow factors required for a successful corporate sports day or corporate family day.
+
+
+					</p>
+					<address>
+						<p><b>Address: </b> Ryder's Sports Academy G-Block, Sushant Lok 2, Sector 57, Near Scottish High School,</p>
+					</address>
+					<p>
+						<b>Mobile:</b> 91-124-4308227 +91-9810141889 +91-8744006906
+					</p>
+					<p>
+						<b>Email:</b> ryders.sports@gmail.com
+					</p>
+					
+				</div>
+				<div class="left-form-wrap">
+					<h2>Reach us for corporate or ground booking</h2>
+					{% include "contact-form.html" %}
+				</div>
+			</div>
+			<div class="ameneties-wrap">
+				<h3>Our Amenities</h3>
+				<ul>
+					<li>
+						<i class="fas fa-video"></i>
+						<span>24/7 CCTV monitoring</span>
+					</li>
+					<li>
+						<i class="fas fa-tint"></i>
+						<span> Drinking Water</span>
+					</li>
+					<li>
+						<i class="fas fa-shield-alt"></i>
+						<span>24/7 Security</span>
+					</li>
+					<li>
+						<i class="fas fa-bus-alt"></i>
+						<span>Transport Facility</span>
+					</li>
+					<li>
+						<i class="fas fa-toilet-paper"></i>
+						<span>Hygenic Toilets </span>
+					</li>
+					<li>
+						<i class="fas fa-walking"></i>
+						<span>Walking Trail </span>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+{% endblock maincontent %}

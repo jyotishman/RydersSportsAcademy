@@ -6,9 +6,17 @@
 
 
 header {
+    background: #fff;
     position: static;
-    background: #b6b6b6;
-    background-color: #858585;
+    border-bottom: 1px solid #ddd;
+
+    .menu-list li a {
+        color: #131313;
+    }
+
+    .menu-list>li:hover>a {
+        color: $primary-color;
+    }
 }
 
 .center-detail-wrap {

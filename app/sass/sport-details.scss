@@ -6,7 +6,6 @@
 @import 'partials/sports';
 @import 'partials/contact-form';
 @import 'partials/footer';
-
 header {
     background: #fff;
     position: static;
@@ -15,8 +14,11 @@ header {
     .menu-list li a {
         color: #131313;
     }
-}
 
+    .menu-list>li:hover>a {
+        color: $primary-color;
+    }
+}
 .hero {
     @include respond-to(mobile) {
         height: auto;
