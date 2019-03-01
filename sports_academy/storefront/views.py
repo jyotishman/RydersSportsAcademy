@@ -293,6 +293,18 @@ class NotificationView(View):
         }
         return render(request, self.template_name, context=context)
 
+class CorporateView(View):
+    template_name = "corporates.html"
+
+    def get(self, request, pk=None, *args, **kwargs):
+        context = {
+            'meta_title': "Ryder's Sports Academy- Where victories begin.",
+            'meta_description': "Ryders Sports Academy is a multi-sport facility that provides education and training in almost every major sport. From lawn tennis, table tennis, badminton and cricket to football, basketball, skating and horse riding - we have every sport sprawling across 7 centers in Gurgaon.",
+            'image': "https://d14nytznni7htl.cloudfront.net/standalone/17663/og_image_1542134794_7567792.png",
+        }
+        context.update(global_context())
+        return render(request, self.template_name, context=context)
+
 
 class NotificationDetailView(View):
     template_name = "notification-detail.html"
