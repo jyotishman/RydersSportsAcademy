@@ -37,9 +37,9 @@
 	<div class="notification-wrap">
 		<div class="container">
 			<h1>{{ notification.title }}</h1>
-			<p class="date">{{ notification.created }}</p>
+			<p class="date">{{ notification.created  }}</p>
 			<p class="desc">
-				{{ notification.description }}
+				{{ notification.description |safe }}
 				
 			</p>
 			
