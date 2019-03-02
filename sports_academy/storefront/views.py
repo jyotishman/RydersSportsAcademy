@@ -253,7 +253,7 @@ class CenterSiteMapView(View):
         for center in Center.objects.all()[start:end]:
             xml_content.create_xml_url_context(
                 urljoin(settings.WEB_BASE_URL, f"/center/{center.id}/{center.slug}"),
-                lastmod=str(center.modified),
+                lastmod=center.modified,
                 images=[center.image] if center.image else []
             )
         return render(request, 'sitemap.xml', xml_content.generate_xml_context, content_type="text/xml")
@@ -267,7 +267,7 @@ class SportSiteMapView(View):
         for sport in Sport.objects.all()[start:end]:
             xml_content.create_xml_url_context(
                 urljoin(settings.WEB_BASE_URL, f"/sport/{sport.id}/{sport.slug}"),
-                lastmod=str(sport.modified),
+                lastmod=sport.modified,
                 images=[sport.image] if sport.image else []
             )
         return render(request, 'sitemap.xml', xml_content.generate_xml_context, content_type="text/xml")
@@ -292,6 +292,7 @@ class NotificationView(View):
             ).data)
         }
         return render(request, self.template_name, context=context)
+
 
 class CorporateView(View):
     template_name = "corporates.html"
@@ -329,6 +330,6 @@ class NotificationSiteMapView(View):
         for notification in models.Notification.objects.all()[start:end]:
             xml_content.create_xml_url_context(
                 urljoin(settings.WEB_BASE_URL, f"/notification/{notification.id}/{notification.slug}"),
-                lastmod=str(notification.modified),
+                lastmod=notification.modified,
             )
         return render(request, 'sitemap.xml', xml_content.generate_xml_context, content_type="text/xml")
