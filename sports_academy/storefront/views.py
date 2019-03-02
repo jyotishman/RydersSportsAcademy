@@ -218,7 +218,7 @@ class SiteMapView(View):
         if team:
             xml_content.create_xml_url_context(reverse('teams'), lastmod=team.modified)
 
-        center = Center.objects.order_by('-modified').first()
+        center = Center.objects.filter(active=True).order_by('-modified').first()
         if center:
             center_list = [reverse('center-sitemap', kwargs={'page': index}) for index in range(1, ceil(
                 Center.objects.count() / settings.XML_PAGINATION_CONSTANTS.get('center', 50)
@@ -226,7 +226,7 @@ class SiteMapView(View):
             for center_list in center_list:
                 xml_content.create_xml_sitemap_context(center_list, lastmod=center.modified)
 
-        sport = Sport.objects.order_by('-modified').first()
+        sport = Sport.objects.filter(active=True).order_by('-modified').first()
         if sport:
             sport_list = [reverse('sport-sitemap', kwargs={'page': index}) for index in range(1, ceil(
                 Sport.objects.count() / settings.XML_PAGINATION_CONSTANTS.get('sport', 50)
@@ -234,7 +234,7 @@ class SiteMapView(View):
             for sport_url in sport_list:
                 xml_content.create_xml_sitemap_context(sport_url, lastmod=sport.modified)
 
-        notification = models.Notification.objects.order_by('-modified').first()
+        notification = models.Notification.objects.filter(active=True).order_by('-modified').first()
         if notification:
             notification_list = [reverse('notification-sitemap', kwargs={'page': index}) for index in range(1, ceil(
                 models.Notification.objects.count() / settings.XML_PAGINATION_CONSTANTS.get('notification', 50)
@@ -250,7 +250,7 @@ class CenterSiteMapView(View):
         xml_content = CreateXMLContext(settings.WEB_BASE_URL, settings.MEDIA_URL)
         start = (int(page) - 1) * int(settings.XML_PAGINATION_CONSTANTS.get('center', 50))
         end = int(page) * settings.XML_PAGINATION_CONSTANTS.get('center', 50)
-        for center in Center.objects.all()[start:end]:
+        for center in Center.objects.filter(active=True)[start:end]:
             xml_content.create_xml_url_context(
                 urljoin(settings.WEB_BASE_URL, f"/center/{center.id}/{center.slug}"),
                 lastmod=center.modified,
@@ -264,7 +264,7 @@ class SportSiteMapView(View):
         xml_content = CreateXMLContext(settings.WEB_BASE_URL, settings.MEDIA_URL)
         start = (int(page) - 1) * int(settings.XML_PAGINATION_CONSTANTS.get('sport', 50))
         end = int(page) * settings.XML_PAGINATION_CONSTANTS.get('sport', 50)
-        for sport in Sport.objects.all()[start:end]:
+        for sport in Sport.objects.filter(active=True)[start:end]:
             xml_content.create_xml_url_context(
                 urljoin(settings.WEB_BASE_URL, f"/sport/{sport.id}/{sport.slug}"),
                 lastmod=sport.modified,
@@ -327,7 +327,7 @@ class NotificationSiteMapView(View):
         xml_content = CreateXMLContext(settings.WEB_BASE_URL, settings.MEDIA_URL)
         start = (int(page) - 1) * int(settings.XML_PAGINATION_CONSTANTS.get('notification', 50))
         end = int(page) * settings.XML_PAGINATION_CONSTANTS.get('sport', 50)
-        for notification in models.Notification.objects.all()[start:end]:
+        for notification in models.Notification.objects.filter(active=True)[start:end]:
             xml_content.create_xml_url_context(
                 urljoin(settings.WEB_BASE_URL, f"/notification/{notification.id}/{notification.slug}"),
                 lastmod=notification.modified,
