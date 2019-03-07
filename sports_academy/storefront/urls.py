@@ -4,6 +4,7 @@ from . import views
 
 sitemap_urlpatterns = [
     url(r'^sitemap\.xml$', views.SiteMapView.as_view(), name='sitemap'),
+    url(r'^home-page-sitemap\.xml$', views.HomeSiteMapView.as_view(), name='home-sitemap'),
     url(r'^center-sitemap-(?P<page>\d+)\.xml$', views.CenterSiteMapView.as_view(), name='center-sitemap'),
     url(r'^sport-sitemap-(?P<page>\d+)\.xml$', views.SportSiteMapView.as_view(), name='sport-sitemap'),
     url(r'^notification-sitemap-(?P<page>\d+)\.xml$', views.NotificationSiteMapView.as_view(),

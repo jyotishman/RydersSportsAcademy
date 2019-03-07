@@ -12,7 +12,7 @@ xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
                         {% if key == "loc" %}
                             <loc>{{ value }}</loc>
                         {% elif key == "lastmod" %}
-                            <lastmod>{{ value }}</lastmod>
+                            <lastmod>{{ value | date:"c" }}</lastmod>
                         {% elif key == "changefreq" %}
                             <changefreq>{{ value }}</changefreq>
                         {% elif key == "images" %}
@@ -37,7 +37,7 @@ xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
                             {% if key == "loc" %}
                                 <loc>{{ value }}</loc>
                             {% elif key == "lastmod" %}
-                                <lastmod>{{ value }}</lastmod>
+                                <lastmod>{{ value | date:"c" }}</lastmod>
                             {% elif key == "changefreq" %}
                                 <changefreq>{{ value }}</changefreq>
                             {% elif key == "images" %}
