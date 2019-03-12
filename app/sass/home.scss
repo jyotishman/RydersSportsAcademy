@@ -1,7 +1,7 @@
 @import 'partials/reset';
 @import 'partials/global';
 @import 'partials/header';
-@import 'partials/hero';
+@import 'partials/hero-area';
 @import 'partials/about-us';
 @import 'partials/footer';
 @import 'partials/sports';
@@ -152,4 +152,64 @@
 
 .tns-controls button[data-controls="next"] {
     right: -12px;
+}
+
+.sports-wrap .sports-list li a .img-wrapper {
+    height: auto;
+}
+
+.sports-wrap .sports-list li a .img-wrapper img {
+    max-width: 100%;
+    max-height: 100%;
+    margin: auto;
+    display: block;
+    width: 100%;
+}
+
+
+.training-camps-wrap {
+    .train-list {
+        overflow: hidden;
+
+        margin-left: -10px;
+        margin-right: -10px;
+
+        .inner-wrap {
+            width: 25%;
+            float: left;
+            padding: 10px;
+            font-size: 20px;
+
+            @include respond-to(mobile) {
+                width: 50%;
+
+            }
+
+            img {
+                max-width: 100%;
+            }
+
+            a {
+                display: block;
+                background: #d0c700;
+                padding: 10px;
+                text-decoration: none;
+            }
+
+
+            span {
+                color: #000;
+                font-weight: 700;
+                text-transform: uppercase;
+                display: block;
+                margin-top: 10px;
+                font-size: 20px;
+
+                @include respond-to(mobile) {
+                    font-size: 15px;
+
+                }
+            }
+        }
+    }
 }

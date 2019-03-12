@@ -20,29 +20,34 @@
 
 		</div>
 		<div class="container">
+			{% if teams %}
 			<ul class="team-list">
-					{% for team in teams  %}
-					<li>
-						<div class="inner-wrap">
-							<div class="img-wrapper">
-								<img src="{{ team.image }}" alt="">
-							</div>
-							<p class="name">{{ team.name }}</p>
-							<p class="designation"><b>Designation: </b>{{ team.designation }}</p>
-							
-							<ul class="social-list">
-								<li><a target="_blank" href="{{ team.facebook_url}}"><i class="fab fa-facebook-square"></i></a></li>
-								<li><a target="_blank" href="{{ team.google_plus_url}}"><i class="fab fa-google-plus-square"></i></a></li>
-								<li><a target="_blank" href="{{ team.linkedin_url}}"><i class="fab fa-linkedin"></i></a></li>
-								<li><a target="_blank" href="{{ team.twitter_url}}"><i class="fab fa-twitter-square"></i></a></li>
-							</ul>
-							<p>
-								<button data-toggle="modal" data-target="#team{{team.id }}">Know More</button>
-							</p>
-						</div>
-					</li>
-				{% endfor %}
+					
+						{% for team in teams  %}
+							<li>
+								<div class="inner-wrap">
+									<div class="img-wrapper">
+										<img src="{{ team.image }}" alt="">
+									</div>
+									<p class="name">{{ team.name }}</p>
+									<p class="designation"><b>Designation: </b>{{ team.designation }}</p>
+									
+									<ul class="social-list">
+										<li><a target="_blank" href="{{ team.facebook_url}}"><i class="fab fa-facebook-square"></i></a></li>
+										<li><a target="_blank" href="{{ team.google_plus_url}}"><i class="fab fa-google-plus-square"></i></a></li>
+										<li><a target="_blank" href="{{ team.linkedin_url}}"><i class="fab fa-linkedin"></i></a></li>
+										<li><a target="_blank" href="{{ team.twitter_url}}"><i class="fab fa-twitter-square"></i></a></li>
+									</ul>
+									<p>
+										<button data-toggle="modal" data-target="#team{{team.id }}">Know More</button>
+									</p>
+								</div>
+							</li>
+						{% endfor %}
 			</ul>
+			{% else %}
+			<p> Teams list will be updated soon!</p>
+			{% endif %}
 		</div>
 	</section>
 	{% for team in teams  %}

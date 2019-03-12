@@ -2,17 +2,8 @@
 
 {% block internal_css %}
     <style>
-        .hero .hero-heading {
-          position: absolute;
-          top: 20%;
-          left: 50%;
-          transform: translate(-50%, 50%);
-          width: 61%;
-          font-size: 36px;
-          padding-left: 6px;
-          color: #fff;
-          font-weight: 400;
-          text-align: center;
+        body{
+            background: url('/static/img/layer2.png') !important;
         }
     </style>
 {% endblock internal_css %}
@@ -25,164 +16,147 @@
 
 
 {% block js %}
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
     <script src="/static/bower_components/bLazy/blazy.js"></script>
     <script src="/static/bower_components/tiny-slider/dist/tiny-slider.js"></script>
     <script src="/static/bundle.js"></script>
     <script type="text/javascript">
         (function() {
-        var typed = new Typed('#typed', {
-            stringsElement: '#typed-strings',
-            loop: true,
-            typeSpeed: 100
-          });
-        var slider = tns({
-          container: '.my-slider',
-          items: 2,
-          slideBy: 1,
-          arrowKeys: true,
-          controls: true,
-          nav: false,
-          autoplay: true,
-          autoplayButtonOutput: false,
-          autoplayTimeout: 3000,
-          controlsText: ['<i class="fas fa-angle-left"></i>', '<i class="fas fa-angle-right"></i>'],
-          responsive: {
-            640: {
-              edgePadding: 20,
-              gutter: 20,
-              items: 2
-            },
-            700: {
-              gutter: 30,
-              items: 3
-            },
-            900: {
-              items: 5
-            }
-          }
-        });
-    })();
+            
+            var slider = tns({
+              container: '.my-slider',
+              items: 1,
+              slideBy: 1,
+              arrowKeys: true,
+              controls: true,
+              nav: false,
+              autoplay: true,
+              autoplayButtonOutput: false,
+              autoplayTimeout: 3000,
+              controlsText: ['<i class="fas fa-angle-left"></i>', '<i class="fas fa-angle-right"></i>'],
+              
+            });
+        })();
     </script>
+    
 {% endblock js %}
 
 {% block maincontent %}
-    <section class="hero">
-        <div class="hero-heading">
-            <h5>Welcome to  Ryder's Sports Academy</h5>
-            <div id="typed-strings">
-                <p>Tennis</p>
-                <p>Football</p>
-                <p>Basketball</p>
-                <p>Cricket</p>
-                <p>Taekwondo</p>
-                <p>Badminton</p>
-                <p>Golf</p>
+    <div class="hero-area">
+        <div class="container">
+            <h1>Ryder's <span>Sports Academy</span>
+                <img src="static/img/smalllogo.png" alt="small"></h1>
+            <img src="/static/img/biglogo.png" class="big-logo" alt="biglogo">
+            <div class="sport-city-selector">
+                <form class="sport-city-form">
+                    <div class="form-group">
+                        <p class="selected-sport selected-data">Select your preferred sport
+                        </p>
+                        <ul class="custom-select">
+                            {% for sport in sports  %}
+                                <li sport="{{sport.id}}" slug="{{sport.slug}}">{{ sport.name }}</li>
+                            {% endfor %}
+                        </ul>
+                        
+                    </div>
+                    <div class="form-group">
+                        <p class="selected-center selected-data">Select your nearest center </p>
+                        <ul class="custom-select">
+                            {% for center in centers  %}
+                                <li slug="{{center.slug}}" center={{center.id}}>{{ center.academy_name }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <div class="form-group">
+                        <button type="button" class="submit-selection">Submit</button>
+                    </div>
+                </form>
             </div>
-            <h1>
-                Find <span id="typed"></span> Coaching in Gurgaon
-            </h1>            
+            <div class="slider-wrapper">
+                <ul class="my-slider brand-list">
+                    {% for brand in brands %}
+                        <li>
+                            <div class="content">
+                                <div class="img-wrapper">
+                                    <img  data-src="/media/{{ brand.image }}" alt="{{brand.name}}">
+                                </div>
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>               
+            </div>
+            <div class="coverage-wrap">
+                <div class="inner-wrap">
+                    <a href="/visitors">
+                        <img src="/static/img/sania.png" alt="">
+                        <span>Our visitors</span>
+                    </a>
+                </div>
+                <div class="inner-wrap">
+                    <a href="/reviews">
+                        <img src="/static/img/review_video.png" alt="">
+                        <span>Parent Review</span>
+                    </a>
+                </div>
+                <div class="inner-wrap">
+                    <a href="/media">
+                        <img src="/static/img/news.png" alt="">
+                        <span>Media Coverage</span>
+                    </a>
+                </div>
+            </div>
         </div>
-
-    	<div class="sport-city-selector">
-    		<form class="sport-city-form">
-    			<div class="form-group">
-    				<p class="selected-sport selected-data">Select your preferred sport
-                    </p>
-                    <ul class="custom-select">
-                        {% for sport in sports  %}
-                            <li sport="{{sport.id}}" slug="{{sport.slug}}">{{ sport.name }}</li>
-                        {% endfor %}
-                    </ul>
-    				
-    			</div>
-    			<div class="form-group">
-    				<p class="selected-center selected-data">Select your nearest center </p>
-                    <ul class="custom-select">
-                        {% for center in centers  %}
-                            <li slug="{{center.slug}}" center={{center.id}}>{{ center.academy_name }}</li>
-                        {% endfor %}
-                    </ul>
-    			</div>
-    			<div class="form-group">
-    				<button type="button" class="submit-selection">Submit</button>
-    			</div>
-    		</form>
-    	</div>
-    </section>
-    <section class="about-us">
-    	<div class="container">
-    		
-            <p></p>
-            <div class="left-photo">
-
-                <img class="b-lazy" data-src="static/img/athelete.jpg" alt="athelete">
+    </div>
+    <section class="training-camps-wrap">
+        <div class="container">
+            <div class="train-list">
+                <div class="inner-wrap">
+                    <a href="/sports">
+                        <img src="/static/img/4001.jpeg" alt="">
+                        <span>Training camps</span>
+                    </a>
+                </div>
+                <div class="inner-wrap">
+                    <a href="/teams">
+                        <img src="/static/img/4004.jpeg" alt="">
+                        <span>Coaches</span>
+                    </a>
+                </div>
+                <div class="inner-wrap">
+                    <a href="/corporates">
+                        <img src="/static/img/4002.jpeg" alt="">
+                        <span>Corporate Events</span>
+                    </a>
+                </div>
+                <div class="inner-wrap">
+                    <a href="">
+                        <img src="/static/img/4003.jpeg" alt="">
+                        <span>Competetions</span>
+                    </a>
+                </div>
             </div>
-            <div class="right-content">
-                <h2 class="global-heading">About <span>RydersSportsAcademy</span></h2>
-                <p>
-                    We are coaches, trainers educators and counsellors committed to building players, athletes and individuals. But most of all we are watchers who never lose sight of our ultimate goal, i.e. <br>
-                    To help you to grow, excel and succeed. Our dedicated and hard working set of coaches always looks for innovative drills and exercises to suit the individual needs of every trainee instead of relying on a ‘one size fits all’ approach. <br>
-                    We help you learn to face challenging situations and to trust one another as partners in new ways, sharing as a team & leadership quality to put you on ‘Top of the World.’
-
-
-                </p>
-                <p>
-                    <a href="">Know More</a>
-                </p>
-            </div>
-    	</div>
+        </div>
     </section>
-    <section class="sports-wrap">
-    	<div class="container">
-    		<h2 class="global-heading">Training <span>Courses</span></h2>
-    		<ul class="sports-list">
-                {% for sport in sports|slice:":8"  %}
-    			<li>
-    				<a href="/sport/{{ sport.id }}/{{ sport.slug }}">
-    					<div class="img-wrapper">
-    						<img alt="{{ sport.name }}" class="b-lazy" data-src="/media/{{ sport.image }}">
-    					</div>
-    					<span class="name">
-    						{{ sport.name }}
-    					</span>
-    				</a>
-    			</li>
-                {% if forloop.counter == 8 %}
+    <section class="homepage sports-wrap">
+        <div class="container">
+            <ul class="sports-list">
+                {% for sport in sports|slice:":10"  %}
+                <li>
+                    <a href="/sport/{{ sport.id }}/{{ sport.slug }}">
+                        <div class="img-wrapper">
+                            <img alt="{{ sport.name }}" class="b-lazy" data-src="/media/{{ sport.image }}">
+                        </div>
+                        <span class="name">
+                            {{ sport.name }}
+                        </span>
+                    </a>
+                </li>
+                {% if forloop.counter == 10 %}
                     
                         <a class="btn-primary" href="/sports">View More</a>
                     
                 {% endif %}
                 {% endfor %}
-    		</ul>
-    	</div>
-    </section>
-    <section class="signup-wrap">
-        <div class="container">
-            <div class="wrapper">
-                <div class="info">
-                    <h2>Join us for free and get amazing discounts and vouchers from top fitness brands.</h2>
-                </div>
-                <div class="button">
-                    <a href="/contact-us/" target="_blank">Join Now</a>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="brands">
-        <div class="container">
-            <h2 class="global-heading">Brands we work with</h2>
-            <ul class="my-slider brand-list">
-                {% for brand in brands %}
-                    <li>
-                        <div class="content">
-                            <div class="img-wrapper">
-                                <img class="b-lazy" data-src="/media/{{ brand.image }}" alt="{{brand.name}}">
-                            </div>
-                        </div>
-                    </li>
-                {% endfor %}
-            </ul>            
+            </ul>
         </div>
     </section>
 {% endblock maincontent %}

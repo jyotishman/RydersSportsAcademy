@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block css %}
+    <link rel="stylesheet" href="/static/css/gallery.css?v=1">
+    <link rel="stylesheet" href="/static/bower_components/fancybox/dist/jquery.fancybox.css?v=1" />
+    <link rel="stylesheet" href="/static/css/center-details.css?v=2">
+    <style>
+        .reviews-list-wrap{
+            overflow: hidden;
+        }
+        .reviews-list-wrap .reviews{
+            width: 50%;
+            float: left;
+            padding: 15px;
+        }   
+        .reviews img {
+          max-width: 100%;
+        }
+
+        .reviews a {
+          width: 100%;
+          display: block;
+          height: 315px;
+          background: #ddd;
+          border-radius: 2px;
+        }
+    
+    </style>
+{% endblock css %}
+{% block js %}
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+    <script type="text/javascript" src="/static/bower_components/fancybox/dist/jquery.fancybox.js"></script>
+
+    <script src="/static/gallery_bundle.js?v=1"></script>
+    
+{% endblock js %}
+
+{% block maincontent %}
+    <section class="reviews-wrap">
+       <div class="container">
+        <h1 class="global-heading">Reviews</h1>
+        <p>Ryder's have been covered by various television news channels like NDTV, Aaj Tak, CNN IBN, FM Radio and leading News papers over the period of time. </p>
+               <div class="reviews-list-wrap">
+                {% for md in media  %}
+                    {% if md.content %}
+                        <div class="reviews">
+                           {{ md.content | safe }}
+                        </div>
+                    {% endif %}
+                    {% if md.image %}
+                        <div class="reviews">
+                           <a class="fancybox-button" href="/media/{{ md.image }}" title="jyotisman" data-fancybox="images">
+                            <img src="/media/{{ md.image }}" alt="" />
+                           </a>
+                        </div>
+                    {% endif %}
+
+                {% endfor %} 
+                
+                  
+               </div>   
+       </div>
+    </section>
+{% endblock maincontent %}

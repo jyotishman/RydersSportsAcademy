@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,700');
+@import url('https://fonts.googleapis.com/css?family=Oswald:400,500,700');
 
 $primary-color: #0078ff;
 $secondary-color: #fed707;
@@ -9,7 +9,7 @@ $break-large: 1024px;
 $break-xlarge: 1024px;
 
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Oswald', sans-serif;
     background: #f8f8f8;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -211,6 +211,7 @@ input {
     background: #fff;
     overflow-y: auto;
     z-index: 999;
+
     .menu-list li {
         display: block;
     }

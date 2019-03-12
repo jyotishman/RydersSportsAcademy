@@ -19,20 +19,6 @@ body {
     background-attachment: fixed;
 }
 
-header {
-    background: #fff;
-    position: static;
-    border-bottom: 1px solid #ddd;
-
-    .menu-list li a {
-        color: #131313;
-    }
-
-    .menu-list>li:hover>a {
-        color: $primary-color;
-    }
-}
-
 .about-us-wrap h1,
 .about-us-wrap h2 {
     margin-top: 32px;

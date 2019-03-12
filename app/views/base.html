@@ -71,11 +71,11 @@
     
     {% block header %}
         <header>
-        	<div class="logo-wrap">
+        	<!-- <div class="logo-wrap">
         		<a href="" class="logo-link">
         			<img src="/static/img/logo.png" alt="">
         		</a>
-        	</div>
+        	</div> -->
             <div class="burger-menu-wrap" id="burger-menu-wrap">
                 <i class="fas fa-bars"></i>
             </div>
@@ -120,35 +120,35 @@
     {% block footer %}
         <footer>
             <div class="container">
-                <h5>Ryder's Sports Academy</h5>
-                <div class="link-wrapper">
-                    <ul class="sports-link-wrap">
-                        <h5>Sports</h5>
-                        {% for sport in sports  %}
-                            <li><a href="/sport/{{sport.id}}">{{ sport.name }}</a></li>
-                        {% endfor %}
-                    </ul>
+                <p class="footer-head">
+                    <span>Ryder's</span>
+                    <span>Join us for free and get amazing discounts and vouchers from top fitness brands.</span>
+                    <a href="">Join Now</a>
+                </p>
+                <div class="black-wrap">
+                    <p>Contact us 
+                        {% if company %}
+                            <span>
+                                <a target="_blank" href="{{ company.facebook_url}}"><i class="fab fa-facebook-square"></i></a>
+                            </span>
+                            <span><a target="_blank" href="{{ company.instagram_url}}"><i class="fab fa-instagram"></i></a></span>
+                            
+                        {% endif %}
+                    </p>
+                    <h5 class="email"><a href="mailto: ryders.sports@gmail.com">ryders.sports@gmail.com</a></h5>
+                    <h5>Centers in <span>Gurgaon</span></h5>
+                    
                     <ul class="center-link-wrap">
-                        <h5>Centers</h5>
+                        
                         {% for center in centers  %}
-                            <li><a href="/center/{{ center.id }}/{{ center.slug }}">{{ center.academy_name }}</a></li>
+                            <li><a href="/center/{{ center.id }}/{{ center.slug }}">{{ center.academy_name }} <span>#{{ center.mobile }}</span></a></li>
                         {% endfor %}                            
                     </ul>
-                    <ul class="social-link-list">
-                        <h5>Connect with us</h5>
-                        {% if company %}
-                        <li>
-                            <a target="_blank" href="{{ company.facebook_url}}"><i class="fab fa-facebook-square"></i></a></li>
-                            <li><a target="_blank" href="{{ company.google_plus_url}}"><i class="fab fa-google-plus-square"></i></a></li>
-                            <li><a target="_blank" href="{{ company.linkedin_url}}"><i class="fab fa-linkedin"></i></a></li>
-                            <li><a target="_blank" href="{{ company.twitter_url}}"><i class="fab fa-twitter-square"></i></a></li>
-                        {% endif %}
-                    </ul>
-                    <div class="logo-wrap">
-                        <img src="/static/img/logo.png" alt="">
-                    </div>
+                    <span class="bus-wrap">
+                        <img src="/static/img/bus.png" alt="bus">
+                        Transport Available
+                    </span>
                 </div>
-                
             </div>
 
             <div class="bottom-fotter">

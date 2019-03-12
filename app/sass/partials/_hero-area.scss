@@ -1,0 +1,265 @@
+.hero-area {
+    .container {
+        position: relative;
+    }
+
+    h1 {
+        font-size: 42px;
+        text-align: left;
+        text-transform: uppercase;
+        font-weight: 700;
+        max-width: 30%;
+        margin: auto;
+        margin-top: 60px;
+        margin-bottom: 20px;
+        line-height: 1.2;
+        position: relative;
+
+        span {
+            display: block;
+            color: #fed707;
+        }
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 152px;
+        }
+    }
+
+    img.big-logo {
+        position: absolute;
+        top: -45px;
+        left: 0;
+    }
+
+    .img-wrapper img {
+        max-width: 100%;
+    }
+
+
+
+
+    .sport-city-selector {
+        padding: 0 5px;
+        border-radius: 2px;
+        box-shadow: 0 6px 12px 0 rgba(0, 0, 0, .15);
+        padding-left: 0;
+        max-width: 60%;
+        margin: auto;
+        background: #fff;
+        margin-bottom: 30px;
+
+
+        @include respond-to(mobile) {
+            width: 90%;
+            padding: 0;
+            top: 62%;
+            background-color: transparent;
+        }
+
+        .sport-city-form {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+
+            .form-group {
+                margin-bottom: 0;
+                width: 40%;
+                position: relative;
+
+                @include respond-to(mobile) {
+                    width: 100%;
+                    background-color: #fff;
+                    border-radius: 3px;
+                    margin-bottom: 10px;
+                }
+
+                .custom-select {
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    background: #fff;
+                    width: 100%;
+                    border: 1px solid rgba(0, 115, 255, 0.25);
+                    display: none;
+                    border-radius: 2px;
+                    z-index: 99;
+                    max-height: 200px;
+                    overflow: scroll;
+                    box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.15);
+
+                    li {
+                        padding: 10px;
+                        font-size: 14px;
+                        border-bottom: 1px solid rgba(0, 115, 255, 0.25);
+                        color: #666;
+
+                        &:last-child {
+                            border-bottom: 0;
+                        }
+
+                        &:hover {
+                            background: $primary-color;
+                            color: #fff;
+                            border-color: $primary-color;
+                        }
+                    }
+                }
+
+                .active+.custom-select {
+                    display: block;
+                }
+
+                .selected-data {
+                    color: #979797;
+                    padding: 10px;
+                    height: 50px;
+                    line-height: 33px;
+                    font-size: 15px;
+                    cursor: pointer;
+                    overflow: hidden;
+                    font-weight: 500;
+
+                    &:before {
+                        content: "\f107";
+                        font-family: 'Font Awesome 5 Free';
+                        position: absolute;
+                        right: 10px;
+                        top: 12px;
+                    }
+
+                }
+
+                .selected-data.highlight {
+                    color: $primary-color
+                }
+
+                &:nth-child(1) {
+                    border-right: 1px solid #cacaca;
+
+                    @include respond-to(mobile) {
+                        border-right: 0;
+                    }
+                }
+
+                &:nth-child(3) {
+                    width: 20%;
+                    text-align: right;
+
+                    @include respond-to(mobile) {
+                        width: 100%;
+                    }
+                }
+            }
+
+            button {
+                text-transform: uppercase;
+                background: #ffd900;
+                color: #000;
+                border: 0;
+                padding: 12px 15px;
+                height: 100%;
+                margin-bottom: 0;
+                font-size: 14px;
+                font-weight: 500;
+                width: 135px;
+                border-radius: 2px;
+
+                @include respond-to(mobile) {
+                    width: 100%;
+                }
+
+            }
+
+        }
+    }
+
+    .coverage-wrap {
+        background: #cfc500;
+        padding: 15px;
+        margin: 15px 0;
+        overflow: hidden;
+
+        .inner-wrap {
+            width: 33.33%;
+            float: left;
+
+            a {
+                text-decoration: none;
+
+                span {
+                    display: inline-block;
+                    color: #fff;
+                    text-decoration: none;
+                    background: #000;
+                    margin: 10px 0;
+                    max-width: 85%;
+                    font-size: 20px;
+                    font-weight: 600;
+                    padding: 10px;
+                    padding-right: 32px;
+                    text-transform: uppercase;
+                    color: #d0c700;
+
+                    @include respond-to(mobile) {
+                        font-size: 14px;
+
+                    }
+                }
+
+                img {
+                    display: block;
+                    width: 88%;
+                }
+            }
+        }
+    }
+}
+
+section.homepage.sports-wrap {
+    background: transparent;
+    padding: 0;
+
+    ul.sports-list {
+        background: #cfc500;
+        padding: 15px;
+
+        @include respond-to(mobile) {
+            overflow: hidden;
+
+        }
+
+        li {
+            border: 0;
+            background: transparent;
+            width: calc(20% - 33px);
+
+            @include respond-to(mobile) {
+                width: calc(50% - 15px);
+            }
+            
+
+            a {
+                span.name {
+                    display: block;
+                    padding: 21px 0;
+                    font-size: 18px;
+                    font-weight: 700;
+                    color: #fff;
+                    height: 60px;
+                    overflow: hidden;
+                    text-align: left;
+                    text-transform: uppercase;
+
+                    @include respond-to(mobile) {
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+
+
+}

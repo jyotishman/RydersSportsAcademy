@@ -4,21 +4,6 @@
 @import 'partials/footer';
 @import 'partials/contact-form';
 
-
-header {
-    background: #fff;
-    position: static;
-    border-bottom: 1px solid #ddd;
-
-    .menu-list li a {
-        color: #131313;
-    }
-
-    .menu-list>li:hover>a {
-        color: $primary-color;
-    }
-}
-
 .center-detail-wrap {
     background: #fff;
 }
