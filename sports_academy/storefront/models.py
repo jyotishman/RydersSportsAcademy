@@ -28,7 +28,7 @@ class ContactUs(models.Model):
 	def send_contact_mail(self):
 		subject = "Notification- Ryder's Sports Academy has a new enquiry"
 		recipient_list = settings.CONTACT_US_RECIPIENTS
-		message = "Full Name - %s\nEmail - %s\nPhone Number - %s\nSport - %s\n%sMessage -" % (
+		message = "Full Name - %s\nEmail - %s\nPhone Number - %s\nSport - %s\n%s" % (
 			self.full_name,
 			self.email,
 			self.phone_number or "N.A.",
