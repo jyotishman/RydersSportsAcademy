@@ -26,7 +26,7 @@ urlpatterns = sitemap_urlpatterns + [
     url(r'^corporates/$', views.CorporateView.as_view(), name='corporate-view-list'),
     url(r'^visitors/$', views.VisitorsView.as_view(), name='visitors-view-list'),
     url(r'^reviews/$', views.ReviewsView.as_view(), name='reviews-view-list'),
-    url(r'^media/$', views.NewsView.as_view(), name='news-view-list'),
+    url(r'^news/$', views.NewsView.as_view(), name='news-view-list'),
     url(r'^notification/(?P<pk>[0-9]+)/(?P<slug>[\w-]+)/$', views.NotificationDetailView.as_view(),
         name='notification-view-detail'),
 ]
