@@ -65,7 +65,7 @@ LOCAL_APPS = [
     'sports_academy.center.apps.CenterConfig',
     'sports_academy.gallery.apps.GalleryConfig',
     'sports_academy.brands.apps.BrandsConfig',
-    'sports_academy.media.apps.MediaConfig',
+    'sports_academy.news.apps.NewsConfig',
     'sports_academy.reviews.apps.ReviewsConfig',
     'sports_academy.company.apps.CompanyConfig',
     'sports_academy.sport.apps.SportConfig',

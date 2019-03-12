@@ -16,7 +16,7 @@ from sports_academy.center.serializers import CenterSerializer, CenterDetailSeri
 from sports_academy.company.models import Company
 from sports_academy.gallery.models import Gallery
 from sports_academy.reviews.models import Reviews
-from sports_academy.media.models import Media
+from sports_academy.news.models import News
 from sports_academy.sport.models import Sport
 from sports_academy.sport.serializers import SportSerializer, SportDetailSerializer
 from sports_academy.team.models import Team
@@ -343,7 +343,7 @@ class ReviewsView(View):
         context.update(global_context())
         return render(request, self.template_name, context=context)
 
-class MediaView(View):
+class NewsView(View):
     template_name = "media.html"
 
     def get(self, request, pk=None, *args, **kwargs):
@@ -351,7 +351,7 @@ class MediaView(View):
             'meta_title': "Ryder's Sports Academy- Where victories begin.",
             'meta_description': "Ryders Sports Academy is a multi-sport facility that provides education and training in almost every major sport. From lawn tennis, table tennis, badminton and cricket to football, basketball, skating and horse riding - we have every sport sprawling across 7 centers in Gurgaon.",
             'image': "https://d14nytznni7htl.cloudfront.net/standalone/17663/og_image_1542134794_7567792.png",
-            'media': Media.objects.filter(active=True).only(
+            'media': News.objects.filter(active=True).only(
                 'id', 'image', 'content'
             ).values('id', 'image', 'content')
         }
