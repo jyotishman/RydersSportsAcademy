@@ -71,11 +71,13 @@
     
     {% block header %}
         <header>
-        	<!-- <div class="logo-wrap">
+        	<div class="logo-wrap">
         		<a href="" class="logo-link">
-        			<img src="/static/img/logo.png" alt="">
+        			<img class="b-lazy" data-src="/static/img/logo.png" alt="logo">
+                    <!-- <img src="/static/img/biglogo.png" class="big-logo" alt="biglogo"> -->
+
         		</a>
-        	</div> -->
+        	</div>
             <div class="burger-menu-wrap" id="burger-menu-wrap">
                 <i class="fas fa-bars"></i>
             </div>
@@ -122,7 +124,7 @@
             <div class="container">
                 <p class="footer-head">
                     <span>Ryder's</span>
-                    <span>Join us for free and get amazing discounts and vouchers from top fitness brands.</span>
+                    <span class="hidden-xs">Join us for free and get amazing discounts and vouchers from top fitness brands.</span>
                     <a href="/contact-us">Join Now</a>
                 </p>
                 <div class="black-wrap">
@@ -145,7 +147,7 @@
                         {% endfor %}                            
                     </ul>
                     <span class="bus-wrap">
-                        <img src="/static/img/bus.png" alt="bus">
+                        <img class="b-lazy" data-src="/static/img/bus.png" alt="bus">
                         Transport Available
                     </span>
                 </div>

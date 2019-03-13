@@ -8,12 +8,17 @@
         text-align: left;
         text-transform: uppercase;
         font-weight: 700;
-        max-width: 30%;
+        width: 750px;
         margin: auto;
         margin-top: 60px;
         margin-bottom: 20px;
         line-height: 1.2;
         position: relative;
+        color: #fff;
+
+        @include respond-to(mobile) {
+            font-size: 28px;
+        }
 
         span {
             display: block;
@@ -23,7 +28,7 @@
         img {
             position: absolute;
             top: 0;
-            left: 152px;
+            left: 200px;
         }
     }
 
@@ -45,7 +50,7 @@
         border-radius: 2px;
         box-shadow: 0 6px 12px 0 rgba(0, 0, 0, .15);
         padding-left: 0;
-        max-width: 60%;
+        width: 750px;
         margin: auto;
         background: #fff;
         margin-bottom: 30px;
@@ -239,7 +244,7 @@ section.homepage.sports-wrap {
             @include respond-to(mobile) {
                 width: calc(50% - 15px);
             }
-            
+
 
             a {
                 span.name {

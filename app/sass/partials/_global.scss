@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Oswald:400,500,700');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,700');
 
 $primary-color: #0078ff;
 $secondary-color: #fed707;
@@ -9,7 +10,8 @@ $break-large: 1024px;
 $break-xlarge: 1024px;
 
 body {
-    font-family: 'Oswald', sans-serif;
+    // font-family: 'Oswald', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     background: #f8f8f8;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -19,6 +21,8 @@ body {
 .list-inline li {
     display: inline-block;
 }
+
+
 
 button#form_btn.disable {
     pointer-events: none;
@@ -121,7 +125,7 @@ input {
 
 .hidden-xs {
     @include respond-to(mobile) {
-        display: none;
+        display: none !important;
     }
 }
 
@@ -130,6 +134,12 @@ input {
     padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
+}
+
+@media (max-width: 767px) {
+    .hidden-xs {
+        display: none;
+    }
 }
 
 @media (min-width: 768px) {
@@ -191,7 +201,7 @@ input {
     left: 0px;
     top: 0;
     background: #000000a6;
-    z-index: 9;
+    z-index: 99;
     border: 0;
     display: none;
 }

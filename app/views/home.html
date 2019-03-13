@@ -4,6 +4,51 @@
     <style>
         body{
             background: url('/static/img/layer.png') !important;
+            background-size: cover !important;
+        }
+        .hero-area .img-wrapper{
+            height: 100vh;
+        }
+        
+        .slider-wrapper{
+            position: relative;
+        }
+        .slider-wrapper:before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+          background: rgba(0,0,0,0.35);
+          z-index: 9;
+        }
+        body header{
+            position: absolute;
+          top: 10px;
+          left: 0;
+          width: 100%;
+          z-index: 999;
+          background: transparent;
+        }
+        .float-data{
+              position: absolute;
+              top: 25%;
+              left: 0;
+              right: 0;
+              z-index: 11;
+              margin-bottom: 0;
+              width: 80%;
+              margin: auto;
+        }
+        @media (max-width: 767px) {
+            .hero-area .img-wrapper{
+            height: 70vh;
+            }
+            .float-data{
+                  top: 10%;
+            }
+
         }
     </style>
 {% endblock internal_css %}
@@ -13,15 +58,12 @@
     <link rel="stylesheet" href="/static/bower_components/tiny-slider/dist/tiny-slider.css"></link>
 {% endblock css %}
 
-
-
 {% block js %}
-    <script src="/static/bower_components/bLazy/blazy.js"></script>
-    <script src="/static/bower_components/tiny-slider/dist/tiny-slider.js"></script>
-    <script src="/static/bundle.js"></script>
+    <script  src="/static/bower_components/bLazy/blazy.js"></script>
+    <script  src="/static/bower_components/tiny-slider/dist/tiny-slider.js"></script>
+    <script  src="/static/bundle.js"></script>
     <script type="text/javascript">
         (function() {
-            
             var slider = tns({
               container: '.my-slider',
               items: 1,
@@ -31,7 +73,7 @@
               nav: false,
               autoplay: true,
               autoplayButtonOutput: false,
-              autoplayTimeout: 3000,
+              autoplayTimeout: 4000,
               controlsText: ['<i class="fas fa-angle-left"></i>', '<i class="fas fa-angle-right"></i>'],
               
             });
@@ -42,64 +84,68 @@
 
 {% block maincontent %}
     <div class="hero-area">
-        <div class="container">
-            <h1>Ryder's <span>Sports Academy</span>
-                <img src="static/img/smalllogo.png" alt="small"></h1>
-            <img src="/static/img/biglogo.png" class="big-logo" alt="biglogo">
-            <div class="sport-city-selector">
-                <form class="sport-city-form">
-                    <div class="form-group">
-                        <p class="selected-sport selected-data">Select your preferred sport
-                        </p>
-                        <ul class="custom-select">
-                            {% for sport in sports  %}
-                                <li sport="{{sport.id}}" slug="{{sport.slug}}">{{ sport.name }}</li>
-                            {% endfor %}
-                        </ul>
-                        
-                    </div>
-                    <div class="form-group">
-                        <p class="selected-center selected-data">Select your nearest center </p>
-                        <ul class="custom-select">
-                            {% for center in centers  %}
-                                <li slug="{{center.slug}}" center={{center.id}}>{{ center.academy_name }}</li>
-                            {% endfor %}
-                        </ul>
-                    </div>
-                    <div class="form-group">
-                        <button type="button" class="submit-selection">Submit</button>
-                    </div>
-                </form>
-            </div>
+        <div class="inner-container">
             <div class="slider-wrapper">
                 <ul class="my-slider brand-list">
                     {% for brand in brands %}
                         <li>
-                            <div class="content">
-                                <div class="img-wrapper">
-                                    <img src="/media/{{ brand.image }}" alt="{{brand.name}}">
+                            <div class="content b-lazy">
+                                <div class="img-wrapper" style="background: url(/media/{{ brand.image }}); background-size: cover;">
                                 </div>
                             </div>
                         </li>
                     {% endfor %}
                 </ul>               
             </div>
+            <div class="float-data">
+                <h1>Ryder's <img class="b-lazy" data-src="static/img/smalllogo.png" alt="small"> 
+                    <span>Sports Academy</span></h1>
+                <p></p>
+                <div class="sport-city-selector">
+                    <form class="sport-city-form">
+                        <div class="form-group">
+                            <p class="selected-sport selected-data">Select your preferred sport
+                            </p>
+                            <ul class="custom-select">
+                                {% for sport in sports  %}
+                                    <li sport="{{sport.id}}" slug="{{sport.slug}}">{{ sport.name }}</li>
+                                {% endfor %}
+                            </ul>
+                            
+                        </div>
+                        <div class="form-group">
+                            <p class="selected-center selected-data">Select your nearest center </p>
+                            <ul class="custom-select">
+                                {% for center in centers  %}
+                                    <li slug="{{center.slug}}" center={{center.id}}>{{ center.academy_name }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        <div class="form-group">
+                            <button type="button" class="submit-selection">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+        </div>
+        <div class="container">
             <div class="coverage-wrap">
                 <div class="inner-wrap">
                     <a href="/visitors">
-                        <img src="/static/img/sania.png" alt="">
+                        <img data-src="/static/img/sania.png" alt="visitors">
                         <span>Our visitors</span>
                     </a>
                 </div>
                 <div class="inner-wrap">
                     <a href="/reviews">
-                        <img src="/static/img/review_video.png" alt="">
+                        <img data-src="/static/img/review_video.png" alt="Review">
                         <span>Parent Review</span>
                     </a>
                 </div>
                 <div class="inner-wrap">
                     <a href="/news">
-                        <img src="/static/img/news.png" alt="">
+                        <img data-src="/static/img/news.png" alt="Media">
                         <span>Media Coverage</span>
                     </a>
                 </div>
@@ -111,26 +157,26 @@
             <div class="train-list">
                 <div class="inner-wrap">
                     <a href="/sports">
-                        <img src="/static/img/4001.jpeg" alt="">
+                        <img class="b-lazy" data-src="/static/img/4001.jpeg" alt="Training camps">
                         <span>Training camps</span>
                     </a>
                 </div>
                 <div class="inner-wrap">
                     <a href="/teams">
-                        <img src="/static/img/4004.jpeg" alt="">
+                        <img class="b-lazy" data-src="/static/img/4004.jpeg" alt="Coaches">
                         <span>Coaches</span>
                     </a>
                 </div>
                 <div class="inner-wrap">
                     <a href="/corporates">
-                        <img src="/static/img/4002.jpeg" alt="">
+                        <img class="b-lazy" data-src="/static/img/4002.jpeg" alt="Corporate">
                         <span>Corporate Events</span>
                     </a>
                 </div>
                 <div class="inner-wrap">
                     <a href="">
-                        <img src="/static/img/4003.jpeg" alt="">
-                        <span>Competetions</span>
+                        <img class="b-lazy" data-src="/static/img/4003.jpeg" alt="Competitions">
+                        <span>Competitions</span>
                     </a>
                 </div>
             </div>
