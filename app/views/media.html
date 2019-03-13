@@ -1,10 +1,18 @@
 {% extends "base.html" %}
 
 {% block css %}
-    <link rel="stylesheet" href="/static/css/gallery.css?v=1">
+    <link rel="stylesheet" href="/static/css/gallery.css?v=2">
     <link rel="stylesheet" href="/static/bower_components/fancybox/dist/jquery.fancybox.css?v=1" />
     <link rel="stylesheet" href="/static/css/center-details.css?v=2">
     <style>
+        .global-heading{
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+        .global-heading+p{
+          text-align: center;
+          margin-bottom: 10px;
+        }
         .reviews-list-wrap{
             overflow: hidden;
         }
@@ -15,13 +23,14 @@
         }   
         .reviews img {
           max-width: 100%;
+          max-height: 100%;
         }
 
         .reviews a {
           width: 100%;
           display: block;
           height: 315px;
-          background: #ddd;
+          background: #eeecec;
           border-radius: 2px;
         }
     
@@ -39,7 +48,7 @@
 {% block maincontent %}
     <section class="reviews-wrap">
        <div class="container">
-        <h1 class="global-heading">Reviews</h1>
+        <h1 class="global-heading">News Coverage</h1>
         <p>Ryder's have been covered by various television news channels like NDTV, Aaj Tak, CNN IBN, FM Radio and leading News papers over the period of time. </p>
                <div class="reviews-list-wrap">
                 {% for md in media  %}
