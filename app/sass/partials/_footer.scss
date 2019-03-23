@@ -67,10 +67,18 @@ p.footer-head a {
     text-transform: uppercase;
     border-radius: 2px;
     line-height: 1.2;
+
+    @include respond-to(mobile) {
+        margin-top: -38px;
+    }
 }
 
 .black-wrap {
     position: relative;
+
+    @include respond-to(mobile) {
+        margin-top: 40px;
+    }
 }
 
 span.bus-wrap {
@@ -88,6 +96,10 @@ span.bus-wrap {
     font-weight: 700;
     font-size: 15px;
     text-transform: uppercase;
+
+    @include respond-to(mobile) {
+        display: none;
+    }
 
     img {
         display: block;
