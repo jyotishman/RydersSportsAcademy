@@ -240,7 +240,7 @@ section.homepage.sports-wrap {
         li {
             border: 0;
             background: transparent;
-            width: calc(20% - 33px);
+            width: calc(25% - 33px);
 
             @include respond-to(mobile) {
                 width: calc(50% - 15px);
@@ -251,7 +251,7 @@ section.homepage.sports-wrap {
                 span.name {
                     display: block;
                     padding: 21px 0;
-                    font-size: 18px;
+                    font-size: 15px;
                     font-weight: 700;
                     color: #1f3e00;
                     height: 60px;
