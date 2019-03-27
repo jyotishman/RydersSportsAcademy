@@ -1,28 +1,221 @@
 {% extends "base.html" %}
 
 {% block css %}
-    <link rel="stylesheet" href="/static/css/center-details.css?v=2121">
-    <style>
-    	
-    	.hero {
-    	    background: url('/static/img/corporate.jpeg') no-repeat center center;
-		  background-size: cover;
-		  background-position-y: 50%;
-    	    height: 350px;
-    	}
-    	h1{
-    		margin-top: 30px;
-
-    	}
-    </style>
+    <link rel="stylesheet" href="/static/css/home.css?v=2121121">
+    <link rel="stylesheet" href="/static/bower_components/tiny-slider/dist/tiny-slider.css"></link>
 {% endblock css %}
+{% block internal_css %}
+    <style>
+        
+        .hero-area .img-wrapper{
+            height: 530px;
+            margin-bottom: 20px;
+        }
+        .global-heading{
+            margin-top: 30px;
+        }
+        .detail-wrap{
+              overflow: hidden;
+              margin-bottom: 30px;
+              border-bottom: 1px solid #ddd;
+              padding-bottom: 30px;
+        }
+        .detail-wrap .img-wrapper{
+          width: 30%;
+          float: left;
+          border: 2px solid #c3c2c2;
+          padding: 5px;
+          border-radius: 5px;
+        }
+
+        .detail-wrap .content-details{
+            width: 70%;
+            float: left;
+            padding-left: 30px;
+            padding-right: 0px;
+        }
+        .detail-wrap .content-details-2{
+            width: 70%;
+            float: left;
+            padding-left: 0px;
+            padding-right: 30px;
+        }
+        .detail-wrap .content-details h3{
+            font-weight: 600;
+            font-size: 22px;
+        }
+        .detail-wrap .content-details p{
+            line-height: 1.5em;
+              margin-top: 15px;
+              color: #424242;
+              font-size: 18px;
+              text-align: justify;
+        }
+        .detail-wrap .img-wrapper img {
+          max-width: 100%;
+        }
+
+       
+    </style>
+{% endblock internal_css %}
 {% block js %}
-    <script src="/static/contact_bundle.js?v=1"></script>
+    <script  src="/static/bower_components/bLazy/blazy.js"></script>
+    <script  src="/static/bower_components/tiny-slider/dist/tiny-slider.js"></script>
+    <script  src="/static/bundle.js"></script>
+    <script type="text/javascript">
+        (function() {
+            var slider = tns({
+              container: '.my-slider',
+              items: 1,
+              slideBy: 1,
+              arrowKeys: true,
+              controls: true,
+              nav: false,
+              autoplay: true,
+              autoplayButtonOutput: false,
+              autoplayTimeout: 4000,
+              controlsText: ['<i class="fas fa-angle-left"></i>', '<i class="fas fa-angle-right"></i>'],
+            });
+        })();
+    </script>
     
 {% endblock js %}
 
 {% block maincontent %}
 	<section class="corporates-wrap">
-			
+			<h1 class="global-heading">Our visitors</h1>
+            <div class="hero-area">
+                <div class="container">
+                    <div class="slider-wrapper">
+                        <div class="float-data hidden">
+                            <h1>Ryder's <img class="b-lazy" data-src="static/img/smalllogo.png" alt="small"> 
+                                <span>Sports Academy</span></h1>
+                            <p></p>
+                            <div class="sport-city-selector">
+                                <form class="sport-city-form">
+                                    <div class="form-group">
+                                        <p class="selected-sport selected-data">Select your preferred sport
+                                        </p>
+                                        <ul class="custom-select">
+                                            {% for sport in sports  %}
+                                                <li sport="{{sport.id}}" slug="{{sport.slug}}">{{ sport.name }}</li>
+                                            {% endfor %}
+                                        </ul>
+                                        
+                                    </div>
+                                    <div class="form-group">
+                                        <p class="selected-center selected-data">Select your nearest center </p>
+                                        <ul class="custom-select">
+                                            {% for center in centers  %}
+                                                <li slug="{{center.slug}}" center={{center.id}}>{{ center.academy_name }}</li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                    <div class="form-group">
+                                        <button type="button" class="submit-selection">Submit</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <ul class="my-slider brand-list">
+                            
+                                <li>
+                                    <div class="content b-lazy">
+                                        <div class="img-wrapper" style="background: url(/static/img/visitors1.png); background-size: cover;">
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="content b-lazy">
+                                        <div class="img-wrapper" style="background: url(/static/img/visitors2.png); background-size: cover;">
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="content b-lazy">
+                                        <div class="img-wrapper" style="background: url(/static/img/visitors3.png); background-size: cover;">
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="content b-lazy">
+                                        <div class="img-wrapper" style="background: url(/static/img/visitors4.png); background-size: cover;">
+                                        </div>
+                                    </div>
+                                </li>
+                            
+                        </ul>               
+                    </div>
+                </div>
+                
+            </div>
+            <div class="details-area">
+                <div class="container">
+                    <div class="detail-wrap">
+                        <div class="img-wrapper">
+                            <img data-src="/static/img/1.png" alt="player" class="b-lazy">
+                        </div>
+                        <div class="content-details">
+                            <h3>Sania Mirza</h3>
+                            <p>
+                                Sania Mirza is an Indian professional tennis player. A former world No. 1 in the doubles discipline, she has won six Grand Slam titles in her career. From 2003 until her retirement from singles in 2013, she was ranked by the WTA as India's No. 1 player in both the categories. Throughout her career, Mirza has established herself as the most successful female Indian tennis player ever and one of the highest-paid and high-profile athletes in the country.
+                            </p>
+                            <p>
+                                In her singles career, Mirza has notable wins over Svetlana Kuznetsova, Vera Zvonareva and Marion Bartoli; as well as former world No. 1s Martina Hingis, Dinara Safina, and Victoria Azarenka.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="detail-wrap">
+                        
+                        <div class="content-details content-details-2">
+                            <h3>Anthony Amalraj</h3>
+                            <p>
+                                Amalraj Anthony Arputharaj born on 24 January 1986 is a professional table tennis player from Tamil Nadu India. He won silver medal at 2014 Commonwealth Games in doubles with Sharath Kamal.
+                            </p>
+                            <p>
+                                Amalraj won the National Table Tennis Championship in January 2012, beating the Indian legend, Sharath Kamal in the finals
+                            </p>
+                            <p>
+                                In 2018 Commonwealth Games held at Gold Coast, Australia, he won gold medal in men's team event with Sharath Kamal, Harmeet Desai, Sathiyan Gnanasekaran & Sanil Shetty
+                            </p>
+                        </div>
+                        <div class="img-wrapper">
+                            <img data-src="/static/img/2.png" alt="player" class="b-lazy">
+                        </div>
+                    </div>
+                    <div class="detail-wrap">
+                        <div class="img-wrapper">
+                            <img data-src="/static/img/3.png" alt="player" class="b-lazy">
+                        </div>
+                        <div class="content-details">
+                            <h3>Ishant Sharma</h3>
+                            <p>
+                                Ishant Sharma  born 2 September 1988 is an Indian cricketer who has represented India in Tests, ODIs and T20Is. He is a 1.93 m (6 ft 4 in) tall right-arm fast-medium bowler.
+                            </p>
+                            <p>
+                                Ishant plays for Delhi in domestic cricket and has taken 68 wickets in 14 first-class games, including a five-wicket haul against Baroda on the opening day of a match Delhi drew after failing to bowl Baroda out on the fourth day.
+                            </p>
+                            <p>
+                                On 15 February 2018, it was officially announced that Ishant will join Sussex CCC for the first two months of the 2018 county season, available from 4 April to 4 June 2018, thus making him the 9th Indian to play for Sussex.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="detail-wrap">
+                        
+                        <div class="content-details content-details-2">
+                            <h3>Sudeep tyagi</h3>
+                            <p>
+                                Sudeep Tyagi (born 17 September 1989) is an Indian international cricketer. He is a right arm fast-medium bowler and a right-handed lower order batsman. In first class cricket, he plays for Uttar Pradesh. In the Indian Premier League, he represented Chennai Super Kings. Tyagi is arguably the leading contender for the next bowling spot in the national squad, consistently performing ahead of his peers, whenever fit.
+                            </p>
+                            <p>
+                                Tyagi first represented the senior Uttar Pradesh team at the 2007-08 Ranji Trophy competition, making his debut against Orissa in a game which was highlighted by a double-century from Suresh Raina. 
+                            </p>
+                        </div>
+                        <div class="img-wrapper">
+                            <img data-src="/static/img/4.png" alt="player" class="b-lazy">
+                        </div>
+                    </div>
+                </div>
+            </div>
 	</section>
 {% endblock maincontent %}
