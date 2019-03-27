@@ -2,6 +2,96 @@
 
 {% block css %}
     <link rel="stylesheet" href="/static/css/sport-details.css?v=2121121">
+    <link rel="stylesheet" href="/static/bower_components/components-bootstrap/css/bootstrap.css">
+    <style>
+    	body{
+    		background: #f5f5f5;
+    	}
+    	.left-details-wrap ,
+    	.right-details-wrap {
+    	  background: #fff;
+    	  padding: 15px;
+    	  margin-top: 10px;
+    	  border-radius: 2px;
+    	  border: 1px solid #ddd;
+    	}
+    	.right-details-wrap h3{
+    		  font-size: 16px;
+			  font-weight: bold;
+			  text-transform: uppercase;
+			  margin-bottom: 15px;
+			  background: #ffd733;
+			  margin-top: -16px;
+			  margin-left: -16px;
+			  margin-right: -16px;
+			  padding: 15px;
+			  color: #575757;
+    	}
+    	.left-details-wrap h1{
+    		margin-top: 0;
+    		text-align: left;
+    		font-size: 32px;
+    	}
+    	form.contact-form .form-group:nth-child(1), form.contact-form .form-group:nth-child(3) ,
+    	form.contact-form .form-group:nth-child(2), form.contact-form .form-group:nth-child(4){
+    	  width: 100%;
+    	  margin-left: 0;
+  			margin-right: 0;
+    	}
+    	.ameneties-wrap ul li {
+    	  width: 33.33%;
+    	  float: left;
+    	  margin-bottom: 15px;
+    	}
+
+    	.ameneties-wrap ul {
+    	  overflow: hidden;
+    	}
+
+    	.ameneties-wrap h3 {
+    	  font-size: 22px;
+    	  font-weight: 600;
+    	}
+    	.explore-centers-list li {
+    	  width: 33.33%;
+    	  float: left;
+    	  padding: 10px;
+    	}
+		.explore-centers-list li .img-wrapper {
+			height: 170px;
+		}
+    	.explore-centers-list li .img-wrapper img {
+    	    max-width: 100%;
+		  max-height: 100%;
+		  margin: auto;
+		  display: block;
+    	}
+
+    	.explore-centers-list {
+    	  overflow: hidden;
+    	  margin-left: -10px;
+    	  margin-right: -10px;
+    	}
+
+    	.explore-centers-list li .content {
+    	  border: 1px solid #ddd;
+    	  padding: 5px;
+    	  border-radius: 2px;
+    	}
+
+    	.centers-wrap h5 {}
+
+    	.centers-wrap h3 {
+    	  font-size: 22px;
+    	  font-weight: 600;
+    	}
+    	.explore-centers-list li .name {
+    	  font-weight: bold;
+    	  color: #555;
+    	  display: block;
+    	  line-height: 22px;
+    	}
+    </style>
 {% endblock css %}
 
 {% block js %}
@@ -10,71 +100,75 @@
 {% endblock js %}
 
 {% block maincontent %}
-	<section class="sport-detail-wrap">
-		<div class="hero" style="background: url({{ sport.image2 }}) no-repeat center center fixed;  background-size: cover;">
-			<div class="fixed-form-wrap">
-				<label class="form-label">Fill this form and get best deals on {{ sport.name }}</label>
-				<p class="success-msgz" id="success-msgz">Thanks for submitting your details!</p>
-				{% include "contact-form.html" %}
-			</div>
-		</div>
+	<div class="sport-detail-wrap">
 		<div class="container">
-			<h1>Find Best {{ sport.name }} in Gurgaon</h1>
-			<div class="left-wrap">
-				{{ sport.content |safe }} 
-			</div>
-			<div class="right-wrap">
-				<ul class="highlight-points">
-					<li><i class="fas fa-user-tie"></i></i> 
-						<span>
-							<b>Highly trained</b> professional sports coaches.
-						</span>
-						
-					</li>
-					<li><i class="fas fa-users"></i>
-						<span>
-							<b>18,000+</b> registered members.
-						</span> 
-					</li>
-					<li><i class="fas fa-map-marked-alt"></i>
-						<span>
-							<b>8 running centers</b> in New Delhi and Gurgaon.
-						</span> 
-					</li>
-				</ul>
-				<div class="star-rating-wrap">
-					<div class="star">
-						<i class="fas fa-star"></i>
-						<i class="fas fa-star"></i>
-						<i class="fas fa-star"></i>
-						<i class="fas fa-star-half-alt"></i>
-						<span>268 reviews</span>
+			<div class="row">
+				<div class="col-sm-9 col-xs-12">
+					<div class="left-details-wrap">
+						<h1>{{ sport.name }} coaching in gurgaon</h1>
+						<div class="slider-wrap">
+							
+						</div>
+						<p class="content-text">
+							{{ sport.content |safe }} 
+						</p>
+						<div class="ameneties-wrap">
+							<h3>Our Amenities</h3>
+							<ul>
+								<li>
+									<i class="fas fa-video"></i>
+									<span>24/7 CCTV monitoring</span>
+								</li>
+								<li>
+									<i class="fas fa-tint"></i>
+									<span> Drinking Water</span>
+								</li>
+								<li>
+									<i class="fas fa-shield-alt"></i>
+									<span>24/7 Security</span>
+								</li>
+								<li>
+									<i class="fas fa-bus-alt"></i>
+									<span>Transport Facility</span>
+								</li>
+								<li>
+									<i class="fas fa-toilet-paper"></i>
+									<span>Hygenic Toilets </span>
+								</li>
+								<li>
+									<i class="fas fa-walking"></i>
+									<span>Walking Trail </span>
+								</li>
+							</ul>
+						</div>
+						<div class="centers-wrap">
+							<h3>Center's that provide {{ sport.name }} coaching	</h3>
+						    <ul class="explore-centers-list">
+						        {% for center in sport.centers  %}
+						            <li>
+						            	<div class="content">
+						            		<a href="/center/{{ center.id }}/{{ center.slug }}">
+						            			<div class="img-wrapper">
+						            				<img src="{{center.image }}" alt="{{ center.academy_name }}">
+						            			</div>
+						            			<span class="name">
+						            				{{ center.academy_name }}
+						            			</span>
+						            		</a>
+						            	</div>
+						            </li>
+						        {% endfor %}
+							</ul>
+						</div>
 					</div>
-					<div class="lock">
-						<i class="fas fa-football-ball"></i>
+				</div>
+				<div class="col-sm-3 col-xs-12">
+					<div class="right-details-wrap">
+						<h3>Enquire for {{ sport.name }} coaching</h3>
+						{% include "contact-form.html" %}
 					</div>
 				</div>
 			</div>
-			<div class="bottom-wrap">
-				<h5>Our Center's that provide {{ sport.name }} </h5>
-				    <ul class="explore-centers-list">
-				        {% for center in sport.centers  %}
-				            <li>
-				            	<div class="content">
-				            		<a href="/center/{{ center.id }}/{{ center.slug }}">
-				            			<div class="img-wrapper">
-				            				<img src="{{center.image }}" alt="{{ center.academy_name }}">
-				            			</div>
-				            			<span class="name">
-				            				{{ center.academy_name }}
-				            			</span>
-				            		</a>
-				            	</div>
-				            </li>
-				        {% endfor %}
-					</ul>
-			</div>
 		</div>
-	</section>
-	
+	</div>
 {% endblock maincontent %}
