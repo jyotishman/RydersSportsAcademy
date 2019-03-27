@@ -9,6 +9,10 @@ class Sport(models.Model):
 	name = models.CharField(max_length=100, unique=True)
 	image = models.ImageField(null=True)
 	image2 = models.ImageField(null=True)
+	image3 = models.ImageField(null=True)
+	image4 = models.ImageField(null=True)
+	image5 = models.ImageField(null=True)
+	image6 = models.ImageField(null=True)
 	content = models.TextField(blank=True)
 
 	active = models.BooleanField(default=True)

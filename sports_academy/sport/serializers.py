@@ -7,7 +7,7 @@ from . import models
 class SportSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = models.Sport
-		fields = ('id', 'name', 'image','image2', 'content', 'active', 'created', 'modified', 'slug',)
+		fields = ('id', 'name', 'image','image2','image3','image4','image5','image6', 'content', 'active', 'created', 'modified', 'slug',)
 
 
 class SportDetailSerializer(serializers.ModelSerializer):
@@ -15,7 +15,7 @@ class SportDetailSerializer(serializers.ModelSerializer):
 
 	class Meta:
 		model = models.Sport
-		fields = ('id', 'name', 'image', 'image2', 'content', 'active', 'created', 'modified', 'slug', 'centers',)
+		fields = ('id', 'name', 'image', 'image2','image3','image4','image5','image6', 'content', 'active', 'created', 'modified', 'slug', 'centers',)
 
 	def get_centers(self, sport):
 		return CenterSerializer(sport.center_set.all(), many=True).data
