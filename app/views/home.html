@@ -7,30 +7,14 @@
             background-size: cover !important;
         }
         .hero-area .img-wrapper{
-            height: 100vh;
+            height: 480px;
         }
         
         .slider-wrapper{
             position: relative;
         }
-        .slider-wrapper:before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          height: 100%;
-          width: 100%;
-          background: rgba(0,0,0,0.35);
-          z-index: 9;
-        }
-        body header{
-            position: absolute;
-          top: 10px;
-          left: 0;
-          width: 100%;
-          z-index: 999;
-          background: transparent;
-        }
+        
+       
         .float-data{
               position: absolute;
               top: 25%;
@@ -43,12 +27,8 @@
         }
         @media (max-width: 767px) {
             .hero-area .img-wrapper{
-            height: 70vh;
+            height: 150px;
             }
-            .float-data{
-                  top: 10%;
-            }
-
         }
     </style>
 {% endblock internal_css %}
@@ -97,36 +77,7 @@
                     {% endfor %}
                 </ul>               
             </div>
-            <div class="float-data">
-                <h1>Ryder's <img class="b-lazy" data-src="static/img/smalllogo.png" alt="small"> 
-                    <span>Sports Academy</span></h1>
-                <p></p>
-                <div class="sport-city-selector">
-                    <form class="sport-city-form">
-                        <div class="form-group">
-                            <p class="selected-sport selected-data">Select your preferred sport
-                            </p>
-                            <ul class="custom-select">
-                                {% for sport in sports  %}
-                                    <li sport="{{sport.id}}" slug="{{sport.slug}}">{{ sport.name }}</li>
-                                {% endfor %}
-                            </ul>
-                            
-                        </div>
-                        <div class="form-group">
-                            <p class="selected-center selected-data">Select your nearest center </p>
-                            <ul class="custom-select">
-                                {% for center in centers  %}
-                                    <li slug="{{center.slug}}" center={{center.id}}>{{ center.academy_name }}</li>
-                                {% endfor %}
-                            </ul>
-                        </div>
-                        <div class="form-group">
-                            <button type="button" class="submit-selection">Submit</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
+            
             
         </div>
         <div class="container">

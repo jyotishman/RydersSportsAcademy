@@ -77,46 +77,63 @@
     
     {% block header %}
         <header>
-        	<div class="logo-wrap">
-        		<a href="" class="logo-link">
-        			<img class="b-lazy" data-src="/static/img/logo.png" alt="logo">
-                    <!-- <img src="/static/img/biglogo.png" class="big-logo" alt="biglogo"> -->
-
-        		</a>
-        	</div>
-            <div class="burger-menu-wrap" id="burger-menu-wrap">
-                <i class="fas fa-bars"></i>
+            <div class="top-wrap">
+                <div class="container">
+                    <div class="logo-wrap">
+                        <i class="fas fa-bars" id="burger-menu-wrap"></i>
+                        <img src="/static/img/logo.png" alt="">
+                        <span>Ryder's <span>Sports Academy</span></span>
+                    </div>
+                    <div class="social-wrap">
+                        <ul class="list-inline">
+                            {% if company %}
+                                <li>
+                                    <a target="_blank" href="{{ company.facebook_url}}"><i class="fab fa-facebook-square"></i></a>
+                                </li>
+                                <li><a target="_blank" href="{{ company.instagram_url}}"><i class="fab fa-instagram"></i></a></li>
+                                
+                            {% endif %}
+                            <li>
+                                <a target="_blank" href="tel:9810141889"><i class="fas fa-phone-volume"></i>
+                                    9810141889
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         	<div class="nav-wrap">
-        		<nav>
-                    <ul class="menu-list">
-                      <li><a href="">Home</a></li>
-                      <li><a href="/about-us">About us</a></li>
-                      <li><a href="/teams">Our team</a></li>
-                      <li>
-                        <a href="/sports">Trainings <i class="fas fa-angle-down"></i></a>
-                        <ul class="menu-dropdown">
-                            {% for sport in sports  %}
-                                <li><a href="/sport/{{sport.id}}/{{sport.slug}}">{{ sport.name }}</a></li>
-                            {% endfor %}
-                        </ul>
-                      </li>
-                      <li>
-                          <a href="/notifications">Notifications</a>
-                      </li>
-                      <li>
-                        <a href="/centers/">Centers <i class="fas fa-angle-down"></i></a>
-                        <ul class="menu-dropdown">
-                            {% for center in centers  %}
-                                <li><a href="/center/{{ center.id }}/{{ center.slug }}">{{ center.academy_name }}</a></li>
-                            {% endfor %}                            
-                        </ul>
-                        </li>
-                      <li><a href="/corporates">Corporates</a></li>
-                      <li><a href="/gallery">Gallery</a></li>
-                      <li><a href="/contact-us">Contact us</a></li>
-                  </ul>      
-                </nav>
+                <div class="container">
+                    <nav>
+                        <ul class="menu-list">
+                          <li><a href="">Home</a></li>
+                          <li><a href="/about-us">About us</a></li>
+                          <li><a href="/teams">Our team</a></li>
+                          <li>
+                            <a href="/sports">Trainings <i class="fas fa-angle-down"></i></a>
+                            <ul class="menu-dropdown">
+                                {% for sport in sports  %}
+                                    <li><a href="/sport/{{sport.id}}/{{sport.slug}}">{{ sport.name }}</a></li>
+                                {% endfor %}
+                            </ul>
+                          </li>
+                          <li>
+                              <a href="/notifications">Notifications</a>
+                          </li>
+                          <li>
+                            <a href="/centers/">Centers <i class="fas fa-angle-down"></i></a>
+                            <ul class="menu-dropdown">
+                                {% for center in centers  %}
+                                    <li><a href="/center/{{ center.id }}/{{ center.slug }}">{{ center.academy_name }}</a></li>
+                                {% endfor %}                            
+                            </ul>
+                            </li>
+                          <li><a href="/corporates">Corporates</a></li>
+                          <li><a href="/gallery">Gallery</a></li>
+                          <li><a href="/contact-us">Contact us</a></li>
+                      </ul>      
+                    </nav>
+                </div>
         	</div>
         </header>
     {% endblock header %}

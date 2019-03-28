@@ -1,11 +1,5 @@
 header {
-    
-    @include flex();
-    background: #5090ca;
-    flex-wrap: wrap;
-    align-items: center;
-    padding: 0 20px;
-    justify-content: flex-end;
+    background: #fff;
     position: static;
     top: 0;
     left: 0;
@@ -17,6 +11,106 @@ header {
         height: 50px;
 
         background: #fff;
+    }
+
+    .top-wrap {
+        overflow: hidden;
+
+        .logo-wrap {
+            width: 50%;
+            float: left;
+
+            .fas.fa-bars {
+                float: left;
+                margin-top: 15px;
+                margin-right: 15px;
+                display: none;
+
+                @include respond-to(mobile) {
+                   display: block;
+                }
+            }
+
+            @include respond-to(mobile) {
+                width: 30%;
+            }
+
+            img {
+                vertical-align: middle;
+                float: left;
+
+                @include respond-to(mobile) {
+                    max-height: 47px;
+                }
+            }
+
+            >span {
+                vertical-align: text-bottom;
+                display: block;
+                font-size: 30px;
+                font-weight: bold;
+                text-transform: uppercase;
+                width: 300px;
+                float: left;
+                padding-top: 31px;
+                padding-left: 10px;
+                color: #535353;
+
+                @include respond-to(mobile) {
+                    display: none;
+                }
+
+                span {
+                    display: block;
+                    font-size: 14px;
+                    font-weight: 500;
+                }
+
+            }
+        }
+
+        .social-wrap {
+            width: 50%;
+            float: left;
+            text-align: right;
+            padding-top: 40px;
+
+            @include respond-to(mobile) {
+                width: 70%;
+                padding-top: 15px;
+            }
+
+
+            ul {
+                li {
+                    &:last-child {
+                        border-left: 1px solid #ddd;
+                        padding-left: 15px;
+
+                        a {
+                            text-decoration: none;
+                            font-size: 14px;
+                            color: #0953b4;
+                            font-weight: bold;
+                        }
+                    }
+                }
+            }
+        }
+
+        .social-wrap .fab,
+        .social-wrap .fas {
+            font-size: 29px;
+            margin-right: 15px;
+            color: #0953b4;
+
+            @include respond-to(mobile) {
+                font-size: 18px;
+                margin-right: 5px;
+                color: #0953b4;
+            }
+
+        }
     }
 
     .logo-link {
@@ -39,21 +133,26 @@ header {
     }
 
     .nav-wrap {
+        background: #5d5d5d;
+
         @include respond-to(mobile) {
             display: none;
         }
     }
 
     .menu-list {
+        margin-bottom: 0;
+
         li {
             display: inline-block;
             position: relative;
             text-align: left;
+
             a {
                 color: #fff;
                 text-decoration: none;
                 display: block;
-                padding: 12px 12px;
+                padding: 12px 15px;
                 font-size: 14px;
                 text-transform: uppercase;
                 font-weight: 700;
