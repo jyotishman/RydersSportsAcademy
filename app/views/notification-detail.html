@@ -31,7 +31,9 @@
         p{
             text-align: left !important;
         }
-    	
+    	table{
+            width: 100%;
+        }
 
     </style>
 {% endblock css %}
@@ -46,7 +48,6 @@
 	<div class="notification-wrap">
 		<div class="container">
 			<h1>{{ notification.title }}</h1>
-			<p class="date">{{ notification.created  }}</p>
 			<p class="desc">
 				{{ notification.description |safe }}
 				

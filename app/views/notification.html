@@ -38,8 +38,13 @@
     	}
     	.notification-list li a span{
     		  float: right;
-			  font-size: 12px;
-			  font-weight: 600;
+		    font-size: 12px;
+		    font-weight: 600;
+		    background: #0050b7;
+		    color: #fff;
+		    padding: 5px 10px;
+		    border-radius: 2px;
+		  }
     	}
     	.notification-list li a strong{
     		  display: block;
@@ -69,7 +74,6 @@
 					<a href="/notification/{{ notification.id }}/{{ notification.slug }}">
 						{{ notification.title }} 
 						
-						<span>{{ notification.created }}</span>
 						<strong>{{ notification.short_description }} <span>Read More</span></strong></a>
 						
 				</li>
