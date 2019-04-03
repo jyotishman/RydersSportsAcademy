@@ -39,7 +39,6 @@ log
 logs
 bin
 node_modules
-app/node_modules
 bower_components
 
 # Others
